@@ -38,6 +38,10 @@
   background-color: #000;
   color: #fff;
 }
+.header .header-btn .active {
+  background-color: #000;
+  color: #fff;
+}
 
 .graphics-gallery {
   text-align: center;

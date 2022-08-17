@@ -38,6 +38,10 @@
   background-color: #000;
   color: #fff;
 }
+.header .header-btn .active {
+  background-color: #000;
+  color: #fff;
+}
 
 .contact .contact-title {
   margin: -4rem 0;
@@ -66,4 +70,26 @@
 .footer p {
   text-align: center;
   margin: 6rem 0;
+}
+
+@media all and (max-width: 426px) {
+  .header .header-title {
+    margin: 0 0.4rem;
+    text-align: center;
+  }
+  .header .header-btn {
+    display: block;
+    margin: 3rem 0;
+  }
+  .header .header-btn .btn {
+    display: block;
+    margin-top: 0.5rem;
+  }
+  .contact {
+    margin: 7rem 0.5rem;
+  }
+  .footer p {
+    margin: 2rem 0;
+    margin-bottom: 2rem;
+  }
 }
