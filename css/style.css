@@ -133,7 +133,7 @@
   }
   .header .header-btn {
     display: block;
-    margin: 3rem -0.9rem;
+    margin: 3rem 0;
   }
   .header .header-btn .btn {
     display: block;
