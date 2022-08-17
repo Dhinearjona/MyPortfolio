@@ -56,3 +56,31 @@
   text-align: center;
   margin: 6rem 0;
 }
+
+@media all and (max-width: 426px) {
+  .header .header-title {
+    margin: 0 0.4rem;
+    text-align: center;
+  }
+  .header .header-btn {
+    display: block;
+    margin: 3rem 0;
+  }
+  .header .header-btn .btn {
+    display: block;
+    margin-top: 0.5rem;
+  }
+  .graphics-gallery {
+    margin: 1rem 0;
+  }
+  .graphics-gallery img {
+    width: 90%;
+    margin: 1rem 1rem;
+    transition: transform 0.2s;
+    display: block;
+  }
+  .footer p {
+    margin: -3rem 0;
+    margin-bottom: 2rem;
+  }
+}
