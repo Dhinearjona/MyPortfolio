@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --black: #000;
+  --white: #fff;
+}
+
+.header .header-title h1 {
+  font-weight: bolder;
+  text-align: center;
+  margin: 3rem 0;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.header .header-title p {
+  text-align: center;
+  margin: -2rem 0;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.header .header-btn {
+  text-align: center;
+  margin: 8rem 0;
+}
+.header .header-btn .btn {
+  padding: 0.5rem 3rem;
+  border-radius: 0.5rem;
+  transition: 0.5ms all;
+}
+.header .header-btn .btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+.header .header-btn .active {
+  background-color: #000;
+  color: #fff;
+}
+
+.certificate {
+  text-align: center;
+  margin: -4rem 0;
+}
+.certificate img {
+  width: 25%;
+  margin: 0.5rem;
+  transition: transform 0.2s;
+}
+.certificate img:hover {
+  transform: scale(1.1);
+}
+
+.footer p {
+  text-align: center;
+  margin: 6rem 0;
+}
+
+@media all and (max-width: 426px) {
+  .header .header-title {
+    margin: 0 0.4rem;
+    text-align: center;
+  }
+  .header .header-btn {
+    display: block;
+    margin: 3rem 0;
+  }
+  .header .header-btn .btn {
+    display: block;
+    margin-top: 0.5rem;
+  }
+  .certificate {
+    margin: 1rem 0;
+  }
+  .certificate img {
+    width: 90%;
+    margin: 1rem 1rem;
+    transition: transform 0.2s;
+    display: block;
+  }
+  .footer p {
+    margin: -3rem 0;
+    margin-bottom: 2rem;
+  }
+}
