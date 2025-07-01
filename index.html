@@ -1,41 +1,348 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
-    <title>Home - Dhine Franklin Arjona</title>
+    <link rel="icon" type="image/x-icon" href="img/profile.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Dhine Franklin Arjona - Portfolio</title>
 </head>
-<body>
-    <div class="header">
-        <div class="header-title">
-            <h1>Dhine Franklin Arjona</h1>
-            <p>My Portfolio</p>
-        </div>
-        <div class="header-btn">
-            <a href="index.html" class="btn btn-light active">Home</a>
-            <a href="graphics.html" class="btn btn-light">Graphic Design</a>
-            <a href="developer.html" class="btn btn-light">Web Development</a>
-            <a href="certificate.html" class="btn btn-light">Certificate</a>
-            <a href="contact.html" class="btn btn-light">Contact</a>
-        </div>
-        <div class="personal-info">
-            <div class="personal-details">
-                <h1>Freelance <b>Graphic Designer, Web Designer, and Web Developer.</b></h1>
-                <p><b>Frank Devs</b> Owner</p>
-                <a href="https://calendly.com/dhinearjona/15min?back=1&month=2022-08" class="btn btn-light" target="_blank"><i class="fa-solid fa-calendar-days"></i>Book a Meeting</a>
-            </div>
-            <div class="personal-image">
-                <img src="img/profile.jpg" />
-            </div>
-        </div>
-        <div class="footer">
-            <p>&copy; 2022 Dhine Franklin Arjona</p>
-        </div>
+
+<body class="font-sans bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Theme Toggle -->
+    <div class="fixed top-4 right-4 z-50">
+        <button id="theme-toggle"
+            class="p-3 bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
+            <i id="theme-icon" class="fas fa-moon text-gray-600 dark:text-gray-400"></i>
+        </button>
     </div>
-</div>
+
+    <!-- Main Container -->
+    <div class="max-w-4xl mx-auto px-4 py-8 space-y-6">
+
+        <!-- Header Card -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 p-6">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                <!-- Profile Picture -->
+                <div class="flex-shrink-0">
+                    <div
+                        class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg border-4 border-gray-200 dark:border-gray-700">
+                        <img src="img/profile.jpg" alt="Dhine Franklin Arjona" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Name, Title, and Description -->
+                <div class="text-center md:text-left space-y-4 flex-1">
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100">
+                        Dhine Franklin Arjona
+                    </h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-400 font-medium">
+                        Junior Web Developer
+                    </p>
+                    <p class="text-base text-gray-500 dark:text-gray-500 leading-relaxed max-w-2xl">
+                        Passionate about creating clean, efficient, and user-friendly web applications.
+                        Combining creativity with technical expertise to build modern digital experiences.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Card -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 p-6">
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">About</h2>
+            <div class="space-y-4">
+                <p class="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                    I combine creativity with technical expertise to deliver exceptional digital solutions. With years of
+                    experience in both design and development, I help businesses create compelling online presences that
+                    drive results.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-map-marker-alt text-gray-500 dark:text-gray-500 w-4"></i>
+                        <span class="text-gray-600 dark:text-gray-400">Philippines, Malabon</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-envelope text-gray-500 dark:text-gray-500 w-4"></i>
+                        <span class="text-gray-600 dark:text-gray-400">dhinearjona16@gmail.com</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-phone text-gray-500 dark:text-gray-500 w-4"></i>
+                        <span class="text-gray-600 dark:text-gray-400">+63 967 335 4929</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-globe text-gray-500 dark:text-gray-500 w-4"></i>
+                        <span class="text-gray-600 dark:text-gray-400">dhinearjona.vercel.app</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Card -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 p-6">
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Tech Stack</h2>
+            <div class="flex flex-wrap gap-3">
+                <span
+                    class="bg-slate-100 dark:bg-gray-700 text-slate-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm font-medium">HTML5</span>
+                <span
+                    class="bg-slate-100 dark:bg-gray-700 text-slate-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm font-medium">CSS3</span>
+                <span
+                    class="bg-slate-100 dark:bg-gray-700 text-slate-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
+                <span
+                    class="bg-slate-100 dark:bg-gray-700 text-slate-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm font-medium">PHP</span>
+                <span
+                    class="bg-slate-100 dark:bg-gray-700 text-slate-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm font-medium">Laravel</span>
+                <span
+                    class="bg-slate-100 dark:bg-gray-700 text-slate-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm font-medium">MySQL</span>
+                <span
+                    class="bg-slate-100 dark:bg-gray-700 text-slate-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm font-medium">Git</span>
+                <span
+                    class="bg-slate-100 dark:bg-gray-700 text-slate-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm font-medium">Bootstrap</span>
+                <span
+                    class="bg-slate-100 dark:bg-gray-700 text-slate-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm font-medium">Tailwind
+                    CSS</span>
+                <span
+                    class="bg-slate-100 dark:bg-gray-700 text-slate-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm font-medium">Adobe
+                    Photoshop</span>
+                <span
+                    class="bg-slate-100 dark:bg-gray-700 text-slate-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm font-medium">Adobe
+                    Illustrator</span>
+            </div>
+        </div>
+
+        <!-- Experience Card -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 p-6">
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Experience</h2>
+            <div class="space-y-6">
+                <div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Junior Web Developer</h3>
+                        <span class="text-sm text-gray-500 dark:text-gray-500 md:ml-4">2025 - Present</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 font-medium mb-2">Myracle Innovations Inc.</p>
+                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+                        <li>Full-stack development of a SaaS platform targeting construction companies using native PHP,
+                            Bootstrap, and MySQL.</li>
+                        <li>Developed responsive web applications and user interfaces for construction management and
+                            project tracking.</li>
+                        <li>Implemented database design and management for construction project data and client
+                            information.</li>
+                        <li>Collaborated with the development team to deliver scalable solutions for construction
+                            industry clients.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Web Developer</h3>
+                        <span class="text-sm text-gray-500 dark:text-gray-500 md:ml-4">2023 - 2025</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 font-medium mb-2">Gerrman IT Solutions</p>
+                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+                        <li>Developed and maintained company product website using Laravel framework.</li>
+                        <li>Built responsive web applications with modern UI/UX design principles.</li>
+                        <li>Implemented database management and backend functionality for product features.</li>
+                        <li>Collaborated with the development team to ensure code quality and best practices.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Card -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 p-6">
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-3">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Myracle Innovation SaaS Platform
+                    </h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Full-stack SaaS platform for construction companies with project management, automation tools,
+                        and property management features.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full text-xs">PHP</span>
+                        <span
+                            class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-2 py-1 rounded-full text-xs">Bootstrap</span>
+                        <span
+                            class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 px-2 py-1 rounded-full text-xs">MySQL</span>
+                    </div>
+                    <div class="flex space-x-3 text-sm">
+                        <a href="https://www.myracle.ph/" target="_blank"
+                            class="text-blue-600 dark:text-blue-400 hover:underline">Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Gerrman IT Solutions Website</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Corporate website for IT solutions company offering web development, mobile apps, cybersecurity,
+                        and various tech services.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full text-xs">Laravel</span>
+                        <span
+                            class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 px-2 py-1 rounded-full text-xs">Tailwind
+                            CSS</span>
+                        <span
+                            class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-2 py-1 rounded-full text-xs">MySQL</span>
+                    </div>
+                    <div class="flex space-x-3 text-sm">
+                        <a href="https://gerrmanitsolutions.com/" target="_blank"
+                            class="text-blue-600 dark:text-blue-400 hover:underline">Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Servicio Mobile Application</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Mobile application platform developed for Gerrman IT Solutions, providing various digital
+                        services and solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full text-xs">Laravel</span>
+                        <span
+                            class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-2 py-1 rounded-full text-xs">MySQL</span>
+                        <span
+                            class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 px-2 py-1 rounded-full text-xs">Tailwind
+                            CSS</span>
+                    </div>
+                    <div class="flex space-x-3 text-sm">
+                        <a href="https://servicio.world/" target="_blank"
+                            class="text-blue-600 dark:text-blue-400 hover:underline">Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">iNurse Review Center Platform
+                    </h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Educational platform for nursing students offering comprehensive review courses, lectures, and
+                        exam preparation materials.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full text-xs">WIX</span>
+                    </div>
+                    <div class="flex space-x-3 text-sm">
+                        <a href="https://www.inursereviewcenter.com/" target="_blank"
+                            class="text-blue-600 dark:text-blue-400 hover:underline">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Card -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 p-6">
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Education</h2>
+            <div class="space-y-4">
+                <div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Bachelor of Science in
+                            Information Technology</h3>
+                        <span class="text-sm text-gray-500 dark:text-gray-500 md:ml-4">2020 - 2024</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">Datamex College of Saint Adeline - Valenzuela Branch</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Card -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 p-6">
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Contact</h2>
+            <div class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-envelope text-gray-500 dark:text-gray-500 w-4"></i>
+                        <span class="text-gray-600 dark:text-gray-400">dhinearjona16@gmail.com</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-phone text-gray-500 dark:text-gray-500 w-4"></i>
+                        <span class="text-gray-600 dark:text-gray-400">+63 967 335 4929</span>
+                    </div>
+                </div>
+
+                <div class="flex space-x-4">
+                    <a href="https://www.linkedin.com/in/dhinearjona/" target="_blank"
+                        class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200">
+                        <i class="fab fa-linkedin text-gray-600 dark:text-gray-400"></i>
+                    </a>
+                    <a href="https://github.com/Dhinearjona" target="_blank"
+                        class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200">
+                        <i class="fab fa-github text-gray-600 dark:text-gray-400"></i>
+                    </a>
+                    <a href="https://x.com/dhinearjona16" target="_blank"
+                        class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200">
+                        <i class="fab fa-twitter text-gray-600 dark:text-gray-400"></i>
+                    </a>
+                    <a href="https://www.instagram.com/dhn_arjs/" target="_blank"
+                        class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200">
+                        <i class="fab fa-instagram text-gray-600 dark:text-gray-400"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for theme toggle -->
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to dark mode
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        html.classList.toggle('dark', currentTheme === 'dark');
+        updateThemeIcon();
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const newTheme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon();
+        });
+
+        function updateThemeIcon() {
+            if (html.classList.contains('dark')) {
+                themeIcon.className = 'fas fa-sun text-gray-400';
+            } else {
+                themeIcon.className = 'fas fa-moon text-gray-600';
+            }
+        }
+
+        // Smooth scrolling for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
