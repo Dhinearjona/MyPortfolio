@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# Optional: Prompt for commit message
 read -p "Enter commit message: " commit_msg
 
-# Default message if none provided
 if [ -z "$commit_msg" ]; then
   commit_msg="update $(date +'%Y-%m-%d %H:%M:%S')"
 fi
