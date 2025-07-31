@@ -17,16 +17,16 @@
                     },
                     colors: {
                         primary: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a',
+                            50: '#fafafa',
+                            100: '#f5f5f5',
+                            200: '#e5e5e5',
+                            300: '#d4d4d4',
+                            400: '#a3a3a3',
+                            500: '#737373',
+                            600: '#525252',
+                            700: '#404040',
+                            800: '#262626',
+                            900: '#171717',
                         }
                     }
                 }
@@ -35,28 +35,28 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <title>Dhine Franklin Arjona - Junior Web Developer</title>
+    <title>Dhine Franklin Arjona - Freelance Web Developer</title>
 </head>
 
 <body
-    class="font-sans bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-300 min-h-screen">
+    class="font-sans bg-gradient-to-br from-gray-50 to-white dark:from-black dark:to-black text-gray-900 dark:text-white transition-colors duration-300 min-h-screen">
     <!-- Theme Toggle -->
-    <div class="fixed top-4 right-4 z-50">
+    <div class="fixed top-6 right-6 z-50">
         <button id="theme-toggle"
-            class="p-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-all duration-300">
+            class="p-3 bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200/50 dark:border-white/10 hover:shadow-xl transition-all duration-300">
             <i id="theme-icon" class="w-5 h-5"></i>
         </button>
     </div>
 
     <!-- Main Container -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 min-h-screen flex flex-col">
+    <div class="max-w-6xl mx-auto px-6 py-8 min-h-screen flex flex-col">
 
         <!-- Header Section -->
-        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 mb-6 sm:mb-8">
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-8 mb-12">
             <!-- Profile Picture -->
             <div class="flex-shrink-0">
                 <div
-                    class="w-32 h-32 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 dark:border-gray-700/20">
+                    class="w-32 h-32 sm:w-36 sm:h-36 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 dark:border-white/10">
                     <img src="img/profile.jpg" alt="Dhine Franklin Arjona" class="w-full h-full object-cover">
                 </div>
             </div>
@@ -64,21 +64,22 @@
             <!-- Name and Title -->
             <div class="flex-1 text-center sm:text-left">
                 <h1
-                    class="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
+                    class="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
                     Dhine Franklin Arjona
                 </h1>
-                <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 font-medium mt-2">
-                    Junior Web Developer
+                <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 font-medium mt-3">
+                    Freelance Web Developer
                 </p>
             </div>
 
             <!-- Contact Info - Hidden on mobile, shown on desktop -->
-            <div class="hidden lg:flex flex-col gap-3 text-base">
-                <div class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+            <div class="hidden lg:flex flex-col gap-4 text-base">
+                <div class="flex items-center gap-3 text-gray-600 dark:text-gray-300">
                     <i data-lucide="mail" class="w-5 h-5"></i>
                     <span>dhinearjona16@gmail.com</span>
                 </div>
-                <a href="https://calendly.com/dhinearjona/15min" target="_blank" class="mt-2 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-200 dark:to-gray-400 text-white dark:text-gray-900 font-semibold shadow hover:from-gray-700 hover:to-gray-500 dark:hover:from-gray-300 dark:hover:to-gray-200 transition-all duration-200">
+                <a href="https://calendly.com/dhinearjona/15min" target="_blank"
+                    class="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 text-white dark:text-black font-semibold shadow-lg hover:from-gray-800 hover:to-gray-600 dark:hover:from-gray-200 dark:hover:to-gray-100 transition-all duration-300">
                     <i data-lucide="calendar" class="w-5 h-5"></i>
                     <span>Schedule a Call</span>
                 </a>
@@ -86,15 +87,18 @@
         </div>
 
         <!-- Mobile Contact Info -->
-        <div class="lg:hidden mb-6">
-            <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 dark:border-gray-700/20 p-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                    <div class="flex items-center justify-center sm:justify-start gap-2 text-gray-600 dark:text-gray-400">
+        <div class="lg:hidden mb-8">
+            <div
+                class="bg-white/80 dark:bg-black/80 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/50 dark:border-white/10 p-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                    <div
+                        class="flex items-center justify-center sm:justify-start gap-3 text-gray-600 dark:text-gray-300">
                         <i data-lucide="mail" class="w-4 h-4"></i>
                         <span class="truncate">dhinearjona16@gmail.com</span>
                     </div>
-                    <div class="flex items-center justify-center sm:justify-start gap-2">
-                        <a href="https://calendly.com/dhinearjona/15min" target="_blank" class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-200 dark:to-gray-400 text-white dark:text-gray-900 font-semibold shadow hover:from-gray-700 hover:to-gray-500 dark:hover:from-gray-300 dark:hover:to-gray-200 transition-all duration-200">
+                    <div class="flex items-center justify-center sm:justify-start gap-3">
+                        <a href="https://calendly.com/dhinearjona/15min" target="_blank"
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 text-white dark:text-black font-semibold shadow-lg hover:from-gray-800 hover:to-gray-600 dark:hover:from-gray-200 dark:hover:to-gray-100 transition-all duration-300">
                             <i data-lucide="calendar" class="w-4 h-4"></i>
                             <span>Schedule a Call</span>
                         </a>
@@ -104,19 +108,19 @@
         </div>
 
         <!-- Main Content Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 flex-1">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1">
 
             <!-- Left Column -->
-            <div class="space-y-4 sm:space-y-6">
+            <div class="space-y-6">
                 <!-- About Card -->
                 <div
-                    class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 dark:border-gray-700/20 p-4 sm:p-6">
+                    class="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/50 dark:border-white/10 p-8">
                     <h2
-                        class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
-                        <i data-lucide="user" class="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300"></i>
+                        class="text-2xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
+                        <i data-lucide="user" class="w-6 h-6 text-gray-600 dark:text-gray-300"></i>
                         About
                     </h2>
-                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <p class="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                         I'm a passionate developer who combines creativity and technical skills to build clean,
                         user-friendly digital solutions. I enjoy turning ideas into functional websites that help
                         businesses grow online.
@@ -125,228 +129,210 @@
 
                 <!-- Skills Card -->
                 <div
-                    class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 dark:border-gray-700/20 p-4 sm:p-6">
+                    class="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/50 dark:border-white/10 p-8">
                     <h2
-                        class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
-                        <i data-lucide="code" class="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300"></i>
+                        class="text-2xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+                        <i data-lucide="code" class="w-6 h-6 text-gray-600 dark:text-gray-300"></i>
                         Tech Stack
                     </h2>
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium">HTML5</span>
-                        <span
-                            class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium">CSS3</span>
-                        <span
-                            class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium">JavaScript</span>
-                        <span
-                            class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium">PHP</span>
-                        <span
-                            class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium">Laravel</span>
-                        <span
-                            class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium">MySQL</span>
-                        <span
-                            class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium">Git</span>
-                        <span
-                            class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium">Bootstrap</span>
-                        <span
-                            class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium">Tailwind
-                            CSS</span>
-                        <span
-                            class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium">Figma</span>
+                    
+                    <!-- Frontend -->
+                    <div class="mb-6">
+                        <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 uppercase tracking-wide">Frontend</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-4 py-2 rounded-2xl text-sm font-medium border border-gray-200/50 dark:border-white/10">HTML5</span>
+                            <span
+                                class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-4 py-2 rounded-2xl text-sm font-medium border border-gray-200/50 dark:border-white/10">CSS3</span>
+                            <span
+                                class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-4 py-2 rounded-2xl text-sm font-medium border border-gray-200/50 dark:border-white/10">JavaScript</span>
+                            <span
+                                class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-4 py-2 rounded-2xl text-sm font-medium border border-gray-200/50 dark:border-white/10">Bootstrap</span>
+                            <span
+                                class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-4 py-2 rounded-2xl text-sm font-medium border border-gray-200/50 dark:border-white/10">Tailwind CSS</span>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Education Card -->
-                <div
-                    class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 dark:border-gray-700/20 p-4 sm:p-6">
-                    <h2
-                        class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
-                        <i data-lucide="graduation-cap"
-                            class="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300"></i>
-                        Education
-                    </h2>
+                    <!-- Backend -->
+                    <div class="mb-6">
+                        <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 uppercase tracking-wide">Backend</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-4 py-2 rounded-2xl text-sm font-medium border border-gray-200/50 dark:border-white/10">PHP</span>
+                            <span
+                                class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-4 py-2 rounded-2xl text-sm font-medium border border-gray-200/50 dark:border-white/10">Laravel</span>
+                            <span
+                                class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-4 py-2 rounded-2xl text-sm font-medium border border-gray-200/50 dark:border-white/10">MySQL</span>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Others -->
                     <div>
-                        <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100">BS Information
-                            Technology
-                        </h3>
-                        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400">Datamex College of Saint
-                            Adeline</p>
-                        <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-500">2020 - 2024</p>
+                        <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 uppercase tracking-wide">Tools & Others</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-4 py-2 rounded-2xl text-sm font-medium border border-gray-200/50 dark:border-white/10">Git</span>
+                            <span
+                                class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-4 py-2 rounded-2xl text-sm font-medium border border-gray-200/50 dark:border-white/10">GitHub</span>
+                            <span
+                                class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-4 py-2 rounded-2xl text-sm font-medium border border-gray-200/50 dark:border-white/10">GitLab</span>
+                            <span
+                                class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-4 py-2 rounded-2xl text-sm font-medium border border-gray-200/50 dark:border-white/10">CI/CD</span>
+                            <span
+                                class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-4 py-2 rounded-2xl text-sm font-medium border border-gray-200/50 dark:border-white/10">Figma</span>
+                            <span
+                                class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-4 py-2 rounded-2xl text-sm font-medium border border-gray-200/50 dark:border-white/10">Adobe Illustrator</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Center Column -->
-            <div class="space-y-4 sm:space-y-6">
-                <!-- Experience Card -->
+            <div class="space-y-6">
+                <!-- Education Card -->
                 <div
-                    class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 dark:border-gray-700/20 p-4 sm:p-6">
+                    class="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/50 dark:border-white/10 p-8">
                     <h2
-                        class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
-                        <i data-lucide="briefcase" class="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300"></i>
-                        Experience
+                        class="text-2xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
+                        <i data-lucide="graduation-cap"
+                            class="w-6 h-6 text-gray-600 dark:text-gray-300"></i>
+                        Education
                     </h2>
-                    <div class="space-y-4 sm:space-y-5">
-                        <div>
-                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-                                <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100">Junior
-                                    Web
-                                    Developer</h3>
-                                <span class="text-xs sm:text-sm text-gray-500 dark:text-gray-500 sm:ml-4">2025 -
-                                    Present</span>
-                            </div>
-                            <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium mb-2 sm:mb-3">
-                                Myracle
-                                Innovations Inc.</p>
-                            <ul class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-1 sm:space-y-2">
-                                <li>• Full-stack SaaS platform development</li>
-                                <li>• Responsive web applications</li>
-                                <li>• Database design and management</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-                                <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100">Web
-                                    Developer</h3>
-                                <span class="text-xs sm:text-sm text-gray-500 dark:text-gray-500 sm:ml-4">2023 -
-                                    2025</span>
-                            </div>
-                            <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium mb-2 sm:mb-3">
-                                Gerrman IT
-                                Solutions</p>
-                            <ul class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-1 sm:space-y-2">
-                                <li>• Laravel framework development</li>
-                                <li>• Modern UI/UX design</li>
-                                <li>• Backend functionality</li>
-                            </ul>
-                        </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">BS Information
+                            Technology
+                        </h3>
+                        <p class="text-base text-gray-600 dark:text-gray-300">Datamex College of Saint
+                            Adeline</p>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">2020 - 2024</p>
                     </div>
                 </div>
 
                 <!-- Contact Card -->
                 <div
-                    class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 dark:border-gray-700/20 p-4 sm:p-6">
+                    class="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/50 dark:border-white/10 p-8">
                     <h2
-                        class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
-                        <i data-lucide="contact" class="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300"></i>
+                        class="text-2xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+                        <i data-lucide="contact" class="w-6 h-6 text-gray-600 dark:text-gray-300"></i>
                         Contact
                     </h2>
-                    <div class="flex justify-center sm:justify-start space-x-3 sm:space-x-4">
+                    <div class="flex justify-center sm:justify-start space-x-4">
                         <a href="https://www.facebook.com/dhinearjona" target="_blank"
-                            class="w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200">
+                            class="w-12 h-12 bg-gray-100 dark:bg-white/10 rounded-2xl flex items-center justify-center hover:bg-gray-200 dark:hover:bg-white/20 transition-all duration-300 border border-gray-200/50 dark:border-white/10">
                             <i data-lucide="facebook"
-                                class="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300"></i>
+                                class="w-6 h-6 text-gray-700 dark:text-white"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/dhinearjona/" target="_blank"
-                            class="w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200">
+                            class="w-12 h-12 bg-gray-100 dark:bg-white/10 rounded-2xl flex items-center justify-center hover:bg-gray-200 dark:hover:bg-white/20 transition-all duration-300 border border-gray-200/50 dark:border-white/10">
                             <i data-lucide="linkedin"
-                                class="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300"></i>
+                                class="w-6 h-6 text-gray-700 dark:text-white"></i>
                         </a>
                         <a href="https://github.com/Dhinearjona" target="_blank"
-                            class="w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200">
-                            <i data-lucide="github" class="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300"></i>
+                            class="w-12 h-12 bg-gray-100 dark:bg-white/10 rounded-2xl flex items-center justify-center hover:bg-gray-200 dark:hover:bg-white/20 transition-all duration-300 border border-gray-200/50 dark:border-white/10">
+                            <i data-lucide="github" class="w-6 h-6 text-gray-700 dark:text-white"></i>
                         </a>
                         <a href="https://x.com/dhinearjona16" target="_blank"
-                            class="w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200">
-                            <i data-lucide="twitter" class="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300"></i>
+                            class="w-12 h-12 bg-gray-100 dark:bg-white/10 rounded-2xl flex items-center justify-center hover:bg-gray-200 dark:hover:bg-white/20 transition-all duration-300 border border-gray-200/50 dark:border-white/10">
+                            <i data-lucide="twitter"
+                                class="w-6 h-6 text-gray-700 dark:text-white"></i>
                         </a>
                         <a href="https://www.instagram.com/dhn_arjs/" target="_blank"
-                            class="w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200">
+                            class="w-12 h-12 bg-gray-100 dark:bg-white/10 rounded-2xl flex items-center justify-center hover:bg-gray-200 dark:hover:bg-white/20 transition-all duration-300 border border-gray-200/50 dark:border-white/10">
                             <i data-lucide="instagram"
-                                class="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300"></i>
+                                class="w-6 h-6 text-gray-700 dark:text-white"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
             <!-- Right Column -->
-            <div class="space-y-4 sm:space-y-6">
+            <div class="space-y-6">
                 <!-- Projects Card -->
                 <div
-                    class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 dark:border-gray-700/20 p-4 sm:p-6">
+                    class="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/50 dark:border-white/10 p-8">
                     <h2
-                        class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
-                        <i data-lucide="folder-open" class="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300"></i>
+                        class="text-2xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+                        <i data-lucide="folder-open"
+                            class="w-6 h-6 text-gray-600 dark:text-gray-300"></i>
                         Projects
                     </h2>
-                    <div class="space-y-4 sm:space-y-5">
-                        <div class="space-y-2 sm:space-y-3">
-                            <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100">Myracle
+                    <div class="space-y-6">
+                        <div class="space-y-3">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Myracle
                                 Innovation SaaS
                             </h3>
-                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Construction management
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Construction management
                                 platform</p>
-                            <div class="flex flex-wrap gap-1 sm:gap-2">
+                            <div class="flex flex-wrap gap-2">
                                 <span
-                                    class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">PHP</span>
+                                    class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-3 py-1 rounded-xl text-xs font-medium border border-gray-200/50 dark:border-white/10">PHP</span>
                                 <span
-                                    class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">Bootstrap</span>
+                                    class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-3 py-1 rounded-xl text-xs font-medium border border-gray-200/50 dark:border-white/10">Bootstrap</span>
                             </div>
                             <a href="https://www.myracle.ph/" target="_blank"
-                                class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 hover:underline">Live Demo
+                                class="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300">Live Demo
                                 →</a>
                         </div>
 
-                        <div class="space-y-2 sm:space-y-3">
-                            <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100">Gerrman IT
+                        <div class="space-y-3">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Gerrman IT
                                 Solutions
                             </h3>
-                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Corporate website & services
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Corporate website & services
                             </p>
-                            <div class="flex flex-wrap gap-1 sm:gap-2">
+                            <div class="flex flex-wrap gap-2">
                                 <span
-                                    class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">Laravel</span>
+                                    class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-3 py-1 rounded-xl text-xs font-medium border border-gray-200/50 dark:border-white/10">Laravel</span>
                                 <span
-                                    class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">Tailwind</span>
+                                    class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-3 py-1 rounded-xl text-xs font-medium border border-gray-200/50 dark:border-white/10">Tailwind</span>
                             </div>
                             <a href="https://gerrmanitsolutions.com/" target="_blank"
-                                class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 hover:underline">Live Demo
+                                class="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300">Live Demo
                                 →</a>
                         </div>
 
-                        <div class="space-y-2 sm:space-y-3">
-                            <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100">Servicio
+                        <div class="space-y-3">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Servicio
                                 Mobile App
                             </h3>
-                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Digital services platform</p>
-                            <div class="flex flex-wrap gap-1 sm:gap-2">
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Digital services platform</p>
+                            <div class="flex flex-wrap gap-2">
                                 <span
-                                    class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">Laravel</span>
+                                    class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-3 py-1 rounded-xl text-xs font-medium border border-gray-200/50 dark:border-white/10">Laravel</span>
                                 <span
-                                    class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">MySQL</span>
+                                    class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-3 py-1 rounded-xl text-xs font-medium border border-gray-200/50 dark:border-white/10">MySQL</span>
                             </div>
                             <a href="https://servicio.world/" target="_blank"
-                                class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 hover:underline">Live Demo
+                                class="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300">Live Demo
                                 →</a>
                         </div>
 
-                        <div class="space-y-2 sm:space-y-3">
-                            <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100">iNurse
+                        <div class="space-y-3">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">iNurse
                                 Review Center
                             </h3>
-                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Educational platform</p>
-                            <div class="flex flex-wrap gap-1 sm:gap-2">
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Educational platform</p>
+                            <div class="flex flex-wrap gap-2">
                                 <span
-                                    class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">WIX</span>
+                                    class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-3 py-1 rounded-xl text-xs font-medium border border-gray-200/50 dark:border-white/10">WIX</span>
                             </div>
                             <a href="https://www.inursereviewcenter.com/" target="_blank"
-                                class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 hover:underline">Live Demo
+                                class="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300">Live Demo
                                 →</a>
                         </div>
 
-                        <div class="space-y-2 sm:space-y-3">
-                            <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100">Filipino
+                        <div class="space-y-3">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Filipino
                                 Hardware</h3>
-                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">E-commerce platform</p>
-                            <div class="flex flex-wrap gap-1 sm:gap-2">
+                            <p class="text-sm text-gray-600 dark:text-gray-300">E-commerce platform</p>
+                            <div class="flex flex-wrap gap-2">
                                 <span
-                                    class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">Laravel</span>
+                                    class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-3 py-1 rounded-xl text-xs font-medium border border-gray-200/50 dark:border-white/10">Laravel</span>
                                 <span
-                                    class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">Tailwind</span>
+                                    class="bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white px-3 py-1 rounded-xl text-xs font-medium border border-gray-200/50 dark:border-white/10">Tailwind</span>
                             </div>
                             <a href="https://filipinohardware.com/" target="_blank"
-                                class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 hover:underline">Live Demo
+                                class="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300">Live Demo
                                 →</a>
                         </div>
                     </div>
