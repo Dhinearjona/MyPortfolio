@@ -55,6 +55,17 @@
             <img src="../img/bowling.jpg" alt="Bowling" class="w-full max-h-[70vh] object-cover bg-gray-100 dark:bg-white/5">
             <div class="p-8">
                 <h1 class="text-3xl font-bold mb-3">Bowling</h1>
+                <div class="mb-6 flex items-center gap-4 text-sm text-gray-600 dark:text-gray-300">
+                    <button id="like-btn"
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-200/60 dark:border-white/10 bg-white/70 dark:bg-white/5 hover:bg-white/90 dark:hover:bg-white/10 transition-colors">
+                        <span aria-hidden="true">❤️</span>
+                        <span id="like-count">0</span>
+                    </button>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-200/60 dark:border-white/10 bg-white/70 dark:bg-white/5">
+                        <span aria-hidden="true">👁️</span>
+                        <span id="view-count">0</span>
+                    </div>
+                </div>
                 <div class="prose prose-neutral dark:prose-invert max-w-none">
                     <p>Noong nakaraan, naglaro ako ng bowling. Akala ko madali lang pipili ka ng bola, tatakbo ng konti, bitaw, tapos bahala na kung strike o hindi. Pero habang tumatagal, napansin ko, hindi pala ganun kasimple.</p>
                     <p>Una, may bigat yung bola. Hindi porket buhat mo siya, ibig sabihin kaya mo nang kontrolin. Tapos may tamang anggulo, tamang bilis, at timing ng release. Kapag sablay kahit sa isa lang doon, nagiging gutter ball agad.</p>
@@ -99,6 +110,56 @@
                     '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
             }
         }
+
+        // Simple per-browser analytics using localStorage
+        const LIKE_COUNT_KEY = 'blog_bowling_like_count';
+        const LIKED_KEY = 'blog_bowling_liked';
+        const VIEW_COUNT_KEY = 'blog_bowling_view_count';
+
+        const likeBtn = document.getElementById('like-btn');
+        const likeCountEl = document.getElementById('like-count');
+        const viewCountEl = document.getElementById('view-count');
+
+        function getNumber(key) {
+            const value = localStorage.getItem(key);
+            const num = parseInt(value || '0', 10);
+            return Number.isNaN(num) ? 0 : num;
+        }
+
+        function setNumber(key, value) {
+            localStorage.setItem(key, String(Math.max(0, value)));
+        }
+
+        // Initialize counts
+        let likeCount = getNumber(LIKE_COUNT_KEY);
+        let viewCount = getNumber(VIEW_COUNT_KEY);
+        const hasLiked = localStorage.getItem(LIKED_KEY) === 'true';
+
+        // Increment views on load
+        viewCount += 1;
+        setNumber(VIEW_COUNT_KEY, viewCount);
+        viewCountEl.textContent = String(viewCount);
+
+        // Reflect like state
+        likeCountEl.textContent = String(likeCount);
+        if (hasLiked) {
+            likeBtn.classList.add('ring-1', 'ring-pink-400/50');
+        }
+
+        likeBtn.addEventListener('click', () => {
+            const currentlyLiked = localStorage.getItem(LIKED_KEY) === 'true';
+            if (currentlyLiked) {
+                likeCount = Math.max(0, likeCount - 1);
+                localStorage.setItem(LIKED_KEY, 'false');
+                likeBtn.classList.remove('ring-1', 'ring-pink-400/50');
+            } else {
+                likeCount += 1;
+                localStorage.setItem(LIKED_KEY, 'true');
+                likeBtn.classList.add('ring-1', 'ring-pink-400/50');
+            }
+            setNumber(LIKE_COUNT_KEY, likeCount);
+            likeCountEl.textContent = String(likeCount);
+        });
     </script>
 </body>
 
