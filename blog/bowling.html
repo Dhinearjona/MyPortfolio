@@ -148,48 +148,89 @@
         const themeIcon = document.getElementById("theme-icon");
         const html = document.documentElement;
 
-        // Likes and Views
+        // Theme icon function
+        function updateThemeIcon() {
+            const isDark = html.classList.contains("dark");
+            themeIcon.setAttribute("data-lucide", isDark ? "moon" : "sun");
+            lucide.createIcons();
+        }
+
+        // Like & View elements
         const likeButton = document.getElementById("like-button");
         const likeIcon = document.getElementById("like-icon");
         const likeCountEl = document.getElementById("like-count");
         const viewCountEl = document.getElementById("view-count");
-        const storageKeyBase = "bowling_blog_";
-        const likesKey = storageKeyBase + "likes";
-        const likedKey = storageKeyBase + "liked";
-        const viewsKey = storageKeyBase + "views";
+        const storageKey = "engagement_bowling_v1";
 
-        function renderLikeState() {
-            const liked = localStorage.getItem(likedKey) === "true";
-            likeIcon.setAttribute("data-lucide", liked ? "heart" : "heart");
-            likeIcon.classList.toggle("text-red-500", liked);
-            // Recreate icons to update if data-lucide changed
-            lucide.createIcons();
+        // LocalStorage helpers
+        function readStore() {
+            try {
+                const raw = localStorage.getItem(storageKey);
+                if (!raw) return {
+                    likes: 0,
+                    liked: false,
+                    views: 0
+                };
+                const parsed = JSON.parse(raw);
+                return {
+                    likes: Number.isFinite(parsed.likes) ? parsed.likes : 0,
+                    liked: !!parsed.liked,
+                    views: Number.isFinite(parsed.views) ? parsed.views : 0,
+                };
+            } catch {
+                return {
+                    likes: 0,
+                    liked: false,
+                    views: 0
+                };
+            }
         }
 
-        function initEngagement() {
-            const likes = parseInt(localStorage.getItem(likesKey) || "0", 10);
-            const views = parseInt(localStorage.getItem(viewsKey) || "0", 10) + 1; // increment on view
-            localStorage.setItem(viewsKey, String(views));
+        function writeStore(data) {
+            try {
+                localStorage.setItem(storageKey, JSON.stringify(data));
+            } catch {}
+        }
+
+        // Update Like button UI
+        function renderLikeState() {
+            const {
+                liked,
+                likes
+            } = readStore();
             likeCountEl.textContent = String(likes);
-            viewCountEl.textContent = String(views);
+            const svg = likeButton.querySelector("svg");
+            if (svg) {
+                svg.classList.toggle("text-red-500", liked);
+                svg.classList.toggle("stroke-red-500", liked);
+            }
+            likeButton.setAttribute("aria-pressed", liked ? "true" : "false");
+        }
+
+        // Init views & likes on load
+        function initEngagement() {
+            const current = readStore();
+            current.views = (current.views || 0) + 1; // add 1 view every visit
+            writeStore(current);
+            viewCountEl.textContent = String(current.views);
             renderLikeState();
         }
 
+        // Heart click event
         likeButton?.addEventListener("click", () => {
-            const liked = localStorage.getItem(likedKey) === "true";
-            let likes = parseInt(localStorage.getItem(likesKey) || "0", 10);
-            if (liked) {
-                likes = Math.max(0, likes - 1);
-                localStorage.setItem(likedKey, "false");
+            const current = readStore();
+            if (current.liked) {
+                current.likes = Math.max(0, current.likes - 1);
+                current.liked = false;
             } else {
-                likes += 1;
-                localStorage.setItem(likedKey, "true");
+                current.likes = current.likes + 1;
+                current.liked = true;
             }
-            localStorage.setItem(likesKey, String(likes));
-            likeCountEl.textContent = String(likes);
+            writeStore(current);
             renderLikeState();
         });
 
+        // Theme init
         const currentTheme = localStorage.getItem("theme") || "dark";
         html.classList.toggle("dark", currentTheme === "dark");
         updateThemeIcon();
