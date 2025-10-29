@@ -5,7 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Dhine Franklin Arjona - Experienced Freelance Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines, offering full-stack development services for businesses worldwide.">
+    <meta name="keywords"
+        content="web developer, PHP developer, Laravel developer, freelance developer, full stack developer, MySQL, JavaScript, HTML5, CSS3, Bootstrap, TailwindCSS, Philippines developer, web development services, custom web applications">
+    <meta name="author" content="Dhine Franklin Arjona">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dhine Franklin Arjona | Freelance Web Developer">
+    <meta property="og:description"
+        content="Experienced Freelance Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines, offering full-stack development services.">
+    <meta property="og:image" content="https://dhinearjona.online/img/profile.png">
+    <meta property="og:url" content="https://dhinearjona.online/">
+    <meta property="og:site_name" content="Dhine Franklin Arjona Portfolio">
+    <meta property="og:locale" content="en_PH">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dhine Franklin Arjona | Freelance Web Developer">
+    <meta name="twitter:description"
+        content="Experienced Freelance Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines.">
+    <meta name="twitter:image" content="https://dhinearjona.online/img/profile.png">
+    <meta name="twitter:creator" content="@dhinearjona16">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#0A66C2">
+    <meta name="msapplication-TileColor" content="#0A66C2">
+    <meta name="application-name" content="Dhine Franklin Arjona Portfolio">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dhinearjona.online/">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="img/profile.png">
+    <link rel="apple-touch-icon" href="img/profile.png">
+
+    <!-- Tailwind CSS CDN - For production, consider installing via npm: npm install -D tailwindcss -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,39 +63,137 @@
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+    </noscript>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <title>Dhine Franklin Arjona | Freelance Web Developer</title>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dhine Franklin Arjona",
+        "jobTitle": "Freelance Web Developer",
+        "description": "Experienced Freelance Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines, offering full-stack development services for businesses worldwide.",
+        "url": "https://dhinearjona.online/",
+        "image": "https://dhinearjona.online/img/profile.png",
+        "email": "dhinearjona16@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "Philippines"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/dhinearjona/",
+            "https://github.com/Dhinearjona",
+            "https://www.facebook.com/dhinearjona",
+            "https://x.com/dhinearjona16",
+            "https://www.instagram.com/dhn_arjs/"
+        ],
+        "knowsAbout": [
+            "PHP",
+            "Laravel",
+            "MySQL",
+            "JavaScript",
+            "HTML5",
+            "CSS3",
+            "Bootstrap",
+            "TailwindCSS",
+            "REST APIs",
+            "Google Cloud Platform",
+            "Web Development",
+            "Full Stack Development"
+        ],
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Datamex College of Saint Adeline",
+            "description": "BS Information Technology"
+        },
+        "hasOccupation": [
+            {
+                "@type": "Occupation",
+                "name": "Senior Full Stack Developer",
+                "occupationLocation": {
+                    "@type": "Place",
+                    "name": "Philippines"
+                },
+                "worksFor": {
+                    "@type": "Organization",
+                    "name": "Myracle Innovation Inc."
+                },
+                "datePosted": "2025-07-01",
+                "employmentType": "FULL_TIME"
+            },
+            {
+                "@type": "Occupation",
+                "name": "Web Developer",
+                "occupationLocation": {
+                    "@type": "Place",
+                    "name": "Manila, Philippines"
+                },
+                "worksFor": {
+                    "@type": "Organization",
+                    "name": "Gerrman IT Solutions"
+                },
+                "datePosted": "2025-07-01",
+                "employmentType": "FULL_TIME"
+                }
+        ],
+        "offers": {
+            "@type": "Offer",
+            "itemOffered": {
+                "@type": "Service",
+                "name": "Web Development Services",
+                "description": "Full-stack web development services including PHP, Laravel, MySQL, and modern web technologies"
+            },
+            "areaServed": "Worldwide",
+            "availableChannel": {
+                "@type": "ServiceChannel",
+                "serviceUrl": "https://calendly.com/dhinearjona/15min"
+            }
+        }
+    }
+    </script>
     <style>
         .linkedin-gradient {
             background: linear-gradient(135deg, #0A66C2 0%, #004182 100%);
         }
+
         .cover-photo {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
+
         .dark .cover-photo {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
         }
     </style>
 </head>
 
-<body class="font-sans bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300 min-h-screen">
+<body
+    class="font-sans bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300 min-h-screen">
     <!-- Theme Toggle -->
     <div class="fixed top-6 right-6 z-50">
         <button id="theme-toggle"
-            class="p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
-            <i id="theme-icon" class="w-5 h-5"></i>
+            class="p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300"
+            aria-label="Toggle dark mode" title="Toggle dark mode">
+            <i id="theme-icon" class="w-5 h-5" aria-hidden="true"></i>
         </button>
     </div>
 
     <!-- Header Section -->
-    <div class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+    <header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
         <div class="max-w-4xl mx-auto px-6 py-8">
             <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
                 <!-- Profile Picture -->
                 <div class="flex-shrink-0">
-                    <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg">
-                        <img src="img/profile.png" alt="Dhine Franklin Arjona" class="w-full h-full bg-white object-cover">
+                    <div
+                        class="w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg">
+                        <img src="img/profile.png" alt="Dhine Franklin Arjona - Professional Web Developer Headshot"
+                            class="w-full h-full bg-white object-cover" width="128" height="128">
                     </div>
                 </div>
 
@@ -63,71 +202,88 @@
                     <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
                         Dhine Franklin Arjona
                     </h1>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 mt-1">
+                    <h2 class="text-lg text-gray-600 dark:text-gray-300 mt-1">
                         Freelance Web Developer
-                    </p>
+                    </h2>
                     <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                        Philippines
+                        Malabon City, Philippines
                     </p>
 
                     <!-- Action Buttons -->
                     <div class="flex flex-wrap gap-3 justify-center md:justify-start mt-6">
-                        <a href="mailto:dhinearjona16@gmail.com" 
-                            class="inline-flex items-center gap-2 px-4 py-2 bg-linkedin text-white rounded-full hover:bg-blue-700 transition-colors duration-200">
-                            <i data-lucide="mail" class="w-4 h-4"></i>
+                        <a href="mailto:dhinearjona16@gmail.com"
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-linkedin text-white rounded-full hover:bg-blue-700 transition-colors duration-200"
+                            aria-label="Send email to Dhine Franklin Arjona">
+                            <i data-lucide="mail" class="w-4 h-4" aria-hidden="true"></i>
                             <span>Contact</span>
                         </a>
-                        <a href="https://calendly.com/dhinearjona/15min" target="_blank"
-                            class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 text-linkedin border border-linkedin rounded-full hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors duration-200">
-                            <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <a href="https://calendly.com/dhinearjona/15min" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 text-linkedin border border-linkedin rounded-full hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                            aria-label="Schedule a meeting with Dhine Franklin Arjona">
+                            <i data-lucide="calendar" class="w-4 h-4" aria-hidden="true"></i>
                             <span>Schedule Meeting</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/dhinearjona/" target="_blank"
-                            class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-full hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-                            <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        <a href="https://www.linkedin.com/in/dhinearjona/" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-full hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                            aria-label="Connect with Dhine Franklin Arjona on LinkedIn">
+                            <i data-lucide="linkedin" class="w-4 h-4" aria-hidden="true"></i>
                             <span>Connect</span>
                         </a>
                     </div>
 
                     <!-- Social Links -->
                     <div class="flex flex-wrap gap-4 justify-center md:justify-start mt-6">
-                        <a href="https://www.facebook.com/dhinearjona" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-linkedin dark:hover:text-linkedin transition-colors">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        <a href="https://www.facebook.com/dhinearjona" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-600 dark:text-gray-400 hover:text-linkedin dark:hover:text-linkedin transition-colors"
+                            aria-label="Follow Dhine Franklin Arjona on Facebook">
+                            <i data-lucide="facebook" class="w-5 h-5" aria-hidden="true"></i>
                         </a>
-                        <a href="https://github.com/Dhinearjona" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-linkedin dark:hover:text-linkedin transition-colors">
-                            <i data-lucide="github" class="w-5 h-5"></i>
+                        <a href="https://github.com/Dhinearjona" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-600 dark:text-gray-400 hover:text-linkedin dark:hover:text-linkedin transition-colors"
+                            aria-label="View Dhine Franklin Arjona's GitHub profile">
+                            <i data-lucide="github" class="w-5 h-5" aria-hidden="true"></i>
                         </a>
-                        <a href="https://x.com/dhinearjona16" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-linkedin dark:hover:text-linkedin transition-colors">
-                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        <a href="https://x.com/dhinearjona16" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-600 dark:text-gray-400 hover:text-linkedin dark:hover:text-linkedin transition-colors"
+                            aria-label="Follow Dhine Franklin Arjona on X (Twitter)">
+                            <i data-lucide="twitter" class="w-5 h-5" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.instagram.com/dhn_arjs/" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-linkedin dark:hover:text-linkedin transition-colors">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        <a href="https://www.instagram.com/dhn_arjs/" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-600 dark:text-gray-400 hover:text-linkedin dark:hover:text-linkedin transition-colors"
+                            aria-label="Follow Dhine Franklin Arjona on Instagram">
+                            <i data-lucide="instagram" class="w-5 h-5" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
     <!-- Main Content -->
-    <div class="max-w-4xl mx-auto px-6 py-8">
+    <main class="max-w-4xl mx-auto px-6 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            
+
             <!-- Left Column - About & Skills -->
             <div class="lg:col-span-2 space-y-6">
                 <!-- About Section -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                <section
+                    class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
                     <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">About</h2>
                     <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                        Hi, I'm <span class="font-semibold">Dhine</span> — a passionate Web Developer specializing in <span class="font-semibold">PHP, Laravel, and MySQL</span>. I build scalable and efficient web systems with clean, maintainable code. I enjoy turning ideas into functional websites that help businesses grow online.
+                        Hi, I'm <span class="font-semibold">Dhine</span> — a passionate Web Developer specializing in
+                        <span class="font-semibold">PHP, Laravel, and MySQL</span>. I build scalable and efficient web
+                        systems with clean, maintainable code. I enjoy turning ideas into functional websites that help
+                        businesses grow online.
                     </p>
-                </div>
+                </section>
 
                 <!-- Education Section -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                <section
+                    class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
                     <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Education</h2>
                     <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 bg-linkedin bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div
+                            class="w-12 h-12 bg-linkedin bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
                             <i data-lucide="graduation-cap" class="w-6 h-6 text-linkedin"></i>
                         </div>
                         <div>
@@ -136,30 +292,46 @@
                             <p class="text-sm text-gray-500 dark:text-gray-500">2020 - 2024</p>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <!-- Experience Section -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
-                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Experience</h2>
+                <section
+                    class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Professional Experience</h2>
                     <div class="space-y-6 relative">
                         <!-- Experience 1 -->
                         <div class="pl-4 relative border-l-2 border-gray-300 dark:border-gray-600">
-                            <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-linkedin border-2 border-white dark:border-gray-800"></div>
+                            <div
+                                class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-linkedin border-2 border-white dark:border-gray-800">
+                            </div>
                             <div class="mt-[-4px]">
                                 <div class="flex items-start gap-3 mb-2">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded flex items-center justify-center text-white font-semibold text-lg">
+                                    <div
+                                        class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded flex items-center justify-center text-white font-semibold text-lg">
                                         MI
                                     </div>
                                     <div class="flex-1">
-                                        <h3 class="font-semibold text-gray-900 dark:text-white">Senior Full Stack Developer</h3>
-                                        <p class="text-sm text-gray-600 dark:text-gray-400">Myracle Innovation Inc. · Full-time</p>
-                                        <p class="text-sm text-gray-500 dark:text-gray-500">Jul 2025 - Present · <span id="myracle-months">4</span> mos · Philippines</p>
-                                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">National Capital Region, Philippines</p>
+                                        <h3 class="font-semibold text-gray-900 dark:text-white">Senior Full Stack
+                                            Developer</h3>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Myracle Innovation Inc. ·
+                                            Full-time</p>
+                                        <p class="text-sm text-gray-500 dark:text-gray-500">Jul 2025 - Present · <span
+                                                id="myracle-months">4</span> mos · Philippines</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">National Capital
+                                            Region, Philippines</p>
                                         <div class="mt-2 flex flex-wrap gap-2">
-                                            <span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-[11px] font-medium">REST APIs</span>
-                                            <span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-[11px] font-medium">Google Cloud Platform (GCP)</span>
-                                            <span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-[11px] font-medium">Web Hosting</span>
-                                            <span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-[11px] font-medium">AI Integration</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-[11px] font-medium">REST
+                                                APIs</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-[11px] font-medium">Google
+                                                Cloud Platform (GCP)</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-[11px] font-medium">Web
+                                                Hosting</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-[11px] font-medium">AI
+                                                Integration</span>
                                         </div>
                                     </div>
                                 </div>
@@ -168,26 +340,40 @@
 
                         <!-- Experience 2 -->
                         <div class="pl-4 relative border-l-2 border-gray-300 dark:border-gray-600">
-                            <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-linkedin border-2 border-white dark:border-gray-800"></div>
+                            <div
+                                class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-linkedin border-2 border-white dark:border-gray-800">
+                            </div>
                             <div class="mt-[-4px]">
                                 <div class="flex items-start gap-3 mb-2">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded flex items-center justify-center text-white font-semibold text-lg">
+                                    <div
+                                        class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded flex items-center justify-center text-white font-semibold text-lg">
                                         MI
                                     </div>
                                     <div class="flex-1">
-                                        <h3 class="font-semibold text-gray-900 dark:text-white">Junior Full stack Developer</h3>
+                                        <h3 class="font-semibold text-gray-900 dark:text-white">Junior Full stack
+                                            Developer</h3>
                                         <p class="text-sm text-gray-600 dark:text-gray-400">Myracle Innovation Inc.</p>
-                                        <p class="text-sm text-gray-500 dark:text-gray-500">Apr 2025 - Jul 2025 · 4 mos</p>
-                                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">National Capital Region, Philippines</p>
+                                        <p class="text-sm text-gray-500 dark:text-gray-500">Apr 2025 - Jul 2025 · 4 mos
+                                        </p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">National Capital
+                                            Region, Philippines</p>
                                         <div class="mt-2 flex flex-wrap gap-2">
-                                            <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">Bootstrap</span>
-                                            <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">Git</span>
-                                            <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">HTML</span>
-                                            <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">MySQL</span>
-                                            <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">PHP</span>
-                                            <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">CSS</span>
-                                            <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">JavaScript</span>
-                                            <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">TailwindCSS</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">Bootstrap</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">Git</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">HTML</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">MySQL</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">PHP</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">CSS</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">JavaScript</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">TailwindCSS</span>
                                         </div>
                                     </div>
                                 </div>
@@ -196,219 +382,292 @@
 
                         <!-- Experience 3 -->
                         <div class="pl-4 relative">
-                            <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-linkedin border-2 border-white dark:border-gray-800"></div>
+                            <div
+                                class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-linkedin border-2 border-white dark:border-gray-800">
+                            </div>
                             <div class="mt-[-4px]">
                                 <div class="flex items-start gap-3 mb-2">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded flex items-center justify-center text-white font-semibold text-lg">
+                                    <div
+                                        class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded flex items-center justify-center text-white font-semibold text-lg">
                                         GI
                                     </div>
                                     <div class="flex-1">
                                         <h3 class="font-semibold text-gray-900 dark:text-white">Web Developer</h3>
-                                        <p class="text-sm text-gray-600 dark:text-gray-400">Gerrman IT Solutions · Full-time</p>
-                                        <p class="text-sm text-gray-500 dark:text-gray-500">Jul 2025 - Present · <span id="gerrman-months">4</span> mos</p>
-                                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">Manila, Philippines · Asia</p>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Gerrman IT Solutions ·
+                                            Full-time</p>
+                                        <p class="text-sm text-gray-500 dark:text-gray-500">Jul 2025 - Present · <span
+                                                id="gerrman-months">4</span> mos</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">Manila, Philippines ·
+                                            Asia</p>
                                         <div class="mt-2 flex flex-wrap gap-2">
-                                            <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">Laravel</span>
-                                            <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">PHP</span>
-                                            <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">MySQL</span>
-                                            <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">Git</span>
-                                            <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">GitLab</span>
-                                            <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">Firebase</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">Laravel</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">PHP</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">MySQL</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">Git</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">GitLab</span>
+                                            <span
+                                                class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-[11px] font-medium">Firebase</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <!-- Projects Section -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                <section
+                    class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
                     <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Featured Projects</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <h3 class="font-semibold text-gray-900 dark:text-white">Myracle Innovation SaaS</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Construction management platform</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Construction management platform
+                            </p>
                             <div class="flex flex-wrap gap-2 mb-2">
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">PHP</span>
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">Bootstrap</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">PHP</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">Bootstrap</span>
                             </div>
-                            <a href="https://www.myracle.ph/" target="_blank" class="text-linkedin hover:underline text-sm">View Project →</a>
+                            <a href="https://www.myracle.ph/" target="_blank"
+                                class="text-linkedin hover:underline text-sm">View Project →</a>
                         </div>
 
                         <div>
                             <h3 class="font-semibold text-gray-900 dark:text-white">Gerrman IT Solutions</h3>
                             <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Corporate website & services</p>
                             <div class="flex flex-wrap gap-2 mb-2">
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">Laravel</span>
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">Tailwind CSS</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">Laravel</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">Tailwind
+                                    CSS</span>
                             </div>
-                            <a href="https://gerrmanitsolutions.com/" target="_blank" class="text-linkedin hover:underline text-sm">View Project →</a>
+                            <a href="https://gerrmanitsolutions.com/" target="_blank"
+                                class="text-linkedin hover:underline text-sm">View Project →</a>
                         </div>
 
                         <div>
                             <h3 class="font-semibold text-gray-900 dark:text-white">Servicio Mobile App</h3>
                             <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Digital services platform</p>
                             <div class="flex flex-wrap gap-2 mb-2">
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">Laravel</span>
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">MySQL</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">Laravel</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">MySQL</span>
                             </div>
-                            <a href="https://servicio.world/" target="_blank" class="text-linkedin hover:underline text-sm">View Project →</a>
+                            <a href="https://servicio.world/" target="_blank"
+                                class="text-linkedin hover:underline text-sm">View Project →</a>
                         </div>
 
                         <div>
                             <h3 class="font-semibold text-gray-900 dark:text-white">iNurse Review Center</h3>
                             <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Educational platform</p>
                             <div class="flex flex-wrap gap-2 mb-2">
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">WIX</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">WIX</span>
                             </div>
-                            <a href="https://www.inursereviewcenter.com/" target="_blank" class="text-linkedin hover:underline text-sm">View Project →</a>
+                            <a href="https://www.inursereviewcenter.com/" target="_blank"
+                                class="text-linkedin hover:underline text-sm">View Project →</a>
                         </div>
 
                         <div>
                             <h3 class="font-semibold text-gray-900 dark:text-white">Filipino Hardware</h3>
                             <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">E-commerce platform</p>
                             <div class="flex flex-wrap gap-2 mb-2">
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">Laravel</span>
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">Tailwind CSS</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">Laravel</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">Tailwind
+                                    CSS</span>
                             </div>
-                            <a href="https://filipinohardware.com/" target="_blank" class="text-linkedin hover:underline text-sm">View Project →</a>
+                            <a href="https://filipinohardware.com/" target="_blank"
+                                class="text-linkedin hover:underline text-sm">View Project →</a>
                         </div>
 
                         <div>
                             <h3 class="font-semibold text-gray-900 dark:text-white">Evacuation Shelter System</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Emergency management platform for tracking shelters and capacity</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Emergency management platform for
+                                tracking shelters and capacity</p>
                             <div class="flex flex-wrap gap-2 mb-2">
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">PHP</span>
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">MySQL</span>
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">Bootstrap</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">PHP</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">MySQL</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">Bootstrap</span>
                             </div>
-                            <a href="https://demo.dhinearjona.online/" target="_blank" class="text-linkedin hover:underline text-sm">View Project →</a>
+                            <a href="https://demo.dhinearjona.online/" target="_blank"
+                                class="text-linkedin hover:underline text-sm">View Project →</a>
                         </div>
 
                         <div>
                             <h3 class="font-semibold text-gray-900 dark:text-white">Point of Sale System</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Complete POS solution for retail businesses</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Complete POS solution for retail
+                                businesses</p>
                             <div class="flex flex-wrap gap-2 mb-2">
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">PHP</span>
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">MySQL</span>
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">JavaScript</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">PHP</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">MySQL</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">JavaScript</span>
                             </div>
-                            <a href="https://pos.dhinearjona.online/login.php" target="_blank" class="text-linkedin hover:underline text-sm">View Project →</a>
+                            <a href="https://pos.dhinearjona.online/login.php" target="_blank"
+                                class="text-linkedin hover:underline text-sm">View Project →</a>
                         </div>
 
                         <div>
                             <h3 class="font-semibold text-gray-900 dark:text-white">Rental Management System</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Property and equipment rental management platform</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Property and equipment rental
+                                management platform</p>
                             <div class="flex flex-wrap gap-2 mb-2">
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">PHP</span>
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">MySQL</span>
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">Bootstrap</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">PHP</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">MySQL</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">Bootstrap</span>
                             </div>
-                            <a href="https://rental.dhinearjona.online/login.php" target="_blank" class="text-linkedin hover:underline text-sm">View Project →</a>
+                            <a href="https://rental.dhinearjona.online/login.php" target="_blank"
+                                class="text-linkedin hover:underline text-sm">View Project →</a>
                         </div>
 
                         <div>
                             <h3 class="font-semibold text-gray-900 dark:text-white">Classroom Management System</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Educational platform for managing classrooms and students</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Educational platform for managing
+                                classrooms and students</p>
                             <div class="flex flex-wrap gap-2 mb-2">
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">PHP</span>
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">MySQL</span>
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">CSS3</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">PHP</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">MySQL</span>
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">CSS3</span>
                             </div>
-                            <a href="https://school.dhinearjona.online/login.php" target="_blank" class="text-linkedin hover:underline text-sm">View Project →</a>
+                            <a href="https://school.dhinearjona.online/login.php" target="_blank"
+                                class="text-linkedin hover:underline text-sm">View Project →</a>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
 
             <!-- Right Sidebar -->
-            <div class="space-y-6">
+            <aside class="space-y-6">
                 <!-- Skills Section -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                <section
+                    class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
                     <div class="flex items-center justify-between mb-4">
-                        <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Skills</h2>
+                        <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Technical Skills</h2>
                         <button id="view-all-skills" class="text-sm text-linkedin hover:underline">View All</button>
                     </div>
                     <div class="space-y-4">
                         <div>
                             <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Frontend</h3>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">HTML5</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">CSS3</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">JavaScript</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">Bootstrap</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">TailwindCSS</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">HTML5</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">CSS3</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">JavaScript</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">Bootstrap</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">TailwindCSS</span>
                             </div>
                         </div>
 
                         <div>
                             <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Backend</h3>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">PHP</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">Laravel</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">MySQL</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">REST APIs</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">PHP</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">Laravel</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">MySQL</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">REST
+                                    APIs</span>
                             </div>
                         </div>
 
                         <div>
-                            <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Cloud & Hosting</h3>
+                            <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Cloud & Hosting
+                            </h3>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">Google Cloud Platform</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">Web Hosting</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">Google
+                                    Cloud Platform</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">Web
+                                    Hosting</span>
                             </div>
                         </div>
 
                         <div>
                             <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tools & Others</h3>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">Git</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">GitHub</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">GitLab</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">Figma</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">Firebase</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">AI Integration</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">Git</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">GitHub</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">GitLab</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">Figma</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">Firebase</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">AI
+                                    Integration</span>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <!-- Blog Section -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
-                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Recent Posts</h2>
+                <section
+                    class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Recent Blog Posts</h2>
                     <a href="blog/bowling.html" class="block group">
-                        <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-linkedin transition-colors mb-2">
+                        <h3
+                            class="font-semibold text-gray-900 dark:text-white group-hover:text-linkedin transition-colors mb-2">
                             Bowling
                         </h3>
                         <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">September 5, 2025 • 3 min read</p>
                         <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
-                            Reflections on focus, timing, consistency, and learning to enjoy the game even when every throw isn't a strike.
+                            Reflections on focus, timing, consistency, and learning to enjoy the game even when every
+                            throw isn't a strike.
                         </p>
                     </a>
-                </div>
+                </section>
 
                 <!-- Contact Section -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
-                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Contact Info</h2>
+                <section
+                    class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Contact Information</h2>
                     <div class="space-y-3">
                         <div class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-linkedin/10 text-linkedin dark:text-linkedin">
-                                <i data-lucide="mail" class="w-4 h-4"></i>
-                            </span>
-                            <a href="mailto:dhinearjona16@gmail.com" class="hover:text-linkedin transition-colors">
-                                dhinearjona16@gmail.com
-                            </a>
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            <span class="text-sm">dhinearjona16@gmail.com</span>
                         </div>
                         <div class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
                             <i data-lucide="map-pin" class="w-5 h-5"></i>
-                            <span>Philippines</span>
+                            <span class="text-sm">Malabon City, Philippines</span>
                         </div>
                     </div>
-                </div>
-            </div>
+                </section>
+            </aside>
         </div>
-    </div>
+    </main>
 
     <!-- Footer -->
     <footer class="border-t border-gray-200 dark:border-gray-800 mt-12">
@@ -420,16 +679,19 @@
     </footer>
 
     <!-- Skills Modal -->
-    <div id="skills-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4 transition-opacity duration-200 opacity-0">
-        <div id="skills-modal-panel" class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto transform transition-all duration-200 ease-out opacity-0 scale-95 translate-y-1">
+    <div id="skills-modal"
+        class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4 transition-opacity duration-200 opacity-0">
+        <div id="skills-modal-panel"
+            class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto transform transition-all duration-200 ease-out opacity-0 scale-95 translate-y-1">
             <div class="p-6">
                 <div class="flex items-center justify-between mb-6">
                     <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">All Skills</h2>
-                    <button id="close-skills-modal" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                    <button id="close-skills-modal"
+                        class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
                         <i data-lucide="x" class="w-6 h-6"></i>
                     </button>
                 </div>
-                
+
                 <div class="space-y-6">
                     <!-- Senior Full Stack Developer Skills -->
                     <div>
@@ -439,22 +701,33 @@
                         </h3>
                         <div class="space-y-3">
                             <div>
-                                <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Backend & APIs</h4>
+                                <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Backend & APIs
+                                </h4>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">REST APIs</span>
+                                    <span
+                                        class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">REST
+                                        APIs</span>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Cloud & Hosting</h4>
+                                <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Cloud & Hosting
+                                </h4>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Google Cloud Platform (GCP)</span>
-                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Web Hosting</span>
+                                    <span
+                                        class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Google
+                                        Cloud Platform (GCP)</span>
+                                    <span
+                                        class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Web
+                                        Hosting</span>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">AI & Integration</h4>
+                                <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">AI & Integration
+                                </h4>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">AI Integration</span>
+                                    <span
+                                        class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">AI
+                                        Integration</span>
                                 </div>
                             </div>
                         </div>
@@ -470,27 +743,38 @@
                             <div>
                                 <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Frontend</h4>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">HTML5</span>
-                                    <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">CSS3</span>
-                                    <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">JavaScript</span>
-                                    <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Bootstrap</span>
-                                    <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">TailwindCSS</span>
+                                    <span
+                                        class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">HTML5</span>
+                                    <span
+                                        class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">CSS3</span>
+                                    <span
+                                        class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">JavaScript</span>
+                                    <span
+                                        class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Bootstrap</span>
+                                    <span
+                                        class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">TailwindCSS</span>
                                 </div>
                             </div>
                             <div>
                                 <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Backend</h4>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">PHP</span>
-                                    <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">MySQL</span>
+                                    <span
+                                        class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">PHP</span>
+                                    <span
+                                        class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">MySQL</span>
                                 </div>
                             </div>
                             <div>
                                 <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Tools</h4>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Git</span>
-                                    <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">GitHub</span>
-                                    <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">GitLab</span>
-                                    <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Figma</span>
+                                    <span
+                                        class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Git</span>
+                                    <span
+                                        class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">GitHub</span>
+                                    <span
+                                        class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">GitLab</span>
+                                    <span
+                                        class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Figma</span>
                                 </div>
                             </div>
                         </div>
@@ -502,8 +786,12 @@
 
     <!-- JavaScript -->
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+        // Initialize Lucide icons after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
 
         // Real-time month calculation for current positions
         function calculateMonths(startDate) {
@@ -518,10 +806,10 @@
         function updateMonthCounters() {
             const myracleMonths = calculateMonths('2025-07-01'); // July 2025
             const gerrmanMonths = calculateMonths('2025-07-01'); // July 2025 (same start date)
-            
+
             const myracleElement = document.getElementById('myracle-months');
             const gerrmanElement = document.getElementById('gerrman-months');
-            
+
             if (myracleElement) myracleElement.textContent = myracleMonths;
             if (gerrmanElement) gerrmanElement.textContent = gerrmanMonths;
         }
@@ -548,9 +836,11 @@
 
         function updateThemeIcon() {
             if (html.classList.contains('dark')) {
-                themeIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
+                themeIcon.innerHTML =
+                    '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
             } else {
-                themeIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+                themeIcon.innerHTML =
+                    '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
             }
         }
 
