@@ -395,8 +395,7 @@
                                         <h3 class="font-semibold text-gray-900 dark:text-white">Web Developer</h3>
                                         <p class="text-sm text-gray-600 dark:text-gray-400">Gerrman IT Solutions ·
                                             Full-time</p>
-                                        <p class="text-sm text-gray-500 dark:text-gray-500">Jul 2025 - Present · <span
-                                                id="gerrman-months">4</span> mos</p>
+                                        <p class="text-sm text-gray-500 dark:text-gray-500">Nov 2023 - May 2025 · 1 yr 6 mos</p>
                                         <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">Manila, Philippines ·
                                             Asia</p>
                                         <div class="mt-2 flex flex-wrap gap-2">
@@ -805,13 +804,11 @@
         // Update month counters
         function updateMonthCounters() {
             const myracleMonths = calculateMonths('2025-07-01'); // July 2025
-            const gerrmanMonths = calculateMonths('2025-07-01'); // July 2025 (same start date)
 
             const myracleElement = document.getElementById('myracle-months');
-            const gerrmanElement = document.getElementById('gerrman-months');
 
             if (myracleElement) myracleElement.textContent = myracleMonths;
-            if (gerrmanElement) gerrmanElement.textContent = gerrmanMonths;
+            // Gerrman IT Solutions is no longer current position, so no need to calculate months
         }
 
         // Update counters on page load
