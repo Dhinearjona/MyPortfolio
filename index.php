@@ -144,8 +144,7 @@
                                             Developer</h3>
                                         <p class="text-sm text-gray-600 dark:text-gray-400">Myracle Innovation Inc. ·
                                             Full-time</p>
-                                        <p class="text-sm text-gray-500 dark:text-gray-500">Jul 2025 - Present · <span
-                                                id="myracle-months">4</span> mos · Philippines</p>
+                                        <p class="text-sm text-gray-500 dark:text-gray-500">Jul 2025 - Nov 2025 · 5 mos · Philippines</p>
                                         <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">National Capital
                                             Region, Philippines</p>
                                         <div class="mt-2 flex flex-wrap gap-2">
@@ -182,7 +181,7 @@
                                         <h3 class="font-semibold text-gray-900 dark:text-white">Junior Full stack
                                             Developer</h3>
                                         <p class="text-sm text-gray-600 dark:text-gray-400">Myracle Innovation Inc.</p>
-                                        <p class="text-sm text-gray-500 dark:text-gray-500">Apr 2025 - Jul 2025 · 4 mos
+                                        <p class="text-sm text-gray-500 dark:text-gray-500">Apr 2025 - Jul 2025 · 3 mos
                                         </p>
                                         <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">National Capital
                                             Region, Philippines</p>
@@ -697,12 +696,7 @@
 
         // Update month counters
         function updateMonthCounters() {
-            const myracleMonths = calculateMonths('2025-07-01'); // July 2025
-
-            const myracleElement = document.getElementById('myracle-months');
-
-            if (myracleElement) myracleElement.textContent = myracleMonths;
-            // Gerrman IT Solutions is no longer current position, so no need to calculate months
+            // No current positions with dynamic month calculations
         }
 
         // Update counters on page load
