@@ -5,7 +5,7 @@
 
     <!-- SEO Meta Tags -->
     <meta name="description"
-        content="Dhine Franklin Arjona - Experienced Freelance Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines, offering full-stack development services for businesses worldwide.">
+        content="Dhine Franklin Arjona - Experienced Full Stack Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines, offering full-stack development services for businesses worldwide.">
     <meta name="keywords"
         content="web developer, PHP developer, Laravel developer, freelance developer, full stack developer, MySQL, JavaScript, HTML5, CSS3, Bootstrap, TailwindCSS, Philippines developer, web development services, custom web applications">
     <meta name="author" content="Dhine Franklin Arjona">
@@ -15,9 +15,9 @@
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Dhine Franklin Arjona | Freelance Web Developer">
+    <meta property="og:title" content="Dhine Franklin Arjona | Full Stack Web Developer">
     <meta property="og:description"
-        content="Experienced Freelance Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines, offering full-stack development services.">
+        content="Experienced Full Stack Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines, offering full-stack development services.">
     <meta property="og:image" content="https://dhinearjona.online/assets/img/profile.png">
     <meta property="og:url" content="https://dhinearjona.online/">
     <meta property="og:site_name" content="Dhine Franklin Arjona Portfolio">
@@ -25,9 +25,9 @@
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Dhine Franklin Arjona | Freelance Web Developer">
+    <meta name="twitter:title" content="Dhine Franklin Arjona | Full Stack Web Developer">
     <meta name="twitter:description"
-        content="Experienced Freelance Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines.">
+        content="Experienced Full Stack Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines.">
     <meta name="twitter:image" content="https://dhinearjona.online/assets/img/profile.png">
     <meta name="twitter:creator" content="@dhinearjona16">
 
@@ -43,23 +43,22 @@
     <link rel="icon" type="image/x-icon" href="assets/img/profile.png">
     <link rel="apple-touch-icon" href="assets/img/profile.png">
 
-    <!-- Tailwind CSS CDN - For production, consider installing via npm: npm install -D tailwindcss -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
+            darkMode: "class",
             theme: {
                 extend: {
                     fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        sans: ["Inter", "system-ui", "sans-serif"],
                     },
-                    colors: {
-                        linkedin: '#0A66C2',
-                    }
-                }
-            }
-        }
+                },
+            },
+        };
     </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"
         media="print" onload="this.media='all'">
     <noscript>
@@ -67,7 +66,7 @@
             rel="stylesheet">
     </noscript>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <title>Dhine Franklin Arjona | Freelance Web Developer</title>
+    <title>Dhine Franklin Arjona | Full Stack Web Developer</title>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -75,8 +74,8 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Dhine Franklin Arjona",
-        "jobTitle": "Freelance Web Developer",
-        "description": "Experienced Freelance Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines, offering full-stack development services for businesses worldwide.",
+        "jobTitle": "Full Stack Web Developer",
+        "description": "Experienced Full Stack Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines, offering full-stack development services for businesses worldwide.",
         "url": "https://dhinearjona.online/",
         "image": "https://dhinearjona.online/assets/img/profile.png",
         "email": "dhinearjona16@gmail.com",
