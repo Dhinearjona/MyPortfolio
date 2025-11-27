@@ -18,7 +18,7 @@
     <meta property="og:title" content="Dhine Franklin Arjona | Freelance Web Developer">
     <meta property="og:description"
         content="Experienced Freelance Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines, offering full-stack development services.">
-    <meta property="og:image" content="https://dhinearjona.online/img/profile.png">
+    <meta property="og:image" content="https://dhinearjona.online/assets/img/profile.png">
     <meta property="og:url" content="https://dhinearjona.online/">
     <meta property="og:site_name" content="Dhine Franklin Arjona Portfolio">
     <meta property="og:locale" content="en_PH">
@@ -28,7 +28,7 @@
     <meta name="twitter:title" content="Dhine Franklin Arjona | Freelance Web Developer">
     <meta name="twitter:description"
         content="Experienced Freelance Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines.">
-    <meta name="twitter:image" content="https://dhinearjona.online/img/profile.png">
+    <meta name="twitter:image" content="https://dhinearjona.online/assets/img/profile.png">
     <meta name="twitter:creator" content="@dhinearjona16">
 
     <!-- Additional SEO Meta Tags -->
@@ -40,8 +40,8 @@
     <link rel="canonical" href="https://dhinearjona.online/">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="img/profile.png">
-    <link rel="apple-touch-icon" href="img/profile.png">
+    <link rel="icon" type="image/x-icon" href="assets/img/profile.png">
+    <link rel="apple-touch-icon" href="assets/img/profile.png">
 
     <!-- Tailwind CSS CDN - For production, consider installing via npm: npm install -D tailwindcss -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -78,7 +78,7 @@
         "jobTitle": "Freelance Web Developer",
         "description": "Experienced Freelance Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines, offering full-stack development services for businesses worldwide.",
         "url": "https://dhinearjona.online/",
-        "image": "https://dhinearjona.online/img/profile.png",
+        "image": "https://dhinearjona.online/assets/img/profile.png",
         "email": "dhinearjona16@gmail.com",
         "address": {
             "@type": "PostalAddress",

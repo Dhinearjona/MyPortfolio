@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="../img/profile.png" />
+    <link rel="icon" type="image/x-icon" href="../../assets/img/profile.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -39,7 +39,7 @@
 
     <!-- Back Button -->
     <div class="max-w-4xl mx-auto px-6 pt-6">
-        <a href="../index.php"
+        <a href="../../index.php"
             class="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-linkedin transition-colors">
             <i data-lucide="arrow-left" class="w-5 h-5"></i>
             <span>Back to Home</span>
@@ -50,7 +50,7 @@
     <div class="max-w-4xl mx-auto px-6 py-8">
         <!-- Header Card -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden mb-6">
-            <img src="../img/bowling.jpg" alt="Bowling"
+            <img src="../../assets/img/bowling.jpg" alt="Bowling"
                 class="w-full h-80 object-cover" />
             <div class="p-8">
                 <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -100,7 +100,7 @@
 
             <!-- The Strike Moment -->
             <div class="my-8">
-                <img src="../img/score.jpg" alt="Score" class="w-full h-auto rounded-xl shadow-lg my-8 border border-gray-200 dark:border-gray-700">
+                <img src="../../assets/img/score.jpg" alt="Score" class="w-full h-auto rounded-xl shadow-lg my-8 border border-gray-200 dark:border-gray-700">
             </div>
 
             <div class="my-8 p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-gray-700/50 dark:to-gray-600/50 rounded-xl border-l-4 border-green-500">
