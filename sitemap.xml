@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://dhinearjona.online/</loc>
         <lastmod>2025-01-27</lastmod>
@@ -8,12 +9,12 @@
         <priority>1.0</priority>
         <image:image>
             <image:loc>https://dhinearjona.online/assets/img/profile.png</image:loc>
-            <image:title>Dhine Franklin Arjona - Professional Web Developer</image:title>
-            <image:caption>Professional headshot of Dhine Franklin Arjona, Freelance Web Developer</image:caption>
+            <image:title>Dhine Franklin Arjona - Full Stack Web Developer</image:title>
+            <image:caption>Dhine Franklin Arjona - Full Stack Web Developer specializing in PHP, Laravel, MySQL, JavaScript, Bootstrap, and Tailwind CSS</image:caption>
         </image:image>
     </url>
     <url>
-        <loc>https://dhinearjona.online/blog/bowling.php</loc>
+        <loc>https://dhinearjona.online/assets/blog/bowling.php</loc>
         <lastmod>2025-09-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
