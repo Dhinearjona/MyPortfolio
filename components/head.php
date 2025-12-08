@@ -2,42 +2,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="en">
+    <meta name="language" content="English">
 
     <!-- SEO Meta Tags -->
     <meta name="description"
-        content="Dhine Franklin Arjona - Experienced Full Stack Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines, offering full-stack development services for businesses worldwide.">
+        content="Dhine Franklin Arjona - Full Stack Web Developer from Philippines. Expert in PHP, Laravel, MySQL, JavaScript, Bootstrap, Tailwind CSS. Building SaaS platforms, web applications, and landing pages. Available for freelance and remote work.">
     <meta name="keywords"
-        content="web developer, PHP developer, Laravel developer, freelance developer, full stack developer, MySQL, JavaScript, HTML5, CSS3, Bootstrap, TailwindCSS, Philippines developer, web development services, custom web applications">
+        content="Dhine Franklin Arjona, Full Stack Web Developer, PHP Developer, Laravel Developer, MySQL Developer, JavaScript Developer, Web Developer Philippines, Freelance Web Developer, PHP Laravel Developer, Bootstrap Developer, Tailwind CSS Developer, SaaS Developer, Web Application Developer, Custom Web Development, Remote Web Developer, Philippines Web Developer, Malabon Web Developer, Full Stack Developer Portfolio">
     <meta name="author" content="Dhine Franklin Arjona">
+    <meta name="geo.region" content="PH">
+    <meta name="geo.placename" content="Malabon City, Philippines">
+    <meta name="geo.position" content="14.6567;120.9492">
+    <meta name="ICBM" content="14.6567, 120.9492">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="bingbot" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Dhine Franklin Arjona | Full Stack Web Developer">
+    <meta property="og:type" content="profile">
+    <meta property="og:profile:first_name" content="Dhine Franklin">
+    <meta property="og:profile:last_name" content="Arjona">
+    <meta property="og:profile:username" content="dhinearjona">
+    <meta property="og:title" content="Dhine Franklin Arjona | Full Stack Web Developer | PHP Laravel MySQL">
     <meta property="og:description"
-        content="Experienced Full Stack Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines, offering full-stack development services.">
+        content="Full Stack Web Developer from Philippines. Expert in PHP, Laravel, MySQL, JavaScript, Bootstrap, Tailwind CSS. Building SaaS platforms and web applications. Available for freelance and remote work.">
     <meta property="og:image" content="https://dhinearjona.online/assets/img/profile.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Dhine Franklin Arjona - Full Stack Web Developer">
     <meta property="og:url" content="https://dhinearjona.online/">
     <meta property="og:site_name" content="Dhine Franklin Arjona Portfolio">
     <meta property="og:locale" content="en_PH">
+    <meta property="og:locale:alternate" content="en_US">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Dhine Franklin Arjona | Full Stack Web Developer">
-    <meta name="twitter:description"
-        content="Experienced Full Stack Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines.">
-    <meta name="twitter:image" content="https://dhinearjona.online/assets/img/profile.png">
+    <meta name="twitter:site" content="@dhinearjona16">
     <meta name="twitter:creator" content="@dhinearjona16">
+    <meta name="twitter:title" content="Dhine Franklin Arjona | Full Stack Web Developer | PHP Laravel MySQL">
+    <meta name="twitter:description"
+        content="Full Stack Web Developer from Philippines. Expert in PHP, Laravel, MySQL, JavaScript. Building SaaS platforms and web applications.">
+    <meta name="twitter:image" content="https://dhinearjona.online/assets/img/profile.png">
+    <meta name="twitter:image:alt" content="Dhine Franklin Arjona - Full Stack Web Developer">
 
     <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#0A66C2">
-    <meta name="msapplication-TileColor" content="#0A66C2">
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
     <meta name="application-name" content="Dhine Franklin Arjona Portfolio">
+    <meta name="apple-mobile-web-app-title" content="Dhine Arjona">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://dhinearjona.online/">
+    <link rel="alternate" hreflang="en" href="https://dhinearjona.online/">
+    <link rel="alternate" hreflang="x-default" href="https://dhinearjona.online/">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/profile.png">
@@ -66,7 +89,7 @@
             rel="stylesheet">
     </noscript>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <title>Dhine Franklin Arjona | Full Stack Web Developer</title>
+    <title>Dhine Franklin Arjona | Full Stack Web Developer | PHP Laravel MySQL Developer Philippines</title>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -74,14 +97,22 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Dhine Franklin Arjona",
+        "alternateName": "Dhine Arjona",
         "jobTitle": "Full Stack Web Developer",
-        "description": "Experienced Full Stack Web Developer specializing in PHP, Laravel, MySQL, and modern web technologies. Based in Philippines, offering full-stack development services for businesses worldwide.",
+        "description": "Full Stack Web Developer from Philippines specializing in PHP (Laravel & Native), MySQL, JavaScript, Bootstrap 5, and Tailwind CSS. Building SaaS platforms, web applications, and landing pages for businesses worldwide.",
         "url": "https://dhinearjona.online/",
         "image": "https://dhinearjona.online/assets/img/profile.png",
         "email": "dhinearjona16@gmail.com",
+        "telephone": "+63",
         "address": {
             "@type": "PostalAddress",
+            "addressLocality": "Malabon City",
+            "addressRegion": "Metro Manila",
             "addressCountry": "Philippines"
+        },
+        "nationality": {
+            "@type": "Country",
+            "name": "Philippines"
         },
         "sameAs": [
             "https://www.linkedin.com/in/dhinearjona/",
@@ -92,17 +123,28 @@
         ],
         "knowsAbout": [
             "PHP",
-            "Laravel",
+            "Laravel Framework",
+            "Native PHP",
             "MySQL",
             "JavaScript",
             "HTML5",
             "CSS3",
-            "Bootstrap",
-            "TailwindCSS",
+            "Bootstrap 5",
+            "Tailwind CSS",
             "REST APIs",
-            "Google Cloud Platform",
             "Web Development",
-            "Full Stack Development"
+            "Full Stack Development",
+            "SaaS Development",
+            "Web Application Development",
+            "Database Design",
+            "Frontend Development",
+            "Backend Development",
+            "Git",
+            "GitHub",
+            "GitLab",
+            "Version Control",
+            "Software Development",
+            "Responsive Web Design"
         ],
         "alumniOf": {
             "@type": "EducationalOrganization",
@@ -154,17 +196,56 @@
         }
     }
     </script>
-    <style>
-        .linkedin-gradient {
-            background: linear-gradient(135deg, #0A66C2 0%, #004182 100%);
-        }
 
-        .cover-photo {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    <!-- WebSite Schema for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Dhine Franklin Arjona Portfolio",
+        "url": "https://dhinearjona.online/",
+        "description": "Portfolio of Dhine Franklin Arjona - Full Stack Web Developer specializing in PHP, Laravel, MySQL, JavaScript, Bootstrap, and Tailwind CSS",
+        "author": {
+            "@type": "Person",
+            "name": "Dhine Franklin Arjona"
+        },
+        "inLanguage": "en",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://dhinearjona.online/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
         }
+    }
+    </script>
 
-        .dark .cover-photo {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-        }
-    </style>
+    <!-- ProfessionalService Schema for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Web Development Services by Dhine Franklin Arjona",
+        "description": "Full Stack Web Development Services - PHP, Laravel, MySQL, JavaScript, Bootstrap, Tailwind CSS. Building SaaS platforms, web applications, and landing pages.",
+        "provider": {
+            "@type": "Person",
+            "name": "Dhine Franklin Arjona",
+            "email": "dhinearjona16@gmail.com",
+            "url": "https://dhinearjona.online/"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Worldwide"
+        },
+        "serviceType": [
+            "Web Development",
+            "Full Stack Development",
+            "SaaS Development",
+            "Web Application Development",
+            "PHP Development",
+            "Laravel Development",
+            "Frontend Development",
+            "Backend Development"
+        ],
+        "priceRange": "Contact for pricing"
+    }
+    </script>
 </head>
