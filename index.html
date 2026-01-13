@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -77,13 +78,24 @@
                     fontFamily: {
                         sans: ["Inter", "system-ui", "sans-serif"],
                     },
+                    colors: {
+                        gray: {
+                            50: '#f9f9f9',
+                            100: '#f0f0f0',
+                            200: '#e0e0e0',
+                            300: '#d0d0d0',
+                            400: '#a0a0a0',
+                            500: '#808080',
+                            600: '#606060',
+                            700: '#404040',
+                            800: '#202020',
+                            900: '#101010',
+                        }
+                    }
                 },
             },
         };
     </script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"
         media="print" onload="this.media='all'">
     <noscript>
@@ -252,283 +264,230 @@
     </script>
 </head>
 
-<body class="font-sans bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300 min-h-screen">
+<body class="font-sans bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 min-h-screen">
 
     <!-- Theme Toggle -->
-    <div class="fixed top-6 right-6 z-50">
+    <div class="fixed top-4 right-4 z-50">
         <button id="theme-toggle"
-            class="p-3 bg-white dark:bg-black border border-gray-200 dark:border-gray-800 rounded-full hover:bg-gray-50 dark:hover:bg-gray-900 transition-all duration-300"
+            class="p-2 bg-transparent text-black dark:text-white hover:text-gray-500 dark:hover:text-gray-500 transition-all duration-300"
             aria-label="Toggle dark mode" title="Toggle dark mode">
             <i id="theme-icon" class="w-5 h-5" aria-hidden="true"></i>
         </button>
     </div>
 
     <!-- Hero -->
-    <header id="hero" class="border-b border-gray-200 dark:border-gray-800">
-        <div class="max-w-5xl mx-auto px-6 pt-20 pb-16 md:pt-24 md:pb-20">
-            <div class="text-center">
-                <div class="flex justify-center mb-6">
-                    <div class="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-black dark:border-white">
-                        <img src="assets/img/profile.png"
-                            alt="Dhine Franklin Arjona"
-                            class="w-full h-full bg-gray-100 dark:bg-gray-900 object-cover transition-all duration-500"
-                            width="112" height="112">
-                    </div>
-                </div>
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-black dark:text-white mb-3">
-                    Dhine Franklin Arjona
-                </h1>
-                <p class="text-sm md:text-base text-gray-600 dark:text-gray-400 mb-8">
-                    Full Stack Web Developer
-                </p>
-                <div class="flex flex-wrap items-center justify-center gap-4 text-sm">
-                    <a href="mailto:dhinearjona16@gmail.com"
-                        class="inline-flex items-center gap-2 px-5 py-2.5 border border-black dark:border-white text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-200"
-                        aria-label="Send email">
-                        <i data-lucide="mail" class="w-4 h-4" aria-hidden="true"></i>
-                        <span>Contact</span>
-                    </a>
-                    <a href="assets/documents/DhineArjonaResume.pdf" download
-                        class="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white transition-all duration-200"
-                        aria-label="Download Resume">
-                        <i data-lucide="download" class="w-4 h-4" aria-hidden="true"></i>
-                        <span>Resume</span>
-                    </a>
-                    <a href="#projects"
-                        class="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white transition-all duration-200">
-                        <i data-lucide="layout-dashboard" class="w-4 h-4" aria-hidden="true"></i>
-                        <span>Projects</span>
-                    </a>
+    <header id="hero" class="pt-16 pb-8">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="flex justify-center mb-4">
+                <div class="w-20 h-20 rounded-full overflow-hidden border border-black dark:border-white">
+                    <img src="assets/img/profile.png" alt="Dhine Franklin Arjona" class="w-full h-full object-cover"
+                        width="80" height="80">
                 </div>
             </div>
+            <h1 class="text-3xl font-semibold mb-2">
+                Dhine Franklin Arjona
+            </h1>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-5xl mx-auto px-6 py-12 md:py-16 space-y-20 md:space-y-24">
+    <main class="max-w-4xl mx-auto px-4 py-8 space-y-12">
 
         <!-- About Section -->
-        <section id="about" class="border-b border-gray-200 dark:border-gray-800 pb-12 md:pb-16">
-            <h2 class="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500 dark:text-gray-500 mb-6">
+        <section id="about">
+            <h2 class="text-xs uppercase tracking-widest text-gray-500 mb-4">
                 About
             </h2>
-            <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm md:text-base max-w-3xl">
-                Full Stack Web Developer building SaaS platforms, internal systems, and landing pages. 
-                I work with PHP (Laravel & Native), MySQL, JavaScript, Bootstrap 5, and Tailwind CSS to deliver 
-                production-ready solutions from concept to deployment.
+            <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                Full-stack developer with experience building internal business systems, SaaS platforms, and responsive
+                client-facing landing pages using PHP, MySQL, JavaScript, Laravel, Bootstrap 5, and Tailwind CSS.
+                Skilled in system deployment, server setup, Git/GitHub version control, and cross-team collaboration,
+                delivering scalable, maintainable, and high-performance solutions.
             </p>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="border-b border-gray-200 dark:border-gray-800 pb-12 md:pb-16">
-            <h2 class="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500 dark:text-gray-500 mb-6">
+        <section id="skills">
+            <h2 class="text-xs uppercase tracking-widest text-gray-500 mb-4">
                 Skills
             </h2>
             <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1.5 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs">PHP (Laravel & Native)</span>
-                <span class="px-3 py-1.5 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs">JavaScript</span>
-                <span class="px-3 py-1.5 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs">MySQL</span>
-                <span class="px-3 py-1.5 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs">Bootstrap 5</span>
-                <span class="px-3 py-1.5 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs">Tailwind CSS</span>
-                <span class="px-3 py-1.5 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs">Git</span>
+                <span
+                    class="px-3 py-1 border border-gray-300 dark:border-gray-700 text-xs text-gray-700 dark:text-gray-300">PHP
+                    (Laravel & Native)</span>
+                <span
+                    class="px-3 py-1 border border-gray-300 dark:border-gray-700 text-xs text-gray-700 dark:text-gray-300">JavaScript</span>
+                <span
+                    class="px-3 py-1 border border-gray-300 dark:border-gray-700 text-xs text-gray-700 dark:text-gray-300">MySQL</span>
+                <span
+                    class="px-3 py-1 border border-gray-300 dark:border-gray-700 text-xs text-gray-700 dark:text-gray-300">Bootstrap
+                    5</span>
+                <span
+                    class="px-3 py-1 border border-gray-300 dark:border-gray-700 text-xs text-gray-700 dark:text-gray-300">Tailwind
+                    CSS</span>
+                <span
+                    class="px-3 py-1 border border-gray-300 dark:border-gray-700 text-xs text-gray-700 dark:text-gray-300">Git</span>
             </div>
         </section>
 
-
         <!-- Projects Section -->
-        <section id="projects" class="border-b border-gray-200 dark:border-gray-800 pb-12 md:pb-16">
-            <h2 class="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500 dark:text-gray-500 mb-6">
+        <section id="projects">
+            <h2 class="text-xs uppercase tracking-widest text-gray-500 mb-4">
                 Projects
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Each card is a live project demo link -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <button onclick="openVideoModal()"
-                    class="group block rounded-lg border border-gray-300 dark:border-gray-700 p-4 hover:border-black dark:hover:border-white transition-colors duration-200 text-left w-full">
-                    <div class="flex items-center justify-between gap-4">
-                        <h3 class="font-medium text-black dark:text-white group-hover:underline">
-                            Job Order Tracker
-                        </h3>
-                        <i data-lucide="play" class="w-4 h-4 text-gray-500 dark:text-gray-500" aria-hidden="true"></i>
-                    </div>
-                    <p class="mt-2 text-xs text-gray-500 dark:text-gray-500">
+                    class="block text-left p-4 border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white transition-colors duration-200">
+                    <h3 class="font-medium mb-1">
+                        Job Order Tracker
+                    </h3>
+                    <p class="text-xs text-gray-500">
                         PHP · MySQL · Bootstrap
                     </p>
                 </button>
 
                 <a href="https://gerrmanitsolutions.com/" target="_blank"
-                    class="group block rounded-lg border border-gray-300 dark:border-gray-700 p-4 hover:border-black dark:hover:border-white transition-colors duration-200">
-                    <div class="flex items-center justify-between gap-4">
-                        <h3 class="font-medium text-black dark:text-white group-hover:underline">
-                            Gerrman IT Solutions
-                        </h3>
-                        <i data-lucide="external-link" class="w-4 h-4 text-gray-500 dark:text-gray-500" aria-hidden="true"></i>
-                    </div>
-                    <p class="mt-2 text-xs text-gray-500 dark:text-gray-500">
+                    class="block text-left p-4 border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white transition-colors duration-200">
+                    <h3 class="font-medium mb-1">
+                        Gerrman IT Solutions
+                    </h3>
+                    <p class="text-xs text-gray-500">
                         Laravel · Tailwind CSS
                     </p>
                 </a>
 
                 <a href="https://servicio.world/" target="_blank"
-                    class="group block rounded-lg border border-gray-300 dark:border-gray-700 p-4 hover:border-black dark:hover:border-white transition-colors duration-200">
-                    <div class="flex items-center justify-between gap-4">
-                        <h3 class="font-medium text-black dark:text-white group-hover:underline">
-                            Servicio Mobile App
-                        </h3>
-                        <i data-lucide="external-link" class="w-4 h-4 text-gray-500 dark:text-gray-500" aria-hidden="true"></i>
-                    </div>
-                    <p class="mt-2 text-xs text-gray-500 dark:text-gray-500">
+                    class="block text-left p-4 border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white transition-colors duration-200">
+                    <h3 class="font-medium mb-1">
+                        Servicio Mobile App
+                    </h3>
+                    <p class="text-xs text-gray-500">
                         Laravel · MySQL
                     </p>
                 </a>
 
                 <a href="https://www.inursereviewcenter.com/" target="_blank"
-                    class="group block rounded-lg border border-gray-300 dark:border-gray-700 p-4 hover:border-black dark:hover:border-white transition-colors duration-200">
-                    <div class="flex items-center justify-between gap-4">
-                        <h3 class="font-medium text-black dark:text-white group-hover:underline">
-                            iNurse Review Center
-                        </h3>
-                        <i data-lucide="external-link" class="w-4 h-4 text-gray-500 dark:text-gray-500" aria-hidden="true"></i>
-                    </div>
-                    <p class="mt-2 text-xs text-gray-500 dark:text-gray-500">
+                    class="block text-left p-4 border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white transition-colors duration-200">
+                    <h3 class="font-medium mb-1">
+                        iNurse Review Center
+                    </h3>
+                    <p class="text-xs text-gray-500">
                         WIX
                     </p>
                 </a>
 
                 <a href="https://filipinohardware.com/" target="_blank"
-                    class="group block rounded-lg border border-gray-300 dark:border-gray-700 p-4 hover:border-black dark:hover:border-white transition-colors duration-200">
-                    <div class="flex items-center justify-between gap-4">
-                        <h3 class="font-medium text-black dark:text-white group-hover:underline">
-                            Filipino Hardware
-                        </h3>
-                        <i data-lucide="external-link" class="w-4 h-4 text-gray-500 dark:text-gray-500" aria-hidden="true"></i>
-                    </div>
-                    <p class="mt-2 text-xs text-gray-500 dark:text-gray-500">
+                    class="block text-left p-4 border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white transition-colors duration-200">
+                    <h3 class="font-medium mb-1">
+                        Filipino Hardware
+                    </h3>
+                    <p class="text-xs text-gray-500">
                         Laravel · Tailwind CSS
                     </p>
                 </a>
 
                 <a href="https://evacuationshelter.online/" target="_blank"
-                    class="group block rounded-lg border border-gray-300 dark:border-gray-700 p-4 hover:border-black dark:hover:border-white transition-colors duration-200">
-                    <div class="flex items-center justify-between gap-4">
-                        <h3 class="font-medium text-black dark:text-white group-hover:underline">
-                            Evacuation Shelter System
-                        </h3>
-                        <i data-lucide="external-link" class="w-4 h-4 text-gray-500 dark:text-gray-500" aria-hidden="true"></i>
-                    </div>
-                    <p class="mt-2 text-xs text-gray-500 dark:text-gray-500">
+                    class="block text-left p-4 border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white transition-colors duration-200">
+                    <h3 class="font-medium mb-1">
+                        Evacuation Shelter System
+                    </h3>
+                    <p class="text-xs text-gray-500">
                         PHP · MySQL · Bootstrap
                     </p>
                 </a>
 
                 <a href="https://pos.dhinearjona.online/login.php" target="_blank"
-                    class="group block rounded-lg border border-gray-300 dark:border-gray-700 p-4 hover:border-black dark:hover:border-white transition-colors duration-200">
-                    <div class="flex items-center justify-between gap-4">
-                        <h3 class="font-medium text-black dark:text-white group-hover:underline">
-                            Point of Sale System
-                        </h3>
-                        <i data-lucide="external-link" class="w-4 h-4 text-gray-500 dark:text-gray-500" aria-hidden="true"></i>
-                    </div>
-                    <p class="mt-2 text-xs text-gray-500 dark:text-gray-500">
+                    class="block text-left p-4 border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white transition-colors duration-200">
+                    <h3 class="font-medium mb-1">
+                        Point of Sale System
+                    </h3>
+                    <p class="text-xs text-gray-500">
                         PHP · MySQL · JavaScript
                     </p>
                 </a>
 
                 <a href="https://inventory.dhinearjona.online/" target="_blank"
-                    class="group block rounded-lg border border-gray-300 dark:border-gray-700 p-4 hover:border-black dark:hover:border-white transition-colors duration-200">
-                    <div class="flex items-center justify-between gap-4">
-                        <h3 class="font-medium text-black dark:text-white group-hover:underline">
-                            Inventory Management
-                        </h3>
-                        <i data-lucide="external-link" class="w-4 h-4 text-gray-500 dark:text-gray-500" aria-hidden="true"></i>
-                    </div>
-                    <p class="mt-2 text-xs text-gray-500 dark:text-gray-500">
+                    class="block text-left p-4 border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white transition-colors duration-200">
+                    <h3 class="font-medium mb-1">
+                        Inventory Management
+                    </h3>
+                    <p class="text-xs text-gray-500">
                         PHP · MySQL · Bootstrap
                     </p>
                 </a>
 
                 <a href="https://rental.dhinearjona.online/login.php" target="_blank"
-                    class="group block rounded-lg border border-gray-300 dark:border-gray-700 p-4 hover:border-black dark:hover:border-white transition-colors duration-200">
-                    <div class="flex items-center justify-between gap-4">
-                        <h3 class="font-medium text-black dark:text-white group-hover:underline">
-                            Rental Management
-                        </h3>
-                        <i data-lucide="external-link" class="w-4 h-4 text-gray-500 dark:text-gray-500" aria-hidden="true"></i>
-                    </div>
-                    <p class="mt-2 text-xs text-gray-500 dark:text-gray-500">
+                    class="block text-left p-4 border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white transition-colors duration-200">
+                    <h3 class="font-medium mb-1">
+                        Rental Management
+                    </h3>
+                    <p class="text-xs text-gray-500">
                         PHP · MySQL · Bootstrap
                     </p>
                 </a>
 
                 <a href="https://school.dhinearjona.online/login.php" target="_blank"
-                    class="group block rounded-lg border border-gray-300 dark:border-gray-700 p-4 hover:border-black dark:hover:border-white transition-colors duration-200">
-                    <div class="flex items-center justify-between gap-4">
-                        <h3 class="font-medium text-black dark:text-white group-hover:underline">
-                            Classroom Management
-                        </h3>
-                        <i data-lucide="external-link" class="w-4 h-4 text-gray-500 dark:text-gray-500" aria-hidden="true"></i>
-                    </div>
-                    <p class="mt-2 text-xs text-gray-500 dark:text-gray-500">
+                    class="block text-left p-4 border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white transition-colors duration-200">
+                    <h3 class="font-medium mb-1">
+                        Classroom Management
+                    </h3>
+                    <p class="text-xs text-gray-500">
                         PHP · MySQL · CSS
                     </p>
                 </a>
             </div>
         </section>
 
-        <section id="contact" class="pb-4 md:pb-6">
-            <h2 class="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500 dark:text-gray-500 mb-6">
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="text-xs uppercase tracking-widest text-gray-500 mb-4">
                 Contact
             </h2>
-            <div class="space-y-3 text-sm">
-                <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-                    <i data-lucide="mail" class="w-4 h-4" aria-hidden="true"></i>
+            <div class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
                     <a href="mailto:dhinearjona16@gmail.com" class="hover:underline">
                         dhinearjona16@gmail.com
                     </a>
                 </div>
-                <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-                    <i data-lucide="map-pin" class="w-4 h-4" aria-hidden="true"></i>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="map-pin" class="w-4 h-4"></i>
                     <span>Malabon City, Philippines</span>
                 </div>
-                <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-                    <i data-lucide="calendar" class="w-4 h-4" aria-hidden="true"></i>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
                     <a href="https://calendly.com/dhinearjona/15min" target="_blank" rel="noopener noreferrer"
                         class="hover:underline">Schedule a call</a>
                 </div>
             </div>
-            <div class="flex flex-wrap gap-4 mt-6">
+            <div class="flex gap-4 mt-4">
                 <a href="https://github.com/Dhinearjona" target="_blank" rel="noopener noreferrer"
-                    class="text-gray-500 hover:text-black dark:text-gray-500 dark:hover:text-white transition-colors duration-200">
-                    <i data-lucide="github" class="w-5 h-5" aria-hidden="true"></i>
+                    class="text-gray-500 hover:text-black dark:hover:text-white transition-colors duration-200">
+                    <i data-lucide="github" class="w-5 h-5"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/dhinearjona/" target="_blank" rel="noopener noreferrer"
-                    class="text-gray-500 hover:text-black dark:text-gray-500 dark:hover:text-white transition-colors duration-200">
-                    <i data-lucide="linkedin" class="w-5 h-5" aria-hidden="true"></i>
+                    class="text-gray-500 hover:text-black dark:hover:text-white transition-colors duration-200">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
                 </a>
             </div>
         </section>
     </main>
 
-    <footer class="border-t border-gray-200 dark:border-gray-800 mt-16">
-        <div class="max-w-4xl mx-auto px-6 py-8">
-            <p class="text-center text-xs text-gray-500 dark:text-gray-500">
-                © 2025 Dhine Franklin Arjona
-            </p>
-        </div>
+    <footer class="mt-12 py-4 text-center text-xs text-gray-500">
+        © 2025 Dhine Franklin Arjona
     </footer>
 
-    <div id="video-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300 ease-in-out">
-        <div id="video-modal-content" class="relative w-full max-w-4xl transform scale-95 transition-transform duration-300 ease-in-out">
-            <button onclick="closeVideoModal()"
-                class="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors z-10 p-2"
+    <!-- Video Modal -->
+    <div id="video-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/80 p-4">
+        <div class="relative w-full max-w-4xl">
+            <button onclick="closeVideoModal()" class="absolute top-0 right-0 text-white hover:text-gray-300 p-2"
                 aria-label="Close video modal">
-                <i data-lucide="x" class="w-6 h-6" aria-hidden="true"></i>
+                <i data-lucide="x" class="w-6 h-6"></i>
             </button>
-            <div class="relative bg-black rounded-lg overflow-hidden shadow-2xl">
-                <video id="job-order-video" class="w-full h-auto" controls>
-                    <source src="assets/video/JobOrderTracker.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+            <video id="job-order-video" class="w-full h-auto" controls>
+                <source src="assets/video/JobOrderTracker.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 
@@ -563,45 +522,24 @@
 
         function openVideoModal() {
             const modal = document.getElementById("video-modal");
-            const modalContent = document.getElementById("video-modal-content");
             const video = document.getElementById("job-order-video");
-            
+
             modal.classList.remove("hidden");
             modal.classList.add("flex");
             document.body.style.overflow = "hidden";
-            
-            requestAnimationFrame(() => {
-                modal.classList.remove("opacity-0");
-                modal.classList.add("opacity-100");
-                modalContent.classList.remove("scale-95");
-                modalContent.classList.add("scale-100");
-            });
-            
-            setTimeout(() => {
-                video.play();
-            }, 150);
-                
-            lucide.createIcons();
+
+            video.play();
         }
 
         function closeVideoModal() {
             const modal = document.getElementById("video-modal");
-            const modalContent = document.getElementById("video-modal-content");
             const video = document.getElementById("job-order-video");
-            
-            modal.classList.remove("opacity-100");
-            modal.classList.add("opacity-0");
-            modalContent.classList.remove("scale-100");
-            modalContent.classList.add("scale-95");
-            
+
             video.pause();
-            
-            setTimeout(() => {
-                modal.classList.add("hidden");
-                modal.classList.remove("flex");
-                document.body.style.overflow = "";
-                video.currentTime = 0;
-            }, 300);
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+            document.body.style.overflow = "";
+            video.currentTime = 0;
         }
 
         document.getElementById("video-modal")?.addEventListener("click", function(e) {
