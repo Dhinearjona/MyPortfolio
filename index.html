@@ -7,6 +7,7 @@
     <title>Dhine Franklin Arjona | Full Stack Web Developer</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="assets/img/profile.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -20,7 +21,11 @@
                         sans: ["Plus Jakarta Sans", "sans-serif"],
                     },
                     colors: {
-                        primary: "#3b82f6", // Blue accent
+                        // Your New Palette
+                        primary: "#005461",
+                        secondary: "#0C7779",
+                        tealMedium: "#249E94",
+                        accent: "#3BC1A8",
                     }
                 },
             },
@@ -30,63 +35,82 @@
     <style>
         .glass {
             background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .dark .glass {
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 84, 97, 0.05);
+            /* Tinted dark glass */
+            border: 1px solid rgba(59, 193, 168, 0.1);
         }
 
         .project-card:hover .project-icon {
             transform: translateY(-5px) scale(1.1);
+            color: #3BC1A8;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #005461, #249E94, #3BC1A8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .dark .text-gradient {
+            background: linear-gradient(to right, #3BC1A8, #249E94, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
 
-<body class="font-sans bg-[#fafafa] dark:bg-[#050505] text-slate-900 dark:text-slate-100 transition-colors duration-500">
+<body
+    class="font-sans bg-[#f4f7f7] dark:bg-[#021113] text-slate-900 dark:text-slate-100 transition-colors duration-500">
 
-    <div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden opacity-20 dark:opacity-40">
-        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500 rounded-full blur-[120px]"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500 rounded-full blur-[120px]"></div>
+    <div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden opacity-30 dark:opacity-20">
+        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#0C7779] rounded-full blur-[140px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#3BC1A8] rounded-full blur-[120px]"></div>
     </div>
 
     <div class="fixed top-6 right-6 z-50">
-        <button id="theme-toggle" class="p-3 rounded-2xl glass hover:bg-white/10 transition-all duration-300 shadow-xl">
-            <i id="theme-icon" class="w-5 h-5"></i>
+        <button id="theme-toggle"
+            class="p-3 rounded-2xl glass hover:border-accent/50 transition-all duration-300 shadow-xl">
+            <i id="theme-icon" class="w-5 h-5 text-tealMedium"></i>
         </button>
     </div>
 
     <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
-        <div class="glass px-6 py-3 rounded-full flex gap-8 items-center shadow-2xl border border-white/10">
-            <a href="#about" class="hover:text-primary transition-colors"><i data-lucide="user"
+        <div class="glass px-6 py-3 rounded-full flex gap-8 items-center shadow-2xl border border-tealMedium/20">
+            <a href="#about" class="hover:text-accent transition-colors"><i data-lucide="user" class="w-5 h-5"></i></a>
+            <a href="#skills" class="hover:text-accent transition-colors"><i data-lucide="code-2"
                     class="w-5 h-5"></i></a>
-            <a href="#skills" class="hover:text-primary transition-colors"><i data-lucide="code-2"
+            <a href="#certifications" class="hover:text-accent transition-colors"><i data-lucide="award"
                     class="w-5 h-5"></i></a>
-            <a href="#projects" class="hover:text-primary transition-colors"><i data-lucide="briefcase"
+            <a href="#projects" class="hover:text-accent transition-colors"><i data-lucide="briefcase"
                     class="w-5 h-5"></i></a>
-            <a href="#contact" class="hover:text-primary transition-colors"><i data-lucide="mail"
+            <a href="#contact" class="hover:text-accent transition-colors"><i data-lucide="mail"
                     class="w-5 h-5"></i></a>
         </div>
     </nav>
 
-    <header class="pt-24 pb-16 relative overflow-hidden">
+    <header class="pt-24 pb-16 relative">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <div class="relative inline-block mb-6">
-                <div class="absolute inset-0 bg-primary blur-2xl opacity-20 rounded-full"></div>
+            <div class="relative inline-block mb-6 group">
+                <div
+                    class="absolute inset-0 bg-accent blur-3xl opacity-20 group-hover:opacity-40 transition-opacity rounded-full">
+                </div>
                 <img src="assets/img/profile.png" alt="Dhine Franklin"
-                    class="relative w-28 h-28 rounded-3xl object-cover border-2 border-white/20 shadow-2xl">
+                    class="relative w-28 h-28 rounded-3xl object-cover border-2 border-tealMedium/30 shadow-2xl">
             </div>
-            <h1
-                class="text-4xl md:text-5xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-300 dark:to-white">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-gradient">
                 Dhine Franklin Arjona
             </h1>
-            <p class="text-lg text-slate-600 dark:text-slate-400 font-medium">Full Stack Web Developer</p>
+            <p class="text-lg text-secondary dark:text-tealMedium font-medium">Full Stack Web Developer</p>
             <div class="flex justify-center gap-3 mt-6">
                 <span
-                    class="px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-widest bg-green-500/10 text-green-500 border border-green-500/20">Available
-                    for Work</span>
+                    class="px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-widest bg-accent/10 text-accent border border-accent/20">
+                    Available for Work
+                </span>
             </div>
         </div>
     </header>
@@ -95,216 +119,244 @@
 
         <section id="about" class="scroll-mt-20">
             <div class="flex items-center gap-4 mb-6">
-                <h2 class="text-sm uppercase tracking-[0.2em] text-primary font-bold">About Me</h2>
-                <div class="h-[1px] flex-1 bg-slate-200 dark:bg-slate-800"></div>
+                <h2 class="text-sm uppercase tracking-[0.2em] text-secondary dark:text-accent font-bold">About Me</h2>
+                <div class="h-[1px] flex-1 bg-tealMedium/20"></div>
             </div>
             <p class="text-lg leading-relaxed text-slate-700 dark:text-slate-300">
                 Full-stack developer with experience building internal business systems, SaaS platforms, and responsive
-                client-facing landing pages.
-                I specialize in <span class="text-primary font-semibold">PHP (Laravel)</span> and <span
-                    class="text-primary font-semibold">Modern Frontend</span> stacks to deliver high-performance
-                solutions.
+                client-facing landing pages. I specialize in <span class="text-tealMedium font-semibold">PHP
+                    (Laravel)</span> and <span class="text-tealMedium font-semibold">Modern Frontend</span> stacks to
+                deliver high-performance solutions.
             </p>
         </section>
 
         <section id="skills" class="scroll-mt-20">
             <div class="flex items-center gap-4 mb-8">
-                <h2 class="text-sm uppercase tracking-[0.2em] text-primary font-bold">Tech Stack</h2>
-                <div class="h-[1px] flex-1 bg-slate-200 dark:bg-slate-800"></div>
+                <h2 class="text-sm uppercase tracking-[0.2em] text-secondary dark:text-accent font-bold">Tech Stack</h2>
+                <div class="h-[1px] flex-1 bg-tealMedium/20"></div>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                 <div
-                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-primary/50 transition-colors group">
-                    <div class="p-2 bg-blue-500/10 rounded-lg text-primary"><i data-lucide="layers" class="w-5 h-5"></i>
-                    </div>
+                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-accent transition-all group cursor-default">
+                    <div class="p-2 bg-accent/10 rounded-lg text-accent group-hover:scale-110 transition-transform"><i
+                            data-lucide="layers" class="w-5 h-5"></i></div>
                     <span class="text-sm font-medium">PHP / Laravel</span>
                 </div>
                 <div
-                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-primary/50 transition-colors group">
-                    <div class="p-2 bg-yellow-500/10 rounded-lg text-yellow-500"><i data-lucide="terminal"
-                            class="w-5 h-5"></i></div>
+                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-accent transition-all group cursor-default">
+                    <div class="p-2 bg-accent/10 rounded-lg text-accent group-hover:scale-110 transition-transform"><i
+                            data-lucide="terminal" class="w-5 h-5"></i></div>
                     <span class="text-sm font-medium">JavaScript</span>
                 </div>
                 <div
-                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-primary/50 transition-colors group">
-                    <div class="p-2 bg-indigo-500/10 rounded-lg text-indigo-500"><i data-lucide="database"
-                            class="w-5 h-5"></i></div>
+                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-accent transition-all group cursor-default">
+                    <div class="p-2 bg-accent/10 rounded-lg text-accent group-hover:scale-110 transition-transform"><i
+                            data-lucide="database" class="w-5 h-5"></i></div>
                     <span class="text-sm font-medium">MySQL</span>
                 </div>
                 <div
-                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-primary/50 transition-colors group">
-                    <div class="p-2 bg-sky-500/10 rounded-lg text-sky-500"><i data-lucide="layout" class="w-5 h-5"></i>
-                    </div>
+                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-accent transition-all group cursor-default">
+                    <div class="p-2 bg-accent/10 rounded-lg text-accent group-hover:scale-110 transition-transform"><i
+                            data-lucide="layout" class="w-5 h-5"></i></div>
                     <span class="text-sm font-medium">Tailwind CSS</span>
                 </div>
                 <div
-                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-primary/50 transition-colors group">
-                    <div class="p-2 bg-orange-500/10 rounded-lg text-orange-500"><i data-lucide="git-branch"
-                            class="w-5 h-5"></i></div>
+                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-accent transition-all group cursor-default">
+                    <div class="p-2 bg-accent/10 rounded-lg text-accent group-hover:scale-110 transition-transform"><i
+                            data-lucide="git-branch" class="w-5 h-5"></i></div>
                     <span class="text-sm font-medium">Git / GitHub</span>
                 </div>
                 <div
-                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-primary/50 transition-colors group">
-                    <div class="p-2 bg-purple-500/10 rounded-lg text-purple-500"><i data-lucide="server"
-                            class="w-5 h-5"></i></div>
+                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-accent transition-all group cursor-default">
+                    <div class="p-2 bg-accent/10 rounded-lg text-accent group-hover:scale-110 transition-transform"><i
+                            data-lucide="server" class="w-5 h-5"></i></div>
                     <span class="text-sm font-medium">Deployment</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="scroll-mt-20">
+            <div class="flex items-center gap-4 mb-8">
+                <h2 class="text-sm uppercase tracking-[0.2em] text-secondary dark:text-accent font-bold">Certifications
+                </h2>
+                <div class="h-[1px] flex-1 bg-tealMedium/20"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass p-6 rounded-[2rem] border-l-4 border-l-secondary relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:rotate-12 transition-transform"><i
+                            data-lucide="award" class="w-12 h-12 text-accent"></i></div>
+                    <div class="relative z-10">
+                        <span class="text-[10px] font-bold tracking-widest text-accent uppercase">TESDA NC II</span>
+                        <h3 class="text-lg font-bold mt-1 text-primary dark:text-white">Animation</h3>
+                        <div class="mt-4 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                            <p><strong>No:</strong> 19130402017845</p>
+                            <p><strong>Issued:</strong> 11/16/2019</p>
+                            <p class="text-red-400 italic">Expires: 11/15/2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-6 rounded-[2rem] border-l-4 border-l-tealMedium relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:rotate-12 transition-transform"><i
+                            data-lucide="monitor" class="w-12 h-12 text-accent"></i></div>
+                    <div class="relative z-10">
+                        <span class="text-[10px] font-bold tracking-widest text-accent uppercase">RVN TECH-VOC
+                            INC.</span>
+                        <h3 class="text-lg font-bold mt-1 text-primary dark:text-white">Web Development II</h3>
+                        <div class="mt-4 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                            <p><strong>Trainer:</strong> Steve Santos</p>
+                            <p><strong>Period:</strong> 12/2021 - 01/2022</p>
+                            <p><strong>Sector:</strong> ICT</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="scroll-mt-20">
             <div class="flex items-center gap-4 mb-10">
-                <h2 class="text-xs uppercase tracking-[0.3em] text-primary font-bold">Featured Projects</h2>
-                <div class="h-[1px] flex-1 bg-slate-200 dark:bg-slate-800"></div>
+                <h2 class="text-xs uppercase tracking-[0.3em] text-secondary dark:text-accent font-bold">Featured
+                    Projects</h2>
+                <div class="h-[1px] flex-1 bg-tealMedium/20"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
                 <button onclick="openVideoModal()"
-                    class="project-card text-left group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-primary/50">
+                    class="project-card text-left group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
                     <div class="flex justify-between items-start mb-4">
-                        <div class="p-3 bg-primary/10 rounded-2xl text-primary project-icon transition-transform">
-                            <i data-lucide="play-circle" class="w-6 h-6"></i>
-                        </div>
-                        <i data-lucide="video"
-                            class="w-5 h-5 text-slate-400 group-hover:text-primary transition-colors"></i>
+                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
+                                data-lucide="play-circle" class="w-6 h-6"></i></div>
+                        <i data-lucide="video" class="w-5 h-5 text-tealMedium opacity-50 group-hover:opacity-100"></i>
                     </div>
-                    <h3 class="text-lg font-bold mb-1">Job Order Tracker</h3>
+                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Job Order Tracker</h3>
                     <p class="text-xs text-slate-500 mb-4">PHP · MySQL · Bootstrap</p>
                 </button>
 
                 <a href="https://gerrmanitsolutions.com/" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-primary/50">
+                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
                     <div class="flex justify-between items-start mb-4">
-                        <div class="p-3 bg-blue-500/10 rounded-2xl text-blue-500 project-icon transition-transform">
-                            <i data-lucide="external-link" class="w-6 h-6"></i>
-                        </div>
+                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
+                                data-lucide="external-link" class="w-6 h-6"></i></div>
                     </div>
-                    <h3 class="text-lg font-bold mb-1">Gerrman IT Solutions</h3>
+                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Gerrman IT Solutions
+                    </h3>
                     <p class="text-xs text-slate-500 mb-4">Laravel · Tailwind CSS</p>
                 </a>
 
                 <a href="https://servicio.world/" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-primary/50">
+                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
                     <div class="flex justify-between items-start mb-4">
-                        <div
-                            class="p-3 bg-indigo-500/10 rounded-2xl text-indigo-500 project-icon transition-transform">
-                            <i data-lucide="smartphone" class="w-6 h-6"></i>
-                        </div>
+                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
+                                data-lucide="smartphone" class="w-6 h-6"></i></div>
                     </div>
-                    <h3 class="text-lg font-bold mb-1">Servicio Mobile App</h3>
+                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Servicio Mobile App
+                    </h3>
                     <p class="text-xs text-slate-500 mb-4">Laravel · MySQL</p>
                 </a>
 
                 <a href="https://www.inursereviewcenter.com/" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-primary/50">
+                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
                     <div class="flex justify-between items-start mb-4">
-                        <div class="p-3 bg-pink-500/10 rounded-2xl text-pink-500 project-icon transition-transform">
-                            <i data-lucide="globe" class="w-6 h-6"></i>
-                        </div>
+                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
+                                data-lucide="globe" class="w-6 h-6"></i></div>
                     </div>
-                    <h3 class="text-lg font-bold mb-1">iNurse Review Center</h3>
+                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">iNurse Review Center
+                    </h3>
                     <p class="text-xs text-slate-500 mb-4">WIX</p>
                 </a>
 
                 <a href="https://filipinohardware.com/" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-primary/50">
+                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
                     <div class="flex justify-between items-start mb-4">
-                        <div
-                            class="p-3 bg-orange-500/10 rounded-2xl text-orange-500 project-icon transition-transform">
-                            <i data-lucide="shopping-cart" class="w-6 h-6"></i>
-                        </div>
+                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
+                                data-lucide="shopping-cart" class="w-6 h-6"></i></div>
                     </div>
-                    <h3 class="text-lg font-bold mb-1">Filipino Hardware</h3>
+                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Filipino Hardware</h3>
                     <p class="text-xs text-slate-500 mb-4">Laravel · Tailwind CSS</p>
                 </a>
 
                 <a href="https://evacuationshelter.online/" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-primary/50">
+                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
                     <div class="flex justify-between items-start mb-4">
-                        <div class="p-3 bg-green-500/10 rounded-2xl text-green-500 project-icon transition-transform">
-                            <i data-lucide="shield-check" class="w-6 h-6"></i>
-                        </div>
+                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
+                                data-lucide="shield-check" class="w-6 h-6"></i></div>
                     </div>
-                    <h3 class="text-lg font-bold mb-1">Evacuation Shelter System</h3>
+                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Evacuation Shelter
+                        System</h3>
                     <p class="text-xs text-slate-500 mb-4">PHP · MySQL · Bootstrap</p>
                 </a>
 
                 <a href="https://pos.dhinearjona.online/login.php" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-primary/50">
+                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
                     <div class="flex justify-between items-start mb-4">
-                        <div
-                            class="p-3 bg-yellow-500/10 rounded-2xl text-yellow-500 project-icon transition-transform">
-                            <i data-lucide="banknote" class="w-6 h-6"></i>
-                        </div>
+                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
+                                data-lucide="banknote" class="w-6 h-6"></i></div>
                     </div>
-                    <h3 class="text-lg font-bold mb-1">Point of Sale System</h3>
+                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Point of Sale System
+                    </h3>
                     <p class="text-xs text-slate-500 mb-4">PHP · MySQL · JavaScript</p>
                 </a>
 
                 <a href="https://inventory.dhinearjona.online/" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-primary/50">
+                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
                     <div class="flex justify-between items-start mb-4">
-                        <div class="p-3 bg-sky-500/10 rounded-2xl text-sky-500 project-icon transition-transform">
-                            <i data-lucide="package" class="w-6 h-6"></i>
-                        </div>
+                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
+                                data-lucide="package" class="w-6 h-6"></i></div>
                     </div>
-                    <h3 class="text-lg font-bold mb-1">Inventory Management</h3>
+                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Inventory Management
+                    </h3>
                     <p class="text-xs text-slate-500 mb-4">PHP · MySQL · Bootstrap</p>
                 </a>
 
                 <a href="https://rental.dhinearjona.online/login.php" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-primary/50">
+                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
                     <div class="flex justify-between items-start mb-4">
-                        <div class="p-3 bg-red-500/10 rounded-2xl text-red-500 project-icon transition-transform">
-                            <i data-lucide="key" class="w-6 h-6"></i>
-                        </div>
+                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
+                                data-lucide="key" class="w-6 h-6"></i></div>
                     </div>
-                    <h3 class="text-lg font-bold mb-1">Rental Management</h3>
+                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Rental Management</h3>
                     <p class="text-xs text-slate-500 mb-4">PHP · MySQL · Bootstrap</p>
                 </a>
 
                 <a href="https://school.dhinearjona.online/login.php" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-primary/50">
+                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
                     <div class="flex justify-between items-start mb-4">
-                        <div
-                            class="p-3 bg-purple-500/10 rounded-2xl text-purple-500 project-icon transition-transform">
-                            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
-                        </div>
+                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
+                                data-lucide="graduation-cap" class="w-6 h-6"></i></div>
                     </div>
-                    <h3 class="text-lg font-bold mb-1">Classroom Management</h3>
+                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Classroom Management
+                    </h3>
                     <p class="text-xs text-slate-500 mb-4">PHP · MySQL · CSS</p>
                 </a>
-
             </div>
         </section>
 
         <section id="contact" class="scroll-mt-20">
-            <div class="glass p-8 md:p-12 rounded-[2rem] relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-8 opacity-10">
-                    <i data-lucide="send" class="w-32 h-32 text-primary"></i>
+            <div class="glass p-8 md:p-12 rounded-[2rem] relative overflow-hidden border-accent/20">
+                <div class="absolute top-0 right-0 p-8 opacity-5">
+                    <i data-lucide="send" class="w-32 h-32 text-accent"></i>
                 </div>
                 <div class="relative z-10">
-                    <h2 class="text-3xl font-bold mb-6">Let's build something <br>extraordinary.</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-primary dark:text-white">Let's build something <br><span
+                            class="text-accent">extraordinary.</span></h2>
                     <div class="flex flex-col md:flex-row gap-6 mb-8">
                         <a href="mailto:dhinearjona16@gmail.com"
-                            class="flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+                            class="flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:text-accent transition-colors">
                             <i data-lucide="mail" class="w-5 h-5"></i>
                             dhinearjona16@gmail.com
                         </a>
                         <a href="https://calendly.com/dhinearjona/15min" target="_blank"
-                            class="flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+                            class="flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:text-accent transition-colors">
                             <i data-lucide="calendar" class="w-5 h-5"></i>
                             Schedule a Call
                         </a>
                     </div>
                     <div class="flex gap-4">
                         <a href="https://github.com/Dhinearjona" target="_blank"
-                            class="p-3 glass rounded-xl hover:text-primary transition-all">
+                            class="p-3 glass rounded-xl hover:text-accent hover:border-accent transition-all">
                             <i data-lucide="github" class="w-5 h-5"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/dhinearjona/" target="_blank"
-                            class="p-3 glass rounded-xl hover:text-primary transition-all">
+                            class="p-3 glass rounded-xl hover:text-accent hover:border-accent transition-all">
                             <i data-lucide="linkedin" class="w-5 h-5"></i>
                         </a>
                     </div>
@@ -316,44 +368,62 @@
 
     <div id="video-modal"
         class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4">
-        <div class="relative w-full max-w-4xl glass rounded-3xl overflow-hidden">
+        <div class="relative w-full max-w-4xl glass rounded-3xl overflow-hidden border-accent/30">
             <button onclick="closeVideoModal()"
-                class="absolute top-4 right-4 z-10 p-2 bg-black/50 text-white rounded-full hover:bg-black transition-colors">
+                class="absolute top-4 right-4 z-10 p-2 bg-black/50 text-white rounded-full hover:bg-accent transition-colors">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
-            <video id="job-order-video" class="w-full h-auto shadow-2xl" controls>
+            <video id="job-order-video" class="w-full h-auto" controls>
                 <source src="assets/video/JobOrderTracker.mp4" type="video/mp4">
             </video>
         </div>
     </div>
 
-    <footer class="pb-32 pt-12 text-center text-xs text-slate-500 font-medium">
-        &copy; <span id="year"></span> Dhine Franklin Arjona.
+    <footer class="pb-32 pt-12 text-center text-xs text-tealMedium font-medium">
+        &copy; <span id="year"></span> Dhine Franklin Arjona. All rights reserved.
     </footer>
 
     <script>
+        // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Theme Logic
         const themeToggle = document.getElementById("theme-toggle");
         const themeIcon = document.getElementById("theme-icon");
         const html = document.documentElement;
 
+        /**
+         * Function para sa real-time icon switching
+         */
         const updateThemeIcon = () => {
             const isDark = html.classList.contains("dark");
-            themeIcon.innerHTML = isDark ?
-                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>' :
-                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+
+            // 1. Burahin ang kasalukuyang icon sa loob ng <i> tag
+            themeIcon.innerHTML = '';
+
+            // 2. Palitan ang attribute (sun kung dark, moon kung light)
+            themeIcon.setAttribute("data-lucide", isDark ? "sun" : "moon");
+
+            // 3. I-trigger ang Lucide para i-render ang bagong icon
+            lucide.createIcons();
         };
 
-        const currentTheme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ?
-            "dark" : "light");
-        if (currentTheme === "dark") html.classList.add("dark");
+        // Check saved preference or system preference
+        const currentTheme = localStorage.getItem("theme") ||
+            (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+
+        if (currentTheme === "dark") {
+            html.classList.add("dark");
+        }
+
+        // Initial setup para sa tamang icon sa pag-load
         updateThemeIcon();
 
         themeToggle.addEventListener("click", () => {
             html.classList.toggle("dark");
-            localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
+            const isDark = html.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+
+            // Tawagin ang function para magpalit agad ang icon
             updateThemeIcon();
         });
 
@@ -374,12 +444,10 @@
             video.currentTime = 0;
         }
 
-        // Close on outside click
         document.getElementById("video-modal").addEventListener("click", (e) => {
             if (e.target.id === "video-modal") closeVideoModal();
         });
 
-        // Set current year in footer
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
