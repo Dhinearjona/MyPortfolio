@@ -1,454 +1,1093 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dhine Franklin Arjona | Full Stack Web Developer</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="shortcut icon" href="assets/img/profile.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dhine Franklin Arjona — Full Stack Developer</title>
+    <link rel="shortcut icon" href="assets/img/profile.png" type="image/x-icon" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap"
+        rel="stylesheet" />
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ["Plus Jakarta Sans", "sans-serif"],
-                    },
-                    colors: {
-                        // Your New Palette
-                        primary: "#005461",
-                        secondary: "#0C7779",
-                        tealMedium: "#249E94",
-                        accent: "#3BC1A8",
-                    }
-                },
-            },
-        };
-    </script>
-
     <style>
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        .dark .glass {
-            background: rgba(0, 84, 97, 0.05);
-            /* Tinted dark glass */
-            border: 1px solid rgba(59, 193, 168, 0.1);
+        :root {
+            --bg: #f8f8f6;
+            --fg: #0a0a0a;
+            --muted: #888;
+            --subtle: #ccc;
+            --card-bg: #f0f0ee;
+            --invert-bg: #0a0a0a;
+            --invert-fg: #f8f8f6;
         }
 
-        .project-card:hover .project-icon {
-            transform: translateY(-5px) scale(1.1);
-            color: #3BC1A8;
+        .dark {
+            --bg: #0a0a0a;
+            --fg: #f0f0ee;
+            --muted: #666;
+            --subtle: #2a2a2a;
+            --card-bg: #141414;
+            --invert-bg: #f0f0ee;
+            --invert-fg: #0a0a0a;
         }
 
-        .text-gradient {
-            background: linear-gradient(to right, #005461, #249E94, #3BC1A8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        html {
+            scroll-behavior: smooth;
         }
 
-        .dark .text-gradient {
-            background: linear-gradient(to right, #3BC1A8, #249E94, #ffffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            transition: background .35s, color .35s;
+            overflow-x: hidden;
+        }
+
+        /* ── GRAIN OVERLAY ── */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: .03;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+        }
+
+        /* ── TOP BAR ── */
+        #topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2.5rem;
+            border-bottom: 1px solid var(--subtle);
+            background: var(--bg);
+            transition: background .35s, border-color .35s;
+        }
+
+        .bar-brand {
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--fg);
+            text-decoration: none;
+        }
+
+        .bar-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .bar-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .bar-links a {
+            font-family: 'DM Mono', monospace;
+            font-size: 9.5px;
+            font-weight: 400;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color .2s;
+        }
+
+        .bar-links a:hover {
+            color: var(--fg);
+        }
+
+        #theme-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid var(--subtle);
+            background: none;
+            color: var(--fg);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .2s, color .2s, border-color .35s;
+        }
+
+        #theme-btn:hover {
+            background: var(--fg);
+            color: var(--bg);
+        }
+
+        /* ── FLOATING DOCK ── */
+        #dock {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            gap: .25rem;
+            padding: .4rem .6rem;
+            background: var(--fg);
+            border-radius: 999px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, .18);
+        }
+
+        .dock-link {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg);
+            text-decoration: none;
+            transition: background .18s, color .18s, transform .18s;
+        }
+
+        .dock-link:hover {
+            background: var(--bg);
+            color: var(--fg);
+            transform: translateY(-3px);
+        }
+
+        /* ── PAGE LAYOUT ── */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+        }
+
+        /* ── HEADER ── */
+        header {
+            padding-top: 120px;
+            padding-bottom: 72px;
+            border-bottom: 1px solid var(--subtle);
+        }
+
+        .header-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: end;
+        }
+
+        .hero-eyebrow {
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            font-weight: 400;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .live-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--fg);
+            animation: blink 2.4s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: .2
+            }
+        }
+
+        h1 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: clamp(2.6rem, 5.5vw, 4rem);
+            font-weight: 400;
+            line-height: 1.0;
+            letter-spacing: -.03em;
+            color: var(--fg);
+        }
+
+        h1 em {
+            font-style: italic;
+            color: var(--muted);
+        }
+
+        .hero-meta {
+            margin-top: 1.5rem;
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 300;
+            color: var(--muted);
+            letter-spacing: .05em;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .hero-photo-wrap {
+            position: relative;
+        }
+
+        .hero-photo-wrap img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.1);
+            border: 1px solid var(--subtle);
+            display: block;
+            transition: filter .4s;
+        }
+
+        .hero-photo-wrap:hover img {
+            filter: grayscale(0%) contrast(1);
+        }
+
+        .hero-photo-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            border: 1px solid var(--subtle);
+            pointer-events: none;
+        }
+
+        /* ── SECTION BASE ── */
+        section {
+            padding: 5rem 0;
+            border-bottom: 1px solid var(--subtle);
+        }
+
+        .sec-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 9px;
+            font-weight: 500;
+            letter-spacing: .25em;
+            text-transform: uppercase;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .sec-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--subtle);
+        }
+
+        /* ── ABOUT ── */
+        .about-body {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+            line-height: 1.6;
+            font-style: italic;
+            color: var(--fg);
+            max-width: 720px;
+        }
+
+        .about-body b {
+            font-style: normal;
+            font-weight: 400;
+            border-bottom: 1.5px solid var(--fg);
+        }
+
+        /* ── SKILLS ── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border: 1px solid var(--subtle);
+            background: var(--subtle);
+            gap: 1px;
+        }
+
+        .skill-tile {
+            background: var(--bg);
+            padding: 1.1rem 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: .9rem;
+            cursor: default;
+            transition: background .15s, color .15s;
+        }
+
+        .skill-tile:hover {
+            background: var(--fg);
+            color: var(--bg);
+        }
+
+        .skill-tile:hover svg {
+            stroke: var(--bg);
+        }
+
+        .skill-tile svg {
+            transition: stroke .15s;
+        }
+
+        .skill-name {
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        /* ── CERTIFICATIONS ── */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--subtle);
+            border: 1px solid var(--subtle);
+        }
+
+        .cert-card {
+            background: var(--bg);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: background .15s, color .15s;
+        }
+
+        .cert-card:hover {
+            background: var(--card-bg);
+        }
+
+        .cert-index {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: .1em;
+            color: var(--muted);
+            margin-bottom: .5rem;
+        }
+
+        .cert-issuer {
+            font-family: 'DM Mono', monospace;
+            font-size: 9px;
+            font-weight: 500;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: .4rem;
+        }
+
+        .cert-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--fg);
+            margin-bottom: 1.25rem;
+        }
+
+        .cert-details {
+            font-family: 'DM Mono', monospace;
+            font-size: 10.5px;
+            font-weight: 300;
+            color: var(--muted);
+            line-height: 1.9;
+        }
+
+        .cert-details .expired {
+            text-decoration: line-through;
+            opacity: .6;
+        }
+
+        .cert-big-num {
+            position: absolute;
+            bottom: 1rem;
+            right: 1.5rem;
+            font-family: 'Instrument Serif', serif;
+            font-size: 5rem;
+            font-weight: 400;
+            line-height: 1;
+            color: var(--subtle);
+            pointer-events: none;
+            transition: color .35s;
+        }
+
+        /* ── PROJECTS ── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--subtle);
+            border: 1px solid var(--subtle);
+        }
+
+        .proj-card {
+            background: var(--bg);
+            padding: 1.8rem 2rem;
+            text-decoration: none;
+            color: var(--fg);
+            display: flex;
+            flex-direction: column;
+            transition: background .15s, color .15s;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+        }
+
+        .proj-card:hover {
+            background: var(--fg);
+            color: var(--bg);
+        }
+
+        .proj-card:hover .proj-meta {
+            color: var(--bg);
+            opacity: .5;
+        }
+
+        .proj-card:hover .proj-arrow {
+            opacity: 1;
+            transform: translate(3px, -3px);
+        }
+
+        .proj-card:hover svg {
+            stroke: var(--bg);
+        }
+
+        .proj-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.2rem;
+        }
+
+        .proj-icon {
+            color: var(--muted);
+            transition: stroke .15s;
+        }
+
+        .proj-arrow {
+            opacity: 0;
+            transition: opacity .15s, transform .2s;
+        }
+
+        .proj-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: .4rem;
+        }
+
+        .proj-meta {
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            font-weight: 300;
+            color: var(--muted);
+            letter-spacing: .04em;
+            transition: color .15s;
+        }
+
+        /* ── CONTACT ── */
+        .contact-box {
+            border: 1px solid var(--subtle);
+            padding: 3.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-headline {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 2.5rem;
+            color: var(--fg);
+        }
+
+        .contact-headline em {
+            font-style: italic;
+            color: var(--muted);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .c-link {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 400;
+            color: var(--fg);
+            text-decoration: none;
+            border: 1px solid var(--subtle);
+            padding: .55rem 1.1rem;
+            transition: background .2s, color .2s, border-color .2s;
+        }
+
+        .c-link:hover {
+            background: var(--fg);
+            color: var(--bg);
+            border-color: var(--fg);
+        }
+
+        .c-link:hover svg {
+            stroke: var(--bg);
+        }
+
+        .social-row {
+            display: flex;
+            gap: .75rem;
+        }
+
+        .soc-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--fg);
+            text-decoration: none;
+            transition: background .2s, color .2s, border-color .2s;
+        }
+
+        .soc-btn:hover {
+            background: var(--fg);
+            color: var(--bg);
+            border-color: var(--fg);
+        }
+
+        .soc-btn:hover svg {
+            stroke: var(--bg);
+        }
+
+        .contact-bg-glyph {
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Instrument Serif', serif;
+            font-size: 14rem;
+            line-height: 1;
+            color: var(--subtle);
+            pointer-events: none;
+            opacity: .4;
+            user-select: none;
+            transition: color .35s;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            padding: 2rem 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .foot-text {
+            font-family: 'DM Mono', monospace;
+            font-size: 9.5px;
+            font-weight: 300;
+            letter-spacing: .1em;
+            color: var(--muted);
+        }
+
+        /* ── VIDEO MODAL ── */
+        #video-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 500;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, .92);
+            padding: 2rem;
+        }
+
+        #video-modal.open {
+            display: flex;
+        }
+
+        .modal-inner {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            border: 1px solid #333;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -1px;
+            right: -40px;
+            width: 36px;
+            height: 36px;
+            background: none;
+            border: 1px solid #555;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .2s;
+        }
+
+        .modal-close:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        #job-order-video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ── ENTRY ANIMATIONS ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            animation: rise .55s ease forwards;
+        }
+
+        @keyframes rise {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .d1 {
+            animation-delay: .05s;
+        }
+
+        .d2 {
+            animation-delay: .15s;
+        }
+
+        .d3 {
+            animation-delay: .25s;
+        }
+
+        .d4 {
+            animation-delay: .35s;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 680px) {
+            .bar-links {
+                display: none;
+            }
+
+            .header-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-photo-wrap {
+                display: none;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                padding: 2rem;
+            }
+
+            .contact-bg-glyph {
+                display: none;
+            }
         }
     </style>
 </head>
 
-<body
-    class="font-sans bg-[#f4f7f7] dark:bg-[#021113] text-slate-900 dark:text-slate-100 transition-colors duration-500">
+<body>
 
-    <div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden opacity-30 dark:opacity-20">
-        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#0C7779] rounded-full blur-[140px]"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#3BC1A8] rounded-full blur-[120px]"></div>
-    </div>
-
-    <div class="fixed top-6 right-6 z-50">
-        <button id="theme-toggle"
-            class="p-3 rounded-2xl glass hover:border-accent/50 transition-all duration-300 shadow-xl">
-            <i id="theme-icon" class="w-5 h-5 text-tealMedium"></i>
-        </button>
-    </div>
-
-    <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
-        <div class="glass px-6 py-3 rounded-full flex gap-8 items-center shadow-2xl border border-tealMedium/20">
-            <a href="#about" class="hover:text-accent transition-colors"><i data-lucide="user" class="w-5 h-5"></i></a>
-            <a href="#skills" class="hover:text-accent transition-colors"><i data-lucide="code-2"
-                    class="w-5 h-5"></i></a>
-            <a href="#certifications" class="hover:text-accent transition-colors"><i data-lucide="award"
-                    class="w-5 h-5"></i></a>
-            <a href="#projects" class="hover:text-accent transition-colors"><i data-lucide="briefcase"
-                    class="w-5 h-5"></i></a>
-            <a href="#contact" class="hover:text-accent transition-colors"><i data-lucide="mail"
-                    class="w-5 h-5"></i></a>
+    <!-- TOP BAR -->
+    <nav id="topbar">
+        <a href="#" class="bar-brand">Dhine Arjona — Portfolio</a>
+        <div class="bar-right">
+            <div class="bar-links">
+                <a href="#about">About</a>
+                <a href="#skills">Stack</a>
+                <a href="#certifications">Certs</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button id="theme-btn" aria-label="Toggle theme">
+                <i id="theme-icon" data-lucide="moon" style="width:14px;height:14px;"></i>
+            </button>
         </div>
     </nav>
 
-    <header class="pt-24 pb-16 relative">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <div class="relative inline-block mb-6 group">
-                <div
-                    class="absolute inset-0 bg-accent blur-3xl opacity-20 group-hover:opacity-40 transition-opacity rounded-full">
+    <!-- FLOATING DOCK -->
+    <nav id="dock">
+        <a href="#about" class="dock-link" title="About"><i data-lucide="user"
+                style="width:16px;height:16px;"></i></a>
+        <a href="#skills" class="dock-link" title="Skills"><i data-lucide="code-2"
+                style="width:16px;height:16px;"></i></a>
+        <a href="#certifications" class="dock-link" title="Certs"><i data-lucide="award"
+                style="width:16px;height:16px;"></i></a>
+        <a href="#projects" class="dock-link" title="Projects"><i data-lucide="briefcase"
+                style="width:16px;height:16px;"></i></a>
+        <a href="#contact" class="dock-link" title="Contact"><i data-lucide="mail"
+                style="width:16px;height:16px;"></i></a>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-grid">
+                <div>
+                    <p class="hero-eyebrow reveal d1">
+                        <span class="live-dot"></span>
+                        Available for Work
+                    </p>
+                    <h1 class="reveal d2">
+                        Dhine Franklin<br><em>Arjona</em>
+                    </h1>
+                    <div class="hero-meta reveal d3">
+                        <span>Full Stack Developer</span>
+                        <span>PHP · Laravel · JS</span>
+                    </div>
                 </div>
-                <img src="assets/img/profile.png" alt="Dhine Franklin"
-                    class="relative w-28 h-28 rounded-3xl object-cover border-2 border-tealMedium/30 shadow-2xl">
-            </div>
-            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-gradient">
-                Dhine Franklin Arjona
-            </h1>
-            <p class="text-lg text-secondary dark:text-tealMedium font-medium">Full Stack Web Developer</p>
-            <div class="flex justify-center gap-3 mt-6">
-                <span
-                    class="px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-widest bg-accent/10 text-accent border border-accent/20">
-                    Available for Work
-                </span>
+                <div class="hero-photo-wrap reveal d4">
+                    <img src="assets/img/profile.png" alt="Dhine Franklin Arjona" />
+                </div>
             </div>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 pb-32 space-y-24">
+    <!-- MAIN -->
+    <main>
 
-        <section id="about" class="scroll-mt-20">
-            <div class="flex items-center gap-4 mb-6">
-                <h2 class="text-sm uppercase tracking-[0.2em] text-secondary dark:text-accent font-bold">About Me</h2>
-                <div class="h-[1px] flex-1 bg-tealMedium/20"></div>
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="container">
+                <p class="sec-label">About</p>
+                <p class="about-body">
+                    Full-stack developer building internal business systems, SaaS platforms, and
+                    responsive client-facing pages. Specialising in <b>PHP (Laravel)</b> and
+                    <b>Modern Frontend</b> stacks to deliver high-performance solutions.
+                </p>
             </div>
-            <p class="text-lg leading-relaxed text-slate-700 dark:text-slate-300">
-                Full-stack developer with experience building internal business systems, SaaS platforms, and responsive
-                client-facing landing pages. I specialize in <span class="text-tealMedium font-semibold">PHP
-                    (Laravel)</span> and <span class="text-tealMedium font-semibold">Modern Frontend</span> stacks to
-                deliver high-performance solutions.
-            </p>
         </section>
 
-        <section id="skills" class="scroll-mt-20">
-            <div class="flex items-center gap-4 mb-8">
-                <h2 class="text-sm uppercase tracking-[0.2em] text-secondary dark:text-accent font-bold">Tech Stack</h2>
-                <div class="h-[1px] flex-1 bg-tealMedium/20"></div>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div
-                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-accent transition-all group cursor-default">
-                    <div class="p-2 bg-accent/10 rounded-lg text-accent group-hover:scale-110 transition-transform"><i
-                            data-lucide="layers" class="w-5 h-5"></i></div>
-                    <span class="text-sm font-medium">PHP / Laravel</span>
-                </div>
-                <div
-                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-accent transition-all group cursor-default">
-                    <div class="p-2 bg-accent/10 rounded-lg text-accent group-hover:scale-110 transition-transform"><i
-                            data-lucide="terminal" class="w-5 h-5"></i></div>
-                    <span class="text-sm font-medium">JavaScript</span>
-                </div>
-                <div
-                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-accent transition-all group cursor-default">
-                    <div class="p-2 bg-accent/10 rounded-lg text-accent group-hover:scale-110 transition-transform"><i
-                            data-lucide="database" class="w-5 h-5"></i></div>
-                    <span class="text-sm font-medium">MySQL</span>
-                </div>
-                <div
-                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-accent transition-all group cursor-default">
-                    <div class="p-2 bg-accent/10 rounded-lg text-accent group-hover:scale-110 transition-transform"><i
-                            data-lucide="layout" class="w-5 h-5"></i></div>
-                    <span class="text-sm font-medium">Tailwind CSS</span>
-                </div>
-                <div
-                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-accent transition-all group cursor-default">
-                    <div class="p-2 bg-accent/10 rounded-lg text-accent group-hover:scale-110 transition-transform"><i
-                            data-lucide="git-branch" class="w-5 h-5"></i></div>
-                    <span class="text-sm font-medium">Git / GitHub</span>
-                </div>
-                <div
-                    class="glass p-4 rounded-2xl flex items-center gap-3 hover:border-accent transition-all group cursor-default">
-                    <div class="p-2 bg-accent/10 rounded-lg text-accent group-hover:scale-110 transition-transform"><i
-                            data-lucide="server" class="w-5 h-5"></i></div>
-                    <span class="text-sm font-medium">Deployment</span>
+        <!-- SKILLS -->
+        <section id="skills">
+            <div class="container">
+                <p class="sec-label">Tech Stack</p>
+                <div class="skills-grid">
+                    <div class="skill-tile">
+                        <i data-lucide="layers" style="width:18px;height:18px;stroke:var(--muted);flex-shrink:0;"></i>
+                        <span class="skill-name">PHP / Laravel</span>
+                    </div>
+                    <div class="skill-tile">
+                        <i data-lucide="terminal" style="width:18px;height:18px;stroke:var(--muted);flex-shrink:0;"></i>
+                        <span class="skill-name">JavaScript</span>
+                    </div>
+                    <div class="skill-tile">
+                        <i data-lucide="database" style="width:18px;height:18px;stroke:var(--muted);flex-shrink:0;"></i>
+                        <span class="skill-name">MySQL</span>
+                    </div>
+                    <div class="skill-tile">
+                        <i data-lucide="layout" style="width:18px;height:18px;stroke:var(--muted);flex-shrink:0;"></i>
+                        <span class="skill-name">Tailwind CSS</span>
+                    </div>
+                    <div class="skill-tile">
+                        <i data-lucide="git-branch"
+                            style="width:18px;height:18px;stroke:var(--muted);flex-shrink:0;"></i>
+                        <span class="skill-name">Git / GitHub</span>
+                    </div>
+                    <div class="skill-tile">
+                        <i data-lucide="server" style="width:18px;height:18px;stroke:var(--muted);flex-shrink:0;"></i>
+                        <span class="skill-name">Deployment</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="certifications" class="scroll-mt-20">
-            <div class="flex items-center gap-4 mb-8">
-                <h2 class="text-sm uppercase tracking-[0.2em] text-secondary dark:text-accent font-bold">Certifications
-                </h2>
-                <div class="h-[1px] flex-1 bg-tealMedium/20"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="glass p-6 rounded-[2rem] border-l-4 border-l-secondary relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:rotate-12 transition-transform"><i
-                            data-lucide="award" class="w-12 h-12 text-accent"></i></div>
-                    <div class="relative z-10">
-                        <span class="text-[10px] font-bold tracking-widest text-accent uppercase">TESDA NC II</span>
-                        <h3 class="text-lg font-bold mt-1 text-primary dark:text-white">Animation</h3>
-                        <div class="mt-4 space-y-1 text-sm text-slate-600 dark:text-slate-400">
-                            <p><strong>No:</strong> 19130402017845</p>
-                            <p><strong>Issued:</strong> 11/16/2019</p>
-                            <p class="text-red-400 italic">Expires: 11/15/2024</p>
+        <!-- CERTIFICATIONS -->
+        <section id="certifications">
+            <div class="container">
+                <p class="sec-label">Certifications</p>
+                <div class="cert-grid">
+
+                    <div class="cert-card">
+                        <p class="cert-index">01</p>
+                        <p class="cert-issuer">TESDA NC II</p>
+                        <h3 class="cert-title">Animation</h3>
+                        <div class="cert-details">
+                            <p>No: 19130402017845</p>
+                            <p>Issued: 11/16/2019</p>
+                            <p class="expired">Expires: 11/15/2024</p>
                         </div>
+                        <span class="cert-big-num">01</span>
                     </div>
-                </div>
-                <div class="glass p-6 rounded-[2rem] border-l-4 border-l-tealMedium relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:rotate-12 transition-transform"><i
-                            data-lucide="monitor" class="w-12 h-12 text-accent"></i></div>
-                    <div class="relative z-10">
-                        <span class="text-[10px] font-bold tracking-widest text-accent uppercase">RVN TECH-VOC
-                            INC.</span>
-                        <h3 class="text-lg font-bold mt-1 text-primary dark:text-white">Web Development II</h3>
-                        <div class="mt-4 space-y-1 text-sm text-slate-600 dark:text-slate-400">
-                            <p><strong>Trainer:</strong> Steve Santos</p>
-                            <p><strong>Period:</strong> 12/2021 - 01/2022</p>
-                            <p><strong>Sector:</strong> ICT</p>
+
+                    <div class="cert-card">
+                        <p class="cert-index">02</p>
+                        <p class="cert-issuer">RVN Tech-Voc Inc.</p>
+                        <h3 class="cert-title">Web Development II</h3>
+                        <div class="cert-details">
+                            <p>Trainer: Steve Santos</p>
+                            <p>Period: 12/2021 – 01/2022</p>
+                            <p>Sector: ICT</p>
                         </div>
+                        <span class="cert-big-num">02</span>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="scroll-mt-20">
-            <div class="flex items-center gap-4 mb-10">
-                <h2 class="text-xs uppercase tracking-[0.3em] text-secondary dark:text-accent font-bold">Featured
-                    Projects</h2>
-                <div class="h-[1px] flex-1 bg-tealMedium/20"></div>
-            </div>
+        <!-- PROJECTS -->
+        <section id="projects">
+            <div class="container">
+                <p class="sec-label">Featured Projects</p>
+                <div class="projects-grid">
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <button onclick="openVideoModal()"
-                    class="project-card text-left group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
-                                data-lucide="play-circle" class="w-6 h-6"></i></div>
-                        <i data-lucide="video" class="w-5 h-5 text-tealMedium opacity-50 group-hover:opacity-100"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Job Order Tracker</h3>
-                    <p class="text-xs text-slate-500 mb-4">PHP · MySQL · Bootstrap</p>
-                </button>
+                    <button onclick="openVideoModal()" class="proj-card">
+                        <div class="proj-top">
+                            <i class="proj-icon" data-lucide="play-circle"
+                                style="width:20px;height:20px;stroke:var(--muted);"></i>
+                            <i class="proj-arrow" data-lucide="arrow-up-right"
+                                style="width:16px;height:16px;stroke:var(--fg);"></i>
+                        </div>
+                        <p class="proj-title">Job Order Tracker</p>
+                        <p class="proj-meta">PHP · MySQL · Bootstrap</p>
+                    </button>
 
-                <a href="https://gerrmanitsolutions.com/" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
-                                data-lucide="external-link" class="w-6 h-6"></i></div>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Gerrman IT Solutions
-                    </h3>
-                    <p class="text-xs text-slate-500 mb-4">Laravel · Tailwind CSS</p>
-                </a>
+                    <a href="https://gerrmanitsolutions.com/" target="_blank" class="proj-card">
+                        <div class="proj-top">
+                            <i class="proj-icon" data-lucide="external-link"
+                                style="width:20px;height:20px;stroke:var(--muted);"></i>
+                            <i class="proj-arrow" data-lucide="arrow-up-right"
+                                style="width:16px;height:16px;stroke:var(--fg);"></i>
+                        </div>
+                        <p class="proj-title">Gerrman IT Solutions</p>
+                        <p class="proj-meta">Laravel · Tailwind CSS</p>
+                    </a>
 
-                <a href="https://servicio.world/" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
-                                data-lucide="smartphone" class="w-6 h-6"></i></div>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Servicio Mobile App
-                    </h3>
-                    <p class="text-xs text-slate-500 mb-4">Laravel · MySQL</p>
-                </a>
+                    <a href="https://servicio.world/" target="_blank" class="proj-card">
+                        <div class="proj-top">
+                            <i class="proj-icon" data-lucide="smartphone"
+                                style="width:20px;height:20px;stroke:var(--muted);"></i>
+                            <i class="proj-arrow" data-lucide="arrow-up-right"
+                                style="width:16px;height:16px;stroke:var(--fg);"></i>
+                        </div>
+                        <p class="proj-title">Servicio Mobile App</p>
+                        <p class="proj-meta">Laravel · MySQL</p>
+                    </a>
 
-                <a href="https://www.inursereviewcenter.com/" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
-                                data-lucide="globe" class="w-6 h-6"></i></div>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">iNurse Review Center
-                    </h3>
-                    <p class="text-xs text-slate-500 mb-4">WIX</p>
-                </a>
+                    <a href="https://www.inursereviewcenter.com/" target="_blank" class="proj-card">
+                        <div class="proj-top">
+                            <i class="proj-icon" data-lucide="globe"
+                                style="width:20px;height:20px;stroke:var(--muted);"></i>
+                            <i class="proj-arrow" data-lucide="arrow-up-right"
+                                style="width:16px;height:16px;stroke:var(--fg);"></i>
+                        </div>
+                        <p class="proj-title">iNurse Review Center</p>
+                        <p class="proj-meta">WIX</p>
+                    </a>
 
-                <a href="https://filipinohardware.com/" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
-                                data-lucide="shopping-cart" class="w-6 h-6"></i></div>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Filipino Hardware</h3>
-                    <p class="text-xs text-slate-500 mb-4">Laravel · Tailwind CSS</p>
-                </a>
+                    <a href="https://filipinohardware.com/" target="_blank" class="proj-card">
+                        <div class="proj-top">
+                            <i class="proj-icon" data-lucide="shopping-cart"
+                                style="width:20px;height:20px;stroke:var(--muted);"></i>
+                            <i class="proj-arrow" data-lucide="arrow-up-right"
+                                style="width:16px;height:16px;stroke:var(--fg);"></i>
+                        </div>
+                        <p class="proj-title">Filipino Hardware</p>
+                        <p class="proj-meta">Laravel · Tailwind CSS</p>
+                    </a>
 
-                <a href="https://evacuationshelter.online/" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
-                                data-lucide="shield-check" class="w-6 h-6"></i></div>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Evacuation Shelter
-                        System</h3>
-                    <p class="text-xs text-slate-500 mb-4">PHP · MySQL · Bootstrap</p>
-                </a>
+                    <a href="https://evacuationshelter.online/" target="_blank" class="proj-card">
+                        <div class="proj-top">
+                            <i class="proj-icon" data-lucide="shield-check"
+                                style="width:20px;height:20px;stroke:var(--muted);"></i>
+                            <i class="proj-arrow" data-lucide="arrow-up-right"
+                                style="width:16px;height:16px;stroke:var(--fg);"></i>
+                        </div>
+                        <p class="proj-title">Evacuation Shelter System</p>
+                        <p class="proj-meta">PHP · MySQL · Bootstrap</p>
+                    </a>
 
-                <a href="https://pos.dhinearjona.online/login.php" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
-                                data-lucide="banknote" class="w-6 h-6"></i></div>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Point of Sale System
-                    </h3>
-                    <p class="text-xs text-slate-500 mb-4">PHP · MySQL · JavaScript</p>
-                </a>
+                    <a href="https://pos.dhinearjona.online/login.php" target="_blank" class="proj-card">
+                        <div class="proj-top">
+                            <i class="proj-icon" data-lucide="banknote"
+                                style="width:20px;height:20px;stroke:var(--muted);"></i>
+                            <i class="proj-arrow" data-lucide="arrow-up-right"
+                                style="width:16px;height:16px;stroke:var(--fg);"></i>
+                        </div>
+                        <p class="proj-title">Point of Sale System</p>
+                        <p class="proj-meta">PHP · MySQL · JavaScript</p>
+                    </a>
 
-                <a href="https://inventory.dhinearjona.online/" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
-                                data-lucide="package" class="w-6 h-6"></i></div>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Inventory Management
-                    </h3>
-                    <p class="text-xs text-slate-500 mb-4">PHP · MySQL · Bootstrap</p>
-                </a>
+                    <a href="https://inventory.dhinearjona.online/" target="_blank" class="proj-card">
+                        <div class="proj-top">
+                            <i class="proj-icon" data-lucide="package"
+                                style="width:20px;height:20px;stroke:var(--muted);"></i>
+                            <i class="proj-arrow" data-lucide="arrow-up-right"
+                                style="width:16px;height:16px;stroke:var(--fg);"></i>
+                        </div>
+                        <p class="proj-title">Inventory Management</p>
+                        <p class="proj-meta">PHP · MySQL · Bootstrap</p>
+                    </a>
 
-                <a href="https://rental.dhinearjona.online/login.php" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
-                                data-lucide="key" class="w-6 h-6"></i></div>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Rental Management</h3>
-                    <p class="text-xs text-slate-500 mb-4">PHP · MySQL · Bootstrap</p>
-                </a>
+                    <a href="https://rental.dhinearjona.online/login.php" target="_blank" class="proj-card">
+                        <div class="proj-top">
+                            <i class="proj-icon" data-lucide="key"
+                                style="width:20px;height:20px;stroke:var(--muted);"></i>
+                            <i class="proj-arrow" data-lucide="arrow-up-right"
+                                style="width:16px;height:16px;stroke:var(--fg);"></i>
+                        </div>
+                        <p class="proj-title">Rental Management</p>
+                        <p class="proj-meta">PHP · MySQL · Bootstrap</p>
+                    </a>
 
-                <a href="https://school.dhinearjona.online/login.php" target="_blank"
-                    class="project-card group glass p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:border-accent">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="p-3 bg-accent/10 rounded-2xl text-accent project-icon transition-all"><i
-                                data-lucide="graduation-cap" class="w-6 h-6"></i></div>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1 group-hover:text-accent transition-colors">Classroom Management
-                    </h3>
-                    <p class="text-xs text-slate-500 mb-4">PHP · MySQL · CSS</p>
-                </a>
+                    <a href="https://school.dhinearjona.online/login.php" target="_blank" class="proj-card">
+                        <div class="proj-top">
+                            <i class="proj-icon" data-lucide="graduation-cap"
+                                style="width:20px;height:20px;stroke:var(--muted);"></i>
+                            <i class="proj-arrow" data-lucide="arrow-up-right"
+                                style="width:16px;height:16px;stroke:var(--fg);"></i>
+                        </div>
+                        <p class="proj-title">Classroom Management</p>
+                        <p class="proj-meta">PHP · MySQL · CSS</p>
+                    </a>
+
+                </div>
             </div>
         </section>
 
-        <section id="contact" class="scroll-mt-20">
-            <div class="glass p-8 md:p-12 rounded-[2rem] relative overflow-hidden border-accent/20">
-                <div class="absolute top-0 right-0 p-8 opacity-5">
-                    <i data-lucide="send" class="w-32 h-32 text-accent"></i>
-                </div>
-                <div class="relative z-10">
-                    <h2 class="text-3xl font-bold mb-6 text-primary dark:text-white">Let's build something <br><span
-                            class="text-accent">extraordinary.</span></h2>
-                    <div class="flex flex-col md:flex-row gap-6 mb-8">
-                        <a href="mailto:dhinearjona16@gmail.com"
-                            class="flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:text-accent transition-colors">
-                            <i data-lucide="mail" class="w-5 h-5"></i>
-                            dhinearjona16@gmail.com
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="container">
+                <p class="sec-label">Contact</p>
+                <div class="contact-box">
+                    <h2 class="contact-headline">
+                        Let's build something<br><em>extraordinary.</em>
+                    </h2>
+                    <div class="contact-links">
+                        <a href="mailto:dhinearjona@gmail.com" class="c-link">
+                            <i data-lucide="mail" style="width:14px;height:14px;"></i>
+                            dhinearjona@gmail.com
                         </a>
-                        <a href="https://calendly.com/dhinearjona/15min" target="_blank"
-                            class="flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:text-accent transition-colors">
-                            <i data-lucide="calendar" class="w-5 h-5"></i>
+                        <a href="https://calendly.com/dhinearjona/15min" target="_blank" class="c-link">
+                            <i data-lucide="calendar" style="width:14px;height:14px;"></i>
                             Schedule a Call
                         </a>
                     </div>
-                    <div class="flex gap-4">
-                        <a href="https://github.com/Dhinearjona" target="_blank"
-                            class="p-3 glass rounded-xl hover:text-accent hover:border-accent transition-all">
-                            <i data-lucide="github" class="w-5 h-5"></i>
+                    <div class="social-row">
+                        <a href="https://github.com/Dhinearjona" target="_blank" class="soc-btn" title="GitHub">
+                            <i data-lucide="github" style="width:16px;height:16px;"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/dhinearjona/" target="_blank"
-                            class="p-3 glass rounded-xl hover:text-accent hover:border-accent transition-all">
-                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        <a href="https://www.linkedin.com/in/dhinearjona/" target="_blank" class="soc-btn"
+                            title="LinkedIn">
+                            <i data-lucide="linkedin" style="width:16px;height:16px;"></i>
                         </a>
                     </div>
+                    <span class="contact-bg-glyph">&rarr;</span>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <div id="video-modal"
-        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4">
-        <div class="relative w-full max-w-4xl glass rounded-3xl overflow-hidden border-accent/30">
-            <button onclick="closeVideoModal()"
-                class="absolute top-4 right-4 z-10 p-2 bg-black/50 text-white rounded-full hover:bg-accent transition-colors">
-                <i data-lucide="x" class="w-6 h-6"></i>
+    <!-- FOOTER -->
+    <footer class="container">
+        <p class="foot-text">&copy; <span id="year"></span> Dhine Franklin Arjona</p>
+        <p class="foot-text">Full Stack Developer</p>
+    </footer>
+
+    <!-- VIDEO MODAL -->
+    <div id="video-modal">
+        <div class="modal-inner">
+            <button class="modal-close" onclick="closeVideoModal()">
+                <i data-lucide="x" style="width:14px;height:14px;"></i>
             </button>
-            <video id="job-order-video" class="w-full h-auto" controls>
-                <source src="assets/video/JobOrderTracker.mp4" type="video/mp4">
+            <video id="job-order-video" controls>
+                <source src="assets/video/JobOrderTracker.mp4" type="video/mp4" />
             </video>
         </div>
     </div>
 
-    <footer class="pb-32 pt-12 text-center text-xs text-tealMedium font-medium">
-        &copy; <span id="year"></span> Dhine Franklin Arjona. All rights reserved.
-    </footer>
-
     <script>
-        // Initialize Lucide Icons
         lucide.createIcons();
 
-        const themeToggle = document.getElementById("theme-toggle");
-        const themeIcon = document.getElementById("theme-icon");
+        // ── YEAR
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // ── THEME
         const html = document.documentElement;
+        const icon = document.getElementById('theme-icon');
 
-        /**
-         * Function para sa real-time icon switching
-         */
-        const updateThemeIcon = () => {
-            const isDark = html.classList.contains("dark");
+        const saved = localStorage.getItem('theme') ||
+            (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        applyTheme(saved);
 
-            // 1. Burahin ang kasalukuyang icon sa loob ng <i> tag
-            themeIcon.innerHTML = '';
-
-            // 2. Palitan ang attribute (sun kung dark, moon kung light)
-            themeIcon.setAttribute("data-lucide", isDark ? "sun" : "moon");
-
-            // 3. I-trigger ang Lucide para i-render ang bagong icon
-            lucide.createIcons();
-        };
-
-        // Check saved preference or system preference
-        const currentTheme = localStorage.getItem("theme") ||
-            (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-
-        if (currentTheme === "dark") {
-            html.classList.add("dark");
-        }
-
-        // Initial setup para sa tamang icon sa pag-load
-        updateThemeIcon();
-
-        themeToggle.addEventListener("click", () => {
-            html.classList.toggle("dark");
-            const isDark = html.classList.contains("dark");
-            localStorage.setItem("theme", isDark ? "dark" : "light");
-
-            // Tawagin ang function para magpalit agad ang icon
-            updateThemeIcon();
+        document.getElementById('theme-btn').addEventListener('click', () => {
+            const next = html.classList.contains('dark') ? 'light' : 'dark';
+            applyTheme(next);
+            localStorage.setItem('theme', next);
         });
 
-        // Modal Logic
+        function applyTheme(t) {
+            html.classList.toggle('dark', t === 'dark');
+            icon.setAttribute('data-lucide', t === 'dark' ? 'sun' : 'moon');
+            lucide.createIcons();
+        }
+
+        // ── MODAL
         function openVideoModal() {
-            const modal = document.getElementById("video-modal");
-            modal.classList.replace("hidden", "flex");
-            document.body.style.overflow = "hidden";
-            document.getElementById("job-order-video").play();
+            const m = document.getElementById('video-modal');
+            m.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('job-order-video').play();
         }
 
         function closeVideoModal() {
-            const modal = document.getElementById("video-modal");
-            modal.classList.replace("flex", "hidden");
-            document.body.style.overflow = "";
-            const video = document.getElementById("job-order-video");
-            video.pause();
-            video.currentTime = 0;
+            const m = document.getElementById('video-modal');
+            m.classList.remove('open');
+            document.body.style.overflow = '';
+            const v = document.getElementById('job-order-video');
+            v.pause();
+            v.currentTime = 0;
         }
-
-        document.getElementById("video-modal").addEventListener("click", (e) => {
-            if (e.target.id === "video-modal") closeVideoModal();
+        document.getElementById('video-modal').addEventListener('click', e => {
+            if (e.target === e.currentTarget) closeVideoModal();
         });
-
-        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 
