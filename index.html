@@ -2,1091 +2,204 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dhine Franklin Arjona — Full Stack Developer</title>
-    <link rel="shortcut icon" href="assets/img/profile.png" type="image/x-icon" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap"
-        rel="stylesheet" />
-    <script src="https://unpkg.com/lucide@latest"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhine Arjona | Web Developer</title>
+    <link rel="shortcut icon" href="assets/img/profile.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#000000',
+                        lightBg: '#ffffff',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        :root {
-            --bg: #f8f8f6;
-            --fg: #0a0a0a;
-            --muted: #888;
-            --subtle: #ccc;
-            --card-bg: #f0f0ee;
-            --invert-bg: #0a0a0a;
-            --invert-fg: #f8f8f6;
-        }
-
-        .dark {
-            --bg: #0a0a0a;
-            --fg: #f0f0ee;
-            --muted: #666;
-            --subtle: #2a2a2a;
-            --card-bg: #141414;
-            --invert-bg: #f0f0ee;
-            --invert-fg: #0a0a0a;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Outfit', sans-serif;
-            background: var(--bg);
-            color: var(--fg);
-            transition: background .35s, color .35s;
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
         }
 
-        /* ── GRAIN OVERLAY ── */
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            pointer-events: none;
-            opacity: .03;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-        }
-
-        /* ── TOP BAR ── */
-        #topbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 200;
-            height: 52px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 2.5rem;
-            border-bottom: 1px solid var(--subtle);
-            background: var(--bg);
-            transition: background .35s, border-color .35s;
-        }
-
-        .bar-brand {
-            font-family: 'DM Mono', monospace;
-            font-size: 10px;
-            font-weight: 500;
-            letter-spacing: .2em;
+        .section-title {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--fg);
-            text-decoration: none;
-        }
-
-        .bar-right {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .bar-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .bar-links a {
-            font-family: 'DM Mono', monospace;
-            font-size: 9.5px;
-            font-weight: 400;
-            letter-spacing: .14em;
-            text-transform: uppercase;
-            color: var(--muted);
-            text-decoration: none;
-            transition: color .2s;
-        }
-
-        .bar-links a:hover {
-            color: var(--fg);
-        }
-
-        #theme-btn {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            border: 1px solid var(--subtle);
-            background: none;
-            color: var(--fg);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background .2s, color .2s, border-color .35s;
-        }
-
-        #theme-btn:hover {
-            background: var(--fg);
-            color: var(--bg);
-        }
-
-        /* ── FLOATING DOCK ── */
-        #dock {
-            position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 200;
-            display: flex;
-            align-items: center;
-            gap: .25rem;
-            padding: .4rem .6rem;
-            background: var(--fg);
-            border-radius: 999px;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, .18);
-        }
-
-        .dock-link {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--bg);
-            text-decoration: none;
-            transition: background .18s, color .18s, transform .18s;
-        }
-
-        .dock-link:hover {
-            background: var(--bg);
-            color: var(--fg);
-            transform: translateY(-3px);
-        }
-
-        /* ── PAGE LAYOUT ── */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 2.5rem;
-        }
-
-        /* ── HEADER ── */
-        header {
-            padding-top: 120px;
-            padding-bottom: 72px;
-            border-bottom: 1px solid var(--subtle);
-        }
-
-        .header-grid {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 3rem;
-            align-items: end;
-        }
-
-        .hero-eyebrow {
-            font-family: 'DM Mono', monospace;
-            font-size: 10px;
-            font-weight: 400;
-            letter-spacing: .2em;
-            text-transform: uppercase;
-            color: var(--muted);
-            display: flex;
-            align-items: center;
-            gap: .6rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .live-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--fg);
-            animation: blink 2.4s infinite;
-        }
-
-        @keyframes blink {
-
-            0%,
-            100% {
-                opacity: 1
-            }
-
-            50% {
-                opacity: .2
-            }
-        }
-
-        h1 {
-            font-family: 'Instrument Serif', Georgia, serif;
-            font-size: clamp(2.6rem, 5.5vw, 4rem);
-            font-weight: 400;
-            line-height: 1.0;
-            letter-spacing: -.03em;
-            color: var(--fg);
-        }
-
-        h1 em {
-            font-style: italic;
-            color: var(--muted);
-        }
-
-        .hero-meta {
-            margin-top: 1.5rem;
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            font-weight: 300;
-            color: var(--muted);
-            letter-spacing: .05em;
-            display: flex;
-            gap: 2rem;
-        }
-
-        .hero-photo-wrap {
-            position: relative;
-        }
-
-        .hero-photo-wrap img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            filter: grayscale(100%) contrast(1.1);
-            border: 1px solid var(--subtle);
+            margin-bottom: 1.5rem;
             display: block;
-            transition: filter .4s;
-        }
-
-        .hero-photo-wrap:hover img {
-            filter: grayscale(0%) contrast(1);
-        }
-
-        .hero-photo-wrap::after {
-            content: '';
-            position: absolute;
-            inset: 4px;
-            border: 1px solid var(--subtle);
-            pointer-events: none;
-        }
-
-        /* ── SECTION BASE ── */
-        section {
-            padding: 5rem 0;
-            border-bottom: 1px solid var(--subtle);
-        }
-
-        .sec-label {
-            font-family: 'DM Mono', monospace;
-            font-size: 9px;
-            font-weight: 500;
-            letter-spacing: .25em;
-            text-transform: uppercase;
-            color: var(--muted);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .sec-label::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--subtle);
-        }
-
-        /* ── ABOUT ── */
-        .about-body {
-            font-family: 'Instrument Serif', serif;
-            font-size: clamp(1.15rem, 2.5vw, 1.5rem);
-            line-height: 1.6;
-            font-style: italic;
-            color: var(--fg);
-            max-width: 720px;
-        }
-
-        .about-body b {
-            font-style: normal;
-            font-weight: 400;
-            border-bottom: 1.5px solid var(--fg);
-        }
-
-        /* ── SKILLS ── */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            border: 1px solid var(--subtle);
-            background: var(--subtle);
-            gap: 1px;
-        }
-
-        .skill-tile {
-            background: var(--bg);
-            padding: 1.1rem 1.4rem;
-            display: flex;
-            align-items: center;
-            gap: .9rem;
-            cursor: default;
-            transition: background .15s, color .15s;
-        }
-
-        .skill-tile:hover {
-            background: var(--fg);
-            color: var(--bg);
-        }
-
-        .skill-tile:hover svg {
-            stroke: var(--bg);
-        }
-
-        .skill-tile svg {
-            transition: stroke .15s;
-        }
-
-        .skill-name {
-            font-size: 13px;
-            font-weight: 400;
-        }
-
-        /* ── CERTIFICATIONS ── */
-        .cert-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1px;
-            background: var(--subtle);
-            border: 1px solid var(--subtle);
-        }
-
-        .cert-card {
-            background: var(--bg);
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-            transition: background .15s, color .15s;
-        }
-
-        .cert-card:hover {
-            background: var(--card-bg);
-        }
-
-        .cert-index {
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            font-weight: 400;
-            letter-spacing: .1em;
-            color: var(--muted);
-            margin-bottom: .5rem;
-        }
-
-        .cert-issuer {
-            font-family: 'DM Mono', monospace;
-            font-size: 9px;
-            font-weight: 500;
-            letter-spacing: .18em;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: .4rem;
-        }
-
-        .cert-title {
-            font-family: 'Instrument Serif', serif;
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: var(--fg);
-            margin-bottom: 1.25rem;
-        }
-
-        .cert-details {
-            font-family: 'DM Mono', monospace;
-            font-size: 10.5px;
-            font-weight: 300;
-            color: var(--muted);
-            line-height: 1.9;
-        }
-
-        .cert-details .expired {
-            text-decoration: line-through;
-            opacity: .6;
-        }
-
-        .cert-big-num {
-            position: absolute;
-            bottom: 1rem;
-            right: 1.5rem;
-            font-family: 'Instrument Serif', serif;
-            font-size: 5rem;
-            font-weight: 400;
-            line-height: 1;
-            color: var(--subtle);
-            pointer-events: none;
-            transition: color .35s;
-        }
-
-        /* ── PROJECTS ── */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1px;
-            background: var(--subtle);
-            border: 1px solid var(--subtle);
-        }
-
-        .proj-card {
-            background: var(--bg);
-            padding: 1.8rem 2rem;
-            text-decoration: none;
-            color: var(--fg);
-            display: flex;
-            flex-direction: column;
-            transition: background .15s, color .15s;
-            border: none;
-            cursor: pointer;
-            text-align: left;
-            font-family: inherit;
-        }
-
-        .proj-card:hover {
-            background: var(--fg);
-            color: var(--bg);
-        }
-
-        .proj-card:hover .proj-meta {
-            color: var(--bg);
-            opacity: .5;
-        }
-
-        .proj-card:hover .proj-arrow {
-            opacity: 1;
-            transform: translate(3px, -3px);
-        }
-
-        .proj-card:hover svg {
-            stroke: var(--bg);
-        }
-
-        .proj-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1.2rem;
-        }
-
-        .proj-icon {
-            color: var(--muted);
-            transition: stroke .15s;
-        }
-
-        .proj-arrow {
-            opacity: 0;
-            transition: opacity .15s, transform .2s;
-        }
-
-        .proj-title {
-            font-family: 'Instrument Serif', serif;
-            font-size: 1.1rem;
-            font-weight: 400;
-            line-height: 1.2;
-            margin-bottom: .4rem;
-        }
-
-        .proj-meta {
-            font-family: 'DM Mono', monospace;
-            font-size: 10px;
-            font-weight: 300;
-            color: var(--muted);
-            letter-spacing: .04em;
-            transition: color .15s;
-        }
-
-        /* ── CONTACT ── */
-        .contact-box {
-            border: 1px solid var(--subtle);
-            padding: 3.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-headline {
-            font-family: 'Instrument Serif', serif;
-            font-size: clamp(1.6rem, 4vw, 2.4rem);
-            font-weight: 400;
-            line-height: 1.2;
-            margin-bottom: 2.5rem;
-            color: var(--fg);
-        }
-
-        .contact-headline em {
-            font-style: italic;
-            color: var(--muted);
-        }
-
-        .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .c-link {
-            display: inline-flex;
-            align-items: center;
-            gap: .6rem;
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            font-weight: 400;
-            color: var(--fg);
-            text-decoration: none;
-            border: 1px solid var(--subtle);
-            padding: .55rem 1.1rem;
-            transition: background .2s, color .2s, border-color .2s;
-        }
-
-        .c-link:hover {
-            background: var(--fg);
-            color: var(--bg);
-            border-color: var(--fg);
-        }
-
-        .c-link:hover svg {
-            stroke: var(--bg);
-        }
-
-        .social-row {
-            display: flex;
-            gap: .75rem;
-        }
-
-        .soc-btn {
-            width: 40px;
-            height: 40px;
-            border: 1px solid var(--subtle);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--fg);
-            text-decoration: none;
-            transition: background .2s, color .2s, border-color .2s;
-        }
-
-        .soc-btn:hover {
-            background: var(--fg);
-            color: var(--bg);
-            border-color: var(--fg);
-        }
-
-        .soc-btn:hover svg {
-            stroke: var(--bg);
-        }
-
-        .contact-bg-glyph {
-            position: absolute;
-            right: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            font-family: 'Instrument Serif', serif;
-            font-size: 14rem;
-            line-height: 1;
-            color: var(--subtle);
-            pointer-events: none;
-            opacity: .4;
-            user-select: none;
-            transition: color .35s;
-        }
-
-        /* ── FOOTER ── */
-        footer {
-            padding: 2rem 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .foot-text {
-            font-family: 'DM Mono', monospace;
-            font-size: 9.5px;
-            font-weight: 300;
-            letter-spacing: .1em;
-            color: var(--muted);
-        }
-
-        /* ── VIDEO MODAL ── */
-        #video-modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 500;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 0, 0, .92);
-            padding: 2rem;
-        }
-
-        #video-modal.open {
-            display: flex;
-        }
-
-        .modal-inner {
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            border: 1px solid #333;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: -1px;
-            right: -40px;
-            width: 36px;
-            height: 36px;
-            background: none;
-            border: 1px solid #555;
-            color: #fff;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background .2s;
-        }
-
-        .modal-close:hover {
-            background: #fff;
-            color: #000;
-        }
-
-        #job-order-video {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* ── ENTRY ANIMATIONS ── */
-        .reveal {
-            opacity: 0;
-            transform: translateY(18px);
-            animation: rise .55s ease forwards;
-        }
-
-        @keyframes rise {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .d1 {
-            animation-delay: .05s;
-        }
-
-        .d2 {
-            animation-delay: .15s;
-        }
-
-        .d3 {
-            animation-delay: .25s;
-        }
-
-        .d4 {
-            animation-delay: .35s;
-        }
-
-        /* ── RESPONSIVE ── */
-        @media (max-width: 680px) {
-            .bar-links {
-                display: none;
-            }
-
-            .header-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-photo-wrap {
-                display: none;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .cert-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-box {
-                padding: 2rem;
-            }
-
-            .contact-bg-glyph {
-                display: none;
-            }
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 0.5rem;
+            opacity: 0.8;
         }
     </style>
 </head>
 
-<body>
+<body class="bg-white text-black dark:bg-black dark:text-white selection:bg-neutral-200 dark:selection:bg-neutral-800">
 
-    <!-- TOP BAR -->
-    <nav id="topbar">
-        <a href="#" class="bar-brand">Dhine Arjona — Portfolio</a>
-        <div class="bar-right">
-            <div class="bar-links">
-                <a href="#about">About</a>
-                <a href="#skills">Stack</a>
-                <a href="#certifications">Certs</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <button id="theme-btn" aria-label="Toggle theme">
-                <i id="theme-icon" data-lucide="moon" style="width:14px;height:14px;"></i>
-            </button>
-        </div>
-    </nav>
+    <div class="fixed top-8 right-8 z-50">
+        <button onclick="toggleTheme()"
+            class="text-[10px] uppercase tracking-widest border border-current px-3 py-1 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
+            Theme
+        </button>
+    </div>
 
-    <!-- FLOATING DOCK -->
-    <nav id="dock">
-        <a href="#about" class="dock-link" title="About"><i data-lucide="user"
-                style="width:16px;height:16px;"></i></a>
-        <a href="#skills" class="dock-link" title="Skills"><i data-lucide="code-2"
-                style="width:16px;height:16px;"></i></a>
-        <a href="#certifications" class="dock-link" title="Certs"><i data-lucide="award"
-                style="width:16px;height:16px;"></i></a>
-        <a href="#projects" class="dock-link" title="Projects"><i data-lucide="briefcase"
-                style="width:16px;height:16px;"></i></a>
-        <a href="#contact" class="dock-link" title="Contact"><i data-lucide="mail"
-                style="width:16px;height:16px;"></i></a>
-    </nav>
+    <main class="max-w-xl mx-auto px-8 py-24 space-y-24">
 
-    <!-- HEADER -->
-    <header>
-        <div class="container">
-            <div class="header-grid">
-                <div>
-                    <p class="hero-eyebrow reveal d1">
-                        <span class="live-dot"></span>
-                        Available for Work
-                    </p>
-                    <h1 class="reveal d2">
-                        Dhine Franklin<br><em>Arjona</em>
-                    </h1>
-                    <div class="hero-meta reveal d3">
-                        <span>Full Stack Developer</span>
-                        <span>PHP · Laravel · JS</span>
-                    </div>
-                </div>
-                <div class="hero-photo-wrap reveal d4">
-                    <img src="assets/img/profile.png" alt="Dhine Franklin Arjona" />
-                </div>
-            </div>
-        </div>
-    </header>
+        <section>
+            <h1 class="text-3xl font-semibold mb-2 tracking-tighter">Dhine Franklin Arjona</h1>
+            <p class="text-sm font-medium uppercase tracking-widest opacity-60 mb-6">Web Developer</p>
+            <p class="text-neutral-500 dark:text-neutral-400 leading-relaxed text-sm max-w-md">
+                Focused on building minimalist, high-performance web applications. Expert in automating workflows and
+                creating clean, data-driven systems.
+            </p>
+        </section>
 
-    <!-- MAIN -->
-    <main>
-
-        <!-- ABOUT -->
-        <section id="about">
-            <div class="container">
-                <p class="sec-label">About</p>
-                <p class="about-body">
-                    Full-stack developer building internal business systems, SaaS platforms, and
-                    responsive client-facing pages. Specialising in <b>PHP (Laravel)</b> and
-                    <b>Modern Frontend</b> stacks to deliver high-performance solutions.
-                </p>
+        <section>
+            <span class="section-title">Tech Stack</span>
+            <div class="grid grid-cols-2 gap-y-2 text-sm">
+                <div class="font-medium">JavaScript</div>
+                <div class="font-medium">HTML / CSS</div>
+                <div class="font-medium">PHP / MySQL</div>
+                <div class="font-medium">Google Apps Script</div>
+                <div class="font-medium">Tailwind / Bootstrap</div>
+                <div class="font-medium">Version Control (Git)</div>
+                <div class="font-medium">Laravel Framework</div>
             </div>
         </section>
 
-        <!-- SKILLS -->
-        <section id="skills">
-            <div class="container">
-                <p class="sec-label">Tech Stack</p>
-                <div class="skills-grid">
-                    <div class="skill-tile">
-                        <i data-lucide="layers" style="width:18px;height:18px;stroke:var(--muted);flex-shrink:0;"></i>
-                        <span class="skill-name">PHP / Laravel</span>
+        <section>
+            <span class="section-title">Certifications</span>
+            <div class="space-y-6 text-sm">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="font-medium">TESDA NC II: Animation</p>
+                        <p class="text-[11px] opacity-60 mt-1">No: 19130402017845</p>
+                        <p class="text-[11px] opacity-40 uppercase tracking-tighter">Issued: 11/2019 · Expires: 11/2024
+                        </p>
                     </div>
-                    <div class="skill-tile">
-                        <i data-lucide="terminal" style="width:18px;height:18px;stroke:var(--muted);flex-shrink:0;"></i>
-                        <span class="skill-name">JavaScript</span>
-                    </div>
-                    <div class="skill-tile">
-                        <i data-lucide="database" style="width:18px;height:18px;stroke:var(--muted);flex-shrink:0;"></i>
-                        <span class="skill-name">MySQL</span>
-                    </div>
-                    <div class="skill-tile">
-                        <i data-lucide="layout" style="width:18px;height:18px;stroke:var(--muted);flex-shrink:0;"></i>
-                        <span class="skill-name">Tailwind CSS</span>
-                    </div>
-                    <div class="skill-tile">
-                        <i data-lucide="git-branch"
-                            style="width:18px;height:18px;stroke:var(--muted);flex-shrink:0;"></i>
-                        <span class="skill-name">Git / GitHub</span>
-                    </div>
-                    <div class="skill-tile">
-                        <i data-lucide="server" style="width:18px;height:18px;stroke:var(--muted);flex-shrink:0;"></i>
-                        <span class="skill-name">Deployment</span>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="font-medium">RVN Tech-Voc Inc.: Web Development II</p>
+                        <p class="text-[11px] opacity-60 mt-1">Trainer: Steve Santos · Sector: ICT</p>
+                        <p class="text-[11px] opacity-40 uppercase tracking-tighter">Period: 12/2021 – 01/2022</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CERTIFICATIONS -->
-        <section id="certifications">
-            <div class="container">
-                <p class="sec-label">Certifications</p>
-                <div class="cert-grid">
-
-                    <div class="cert-card">
-                        <p class="cert-index">01</p>
-                        <p class="cert-issuer">TESDA NC II</p>
-                        <h3 class="cert-title">Animation</h3>
-                        <div class="cert-details">
-                            <p>No: 19130402017845</p>
-                            <p>Issued: 11/16/2019</p>
-                            <p class="expired">Expires: 11/15/2024</p>
-                        </div>
-                        <span class="cert-big-num">01</span>
-                    </div>
-
-                    <div class="cert-card">
-                        <p class="cert-index">02</p>
-                        <p class="cert-issuer">RVN Tech-Voc Inc.</p>
-                        <h3 class="cert-title">Web Development II</h3>
-                        <div class="cert-details">
-                            <p>Trainer: Steve Santos</p>
-                            <p>Period: 12/2021 – 01/2022</p>
-                            <p>Sector: ICT</p>
-                        </div>
-                        <span class="cert-big-num">02</span>
-                    </div>
-
+        <section>
+            <span class="section-title">Selected Projects</span>
+            <div class="space-y-6 text-sm">
+                <div class="flex justify-between items-center group">
+                    <a href="https://gerrmanitsolutions.com/" target="_blank"
+                        class="opacity-70 hover:opacity-100 transition-opacity">Gerrman IT Solutions</a>
+                    <span class="text-[10px] opacity-30">2025</span>
                 </div>
-            </div>
-        </section>
-
-        <!-- PROJECTS -->
-        <section id="projects">
-            <div class="container">
-                <p class="sec-label">Featured Projects</p>
-                <div class="projects-grid">
-
-                    <button onclick="openVideoModal()" class="proj-card">
-                        <div class="proj-top">
-                            <i class="proj-icon" data-lucide="play-circle"
-                                style="width:20px;height:20px;stroke:var(--muted);"></i>
-                            <i class="proj-arrow" data-lucide="arrow-up-right"
-                                style="width:16px;height:16px;stroke:var(--fg);"></i>
-                        </div>
-                        <p class="proj-title">Job Order Tracker</p>
-                        <p class="proj-meta">PHP · MySQL · Bootstrap</p>
+                <div class="flex justify-between items-center group">
+                    <a href="https://truvizionmultimedia.com/" target="_blank"
+                        class="opacity-70 hover:opacity-100 transition-opacity">Truvizion Multimedia</a>
+                    <span class="text-[10px] opacity-30">2026</span>
+                </div>
+                <div class="flex justify-between items-center group">
+                    <a href="https://servicio.world/" target="_blank"
+                        class="opacity-70 hover:opacity-100 transition-opacity">Servicio World</a>
+                    <span class="text-[10px] opacity-30">Live</span>
+                </div>
+                <div class="flex justify-between items-center group">
+                    <a href="https://www.inursereviewcenter.com/" target="_blank"
+                        class="opacity-70 hover:opacity-100 transition-opacity">iNurse Review Center</a>
+                    <span class="text-[10px] opacity-30">Live</span>
+                </div>
+                <div class="flex justify-between items-center group">
+                    <span class="opacity-70">Job Order Tracker</span>
+                    <button onclick="openVideoModal()"
+                        class="text-[10px] uppercase tracking-widest border border-current px-2 py-0.5 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
+                        Demo
                     </button>
-
-                    <a href="https://gerrmanitsolutions.com/" target="_blank" class="proj-card">
-                        <div class="proj-top">
-                            <i class="proj-icon" data-lucide="external-link"
-                                style="width:20px;height:20px;stroke:var(--muted);"></i>
-                            <i class="proj-arrow" data-lucide="arrow-up-right"
-                                style="width:16px;height:16px;stroke:var(--fg);"></i>
-                        </div>
-                        <p class="proj-title">Gerrman IT Solutions</p>
-                        <p class="proj-meta">Laravel · Tailwind CSS</p>
-                    </a>
-
-                    <a href="https://servicio.world/" target="_blank" class="proj-card">
-                        <div class="proj-top">
-                            <i class="proj-icon" data-lucide="smartphone"
-                                style="width:20px;height:20px;stroke:var(--muted);"></i>
-                            <i class="proj-arrow" data-lucide="arrow-up-right"
-                                style="width:16px;height:16px;stroke:var(--fg);"></i>
-                        </div>
-                        <p class="proj-title">Servicio Mobile App</p>
-                        <p class="proj-meta">Laravel · MySQL</p>
-                    </a>
-
-                    <a href="https://www.inursereviewcenter.com/" target="_blank" class="proj-card">
-                        <div class="proj-top">
-                            <i class="proj-icon" data-lucide="globe"
-                                style="width:20px;height:20px;stroke:var(--muted);"></i>
-                            <i class="proj-arrow" data-lucide="arrow-up-right"
-                                style="width:16px;height:16px;stroke:var(--fg);"></i>
-                        </div>
-                        <p class="proj-title">iNurse Review Center</p>
-                        <p class="proj-meta">WIX</p>
-                    </a>
-
-                    <a href="https://filipinohardware.com/" target="_blank" class="proj-card">
-                        <div class="proj-top">
-                            <i class="proj-icon" data-lucide="shopping-cart"
-                                style="width:20px;height:20px;stroke:var(--muted);"></i>
-                            <i class="proj-arrow" data-lucide="arrow-up-right"
-                                style="width:16px;height:16px;stroke:var(--fg);"></i>
-                        </div>
-                        <p class="proj-title">Filipino Hardware</p>
-                        <p class="proj-meta">Laravel · Tailwind CSS</p>
-                    </a>
-
-                    <a href="https://evacuationshelter.online/" target="_blank" class="proj-card">
-                        <div class="proj-top">
-                            <i class="proj-icon" data-lucide="shield-check"
-                                style="width:20px;height:20px;stroke:var(--muted);"></i>
-                            <i class="proj-arrow" data-lucide="arrow-up-right"
-                                style="width:16px;height:16px;stroke:var(--fg);"></i>
-                        </div>
-                        <p class="proj-title">Evacuation Shelter System</p>
-                        <p class="proj-meta">PHP · MySQL · Bootstrap</p>
-                    </a>
-
-                    <a href="https://pos.dhinearjona.online/login.php" target="_blank" class="proj-card">
-                        <div class="proj-top">
-                            <i class="proj-icon" data-lucide="banknote"
-                                style="width:20px;height:20px;stroke:var(--muted);"></i>
-                            <i class="proj-arrow" data-lucide="arrow-up-right"
-                                style="width:16px;height:16px;stroke:var(--fg);"></i>
-                        </div>
-                        <p class="proj-title">Point of Sale System</p>
-                        <p class="proj-meta">PHP · MySQL · JavaScript</p>
-                    </a>
-
-                    <a href="https://inventory.dhinearjona.online/" target="_blank" class="proj-card">
-                        <div class="proj-top">
-                            <i class="proj-icon" data-lucide="package"
-                                style="width:20px;height:20px;stroke:var(--muted);"></i>
-                            <i class="proj-arrow" data-lucide="arrow-up-right"
-                                style="width:16px;height:16px;stroke:var(--fg);"></i>
-                        </div>
-                        <p class="proj-title">Inventory Management</p>
-                        <p class="proj-meta">PHP · MySQL · Bootstrap</p>
-                    </a>
-
-                    <a href="https://rental.dhinearjona.online/login.php" target="_blank" class="proj-card">
-                        <div class="proj-top">
-                            <i class="proj-icon" data-lucide="key"
-                                style="width:20px;height:20px;stroke:var(--muted);"></i>
-                            <i class="proj-arrow" data-lucide="arrow-up-right"
-                                style="width:16px;height:16px;stroke:var(--fg);"></i>
-                        </div>
-                        <p class="proj-title">Rental Management</p>
-                        <p class="proj-meta">PHP · MySQL · Bootstrap</p>
-                    </a>
-
-                    <a href="https://school.dhinearjona.online/login.php" target="_blank" class="proj-card">
-                        <div class="proj-top">
-                            <i class="proj-icon" data-lucide="graduation-cap"
-                                style="width:20px;height:20px;stroke:var(--muted);"></i>
-                            <i class="proj-arrow" data-lucide="arrow-up-right"
-                                style="width:16px;height:16px;stroke:var(--fg);"></i>
-                        </div>
-                        <p class="proj-title">Classroom Management</p>
-                        <p class="proj-meta">PHP · MySQL · CSS</p>
-                    </a>
-
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT -->
-        <section id="contact">
-            <div class="container">
-                <p class="sec-label">Contact</p>
-                <div class="contact-box">
-                    <h2 class="contact-headline">
-                        Let's build something<br><em>extraordinary.</em>
-                    </h2>
-                    <div class="contact-links">
-                        <a href="mailto:dhinearjona@gmail.com" class="c-link">
-                            <i data-lucide="mail" style="width:14px;height:14px;"></i>
-                            dhinearjona@gmail.com
-                        </a>
-                        <a href="https://calendly.com/dhinearjona/15min" target="_blank" class="c-link">
-                            <i data-lucide="calendar" style="width:14px;height:14px;"></i>
-                            Schedule a Call
-                        </a>
-                    </div>
-                    <div class="social-row">
-                        <a href="https://github.com/Dhinearjona" target="_blank" class="soc-btn" title="GitHub">
-                            <i data-lucide="github" style="width:16px;height:16px;"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/dhinearjona/" target="_blank" class="soc-btn"
-                            title="LinkedIn">
-                            <i data-lucide="linkedin" style="width:16px;height:16px;"></i>
-                        </a>
-                    </div>
-                    <span class="contact-bg-glyph">&rarr;</span>
-                </div>
-            </div>
+        <section>
+            <span class="section-title">Connect</span>
+            <footer class="flex gap-10 text-xs font-medium">
+                 <a href="https://www.facebook.com/dhinearjona/" target="_blank"
+                    class="opacity-50 hover:opacity-100 transition-opacity underline underline-offset-8 decoration-neutral-300 dark:decoration-neutral-700">Facebook</a>
+                <a href="mailto:dhinearjona16@gmail.com"
+                    class="opacity-50 hover:opacity-100 transition-opacity underline underline-offset-8 decoration-neutral-300 dark:decoration-neutral-700">Email</a>
+                <a href="https://www.linkedin.com/in/dhinearjona/" target="_blank"
+                    class="opacity-50 hover:opacity-100 transition-opacity underline underline-offset-8 decoration-neutral-300 dark:decoration-neutral-700">LinkedIn</a>
+                <a href="https://github.com/Dhinearjona" target="_blank"
+                    class="opacity-50 hover:opacity-100 transition-opacity underline underline-offset-8 decoration-neutral-300 dark:decoration-neutral-700">GitHub</a>
+            </footer>
         </section>
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="container">
-        <p class="foot-text">&copy; <span id="year"></span> Dhine Franklin Arjona</p>
-        <p class="foot-text">Full Stack Developer</p>
-    </footer>
-
-    <!-- VIDEO MODAL -->
-    <div id="video-modal">
-        <div class="modal-inner">
-            <button class="modal-close" onclick="closeVideoModal()">
-                <i data-lucide="x" style="width:14px;height:14px;"></i>
-            </button>
-            <video id="job-order-video" controls>
-                <source src="assets/video/JobOrderTracker.mp4" type="video/mp4" />
-            </video>
+    <div id="videoModal"
+        class="fixed inset-0 bg-white/95 dark:bg-black/95 hidden items-center justify-center z-50 p-6 backdrop-blur-sm">
+        <div class="max-w-4xl w-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black">
+            <div class="flex justify-between items-center p-4 border-b border-neutral-200 dark:border-neutral-800">
+                <span class="text-[10px] uppercase tracking-widest opacity-50">Project Demo</span>
+                <button onclick="closeVideoModal()" class="text-[10px] uppercase tracking-widest hover:opacity-50">Close
+                    [esc]</button>
+            </div>
+            <div class="aspect-video bg-neutral-100 dark:bg-neutral-900">
+                <video id="modalVideo" controls class="w-full h-full">
+                    <source src="assets/video/JobOrderTracker.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
     </div>
 
     <script>
-        lucide.createIcons();
-
-        // ── YEAR
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // ── THEME
+        const modal = document.getElementById('videoModal');
+        const video = document.getElementById('modalVideo');
         const html = document.documentElement;
-        const icon = document.getElementById('theme-icon');
 
-        const saved = localStorage.getItem('theme') ||
-            (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        applyTheme(saved);
-
-        document.getElementById('theme-btn').addEventListener('click', () => {
-            const next = html.classList.contains('dark') ? 'light' : 'dark';
-            applyTheme(next);
-            localStorage.setItem('theme', next);
-        });
-
-        function applyTheme(t) {
-            html.classList.toggle('dark', t === 'dark');
-            icon.setAttribute('data-lucide', t === 'dark' ? 'sun' : 'moon');
-            lucide.createIcons();
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
         }
 
-        // ── MODAL
+        function toggleTheme() {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+
         function openVideoModal() {
-            const m = document.getElementById('video-modal');
-            m.classList.add('open');
-            document.body.style.overflow = 'hidden';
-            document.getElementById('job-order-video').play();
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            video.play();
         }
 
         function closeVideoModal() {
-            const m = document.getElementById('video-modal');
-            m.classList.remove('open');
-            document.body.style.overflow = '';
-            const v = document.getElementById('job-order-video');
-            v.pause();
-            v.currentTime = 0;
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            video.pause();
+            video.currentTime = 0;
         }
-        document.getElementById('video-modal').addEventListener('click', e => {
-            if (e.target === e.currentTarget) closeVideoModal();
+
+        document.addEventListener('keydown', e => {
+            if (e.key === "Escape") closeVideoModal();
+        });
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeVideoModal();
         });
     </script>
 </body>
