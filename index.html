@@ -2,12 +2,18 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dhine Arjona | Web Developer</title>
+
     <link rel="shortcut icon" href="assets/img/profile.png" type="image/x-icon">
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -53,10 +59,21 @@
     <main class="max-w-xl mx-auto px-8 py-24 space-y-24">
 
         <section>
-            <h1 class="text-3xl font-semibold mb-2 tracking-tighter">Dhine Franklin Arjona</h1>
-            <p class="text-sm font-medium uppercase tracking-widest opacity-60 mb-6">Web Developer</p>
+            <div class="flex items-center gap-6 mb-6">
+                <img src="assets/img/profile.png" alt="Dhine Franklin Arjona"
+                    class="w-24 h-24 rounded-full object-cover border-2 border-neutral-200 dark:border-neutral-800">
+
+                <div>
+                    <h1 class="text-3xl font-semibold mb-1 tracking-tighter">Dhine Franklin Arjona
+                    </h1>
+                    <p class="text-sm font-medium uppercase tracking-widest opacity-60">Web
+                        Developer</p>
+                </div>
+            </div>
+
             <p class="text-neutral-500 dark:text-neutral-400 leading-relaxed text-sm max-w-md">
-                Focused on building minimalist, high-performance web applications. Expert in automating workflows and
+                Focused on building minimalist, high-performance web applications. Expert in automating
+                workflows and
                 creating clean, data-driven systems.
             </p>
         </section>
@@ -81,15 +98,18 @@
                     <div>
                         <p class="font-medium">TESDA NC II: Animation</p>
                         <p class="text-[11px] opacity-60 mt-1">No: 19130402017845</p>
-                        <p class="text-[11px] opacity-40 uppercase tracking-tighter">Issued: 11/2019 · Expires: 11/2024
+                        <p class="text-[11px] opacity-40 uppercase tracking-tighter">Issued:
+                            11/2019 · Expires: 11/2024
                         </p>
                     </div>
                 </div>
                 <div class="flex justify-between items-start">
                     <div>
                         <p class="font-medium">RVN Tech-Voc Inc.: Web Development II</p>
-                        <p class="text-[11px] opacity-60 mt-1">Trainer: Steve Santos · Sector: ICT</p>
-                        <p class="text-[11px] opacity-40 uppercase tracking-tighter">Period: 12/2021 – 01/2022</p>
+                        <p class="text-[11px] opacity-60 mt-1">Trainer: Steve Santos · Sector:
+                            ICT</p>
+                        <p class="text-[11px] opacity-40 uppercase tracking-tighter">Period:
+                            12/2021 – 01/2022</p>
                     </div>
                 </div>
             </div>
@@ -131,7 +151,7 @@
         <section>
             <span class="section-title">Connect</span>
             <footer class="flex gap-10 text-xs font-medium">
-                 <a href="https://www.facebook.com/dhinearjona/" target="_blank"
+                <a href="https://www.facebook.com/dhinearjona/" target="_blank"
                     class="opacity-50 hover:opacity-100 transition-opacity underline underline-offset-8 decoration-neutral-300 dark:decoration-neutral-700">Facebook</a>
                 <a href="mailto:dhinearjona16@gmail.com"
                     class="opacity-50 hover:opacity-100 transition-opacity underline underline-offset-8 decoration-neutral-300 dark:decoration-neutral-700">Email</a>
@@ -154,17 +174,30 @@
             </div>
             <div class="aspect-video bg-neutral-100 dark:bg-neutral-900">
                 <video id="modalVideo" controls class="w-full h-full">
+
                     <source src="assets/video/JobOrderTracker.mp4" type="video/mp4">
+
                 </video>
             </div>
+
+            <script>
+                function openVideoModal() {
+                    document.getElementById('videoModal').classList.remove('hidden');
+                    document.getElementById('videoModal').classList.add('flex');
+                }
+
+                function closeVideoModal() {
+                    document.getElementById('videoModal').classList.add('hidden');
+                    document.getElementById('videoModal').classList.remove('flex');
+                }
+            </script>
+
         </div>
     </div>
 
-    <script>
-        const modal = document.getElementById('videoModal');
-        const video = document.getElementById('modalVideo');
-        const html = document.documentElement;
 
+    <script>
+        const html = document.documentElement;
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia(
                 '(prefers-color-scheme: dark)').matches)) {
             html.classList.add('dark');
@@ -181,26 +214,6 @@
                 localStorage.theme = 'dark';
             }
         }
-
-        function openVideoModal() {
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            video.play();
-        }
-
-        function closeVideoModal() {
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-            video.pause();
-            video.currentTime = 0;
-        }
-
-        document.addEventListener('keydown', e => {
-            if (e.key === "Escape") closeVideoModal();
-        });
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeVideoModal();
-        });
     </script>
 </body>
 
