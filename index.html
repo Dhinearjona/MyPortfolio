@@ -121,12 +121,17 @@
                 <div class="flex justify-between items-center group">
                     <a href="https://gerrmanitsolutions.com/" target="_blank"
                         class="opacity-70 hover:opacity-100 transition-opacity">Gerrman IT Solutions</a>
-                    <span class="text-[10px] opacity-30">2025</span>
+                    <span class="text-[10px] opacity-30">Live</span>
+                </div>
+                <div class="flex justify-between items-center group">
+                    <a href="https://goldenhorselimo.com/" target="_blank"
+                        class="opacity-70 hover:opacity-100 transition-opacity font-medium">Golden Horse Limo</a>
+                    <span class="text-[10px] opacity-30">Live</span>
                 </div>
                 <div class="flex justify-between items-center group">
                     <a href="https://truvizionmultimedia.com/" target="_blank"
                         class="opacity-70 hover:opacity-100 transition-opacity">Truvizion Multimedia</a>
-                    <span class="text-[10px] opacity-30">2026</span>
+                    <span class="text-[10px] opacity-30">Live</span>
                 </div>
                 <div class="flex justify-between items-center group">
                     <a href="https://servicio.world/" target="_blank"
@@ -182,14 +187,29 @@
 
             <script>
                 function openVideoModal() {
-                    document.getElementById('videoModal').classList.remove('hidden');
-                    document.getElementById('videoModal').classList.add('flex');
+                    const modal = document.getElementById('videoModal');
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
                 }
 
                 function closeVideoModal() {
-                    document.getElementById('videoModal').classList.add('hidden');
-                    document.getElementById('videoModal').classList.remove('flex');
+                    const modal = document.getElementById('videoModal');
+                    const video = document.getElementById('modalVideo');
+
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                    video.pause();
+                    video.currentTime = 0;
                 }
+
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === "Escape") {
+                        const modal = document.getElementById('videoModal');
+                        if (!modal.classList.contains('hidden')) {
+                            closeVideoModal();
+                        }
+                    }
+                });
             </script>
 
         </div>
