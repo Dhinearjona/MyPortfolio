@@ -32,6 +32,7 @@
         body {
             background-color: #000000;
             color: #FFFFFF;
+            overflow-x: hidden;
         }
 
         .bento-card {
@@ -39,18 +40,33 @@
             border: 1px solid #1A1A1A;
             border-radius: 1rem;
             padding: 1.5rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
         }
 
         .bento-card:hover {
             border-color: #FF0000;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.05);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            filter: blur(5px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
         }
 
         .project-item {
             border-bottom: 1px solid #1A1A1A;
             padding: 1rem 0;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
         }
 
         .project-item:last-child {
@@ -58,306 +74,236 @@
         }
 
         .project-item:hover {
-            padding-left: 0.5rem;
+            padding-left: 0.75rem;
             border-color: #FF0000;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease-out;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
+            background: rgba(255, 0, 0, 0.02);
         }
     </style>
 </head>
 
-<body class="antialiased p-4 md:p-8 font-sans">
-
+<body class="antialiased p-4 md:p-8 font-sans uppercase">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-4">
-
-        <div class="bento-card md:col-span-4 flex flex-col md:flex-row gap-6 items-center md:items-start reveal">
-            <img src="assets/img/profile.png" class="w-28 h-28 rounded-xl object-cover border border-border"
-                alt="Profile">
+        <div
+            class="bento-card col-span-1 md:col-span-4 flex flex-col md:flex-row gap-6 items-center md:items-start reveal">
+            <img src="assets/img/profile.png"
+                class="w-24 h-24 md:w-28 md:h-28 rounded-xl object-cover border border-border" alt="Profile">
             <div class="space-y-3 text-center md:text-left">
-                <div class="flex items-center justify-center md:justify-start gap-2">
-                    <h1 class="text-4xl font-extrabold tracking-tighter">Dhine Franklin <span
+                <div class="flex flex-col md:flex-row items-center md:justify-start gap-2">
+                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tighter italic">Dhine Franklin <span
                             class="text-brand">Arjona</span></h1>
-                    <img src="assets/img/social-media.png" class="w-5 h-5 object-contain" alt="Verified">
+                    <img src="assets/img/social-media.png" class="hidden md:block w-5 h-5 object-contain"
+                        alt="Verified">
                 </div>
-
                 <div class="flex flex-col gap-1">
-                    <p class="text-white text-sm font-bold tracking-wide uppercase">Web Developer / AI Automation</p>
-                    <p class="text-gray-400 text-xs">Malabon City, Philippines</p>
+                    <p class="text-white text-xs md:text-sm font-bold tracking-wide">Web Developer / AI Automation</p>
+                    <p class="text-gray-400 text-[10px] md:text-xs">Malabon City, Philippines</p>
                 </div>
-
-                <div class="flex flex-wrap gap-x-4 gap-y-2 justify-center md:justify-start pt-2">
+                <div class="flex flex-wrap gap-x-4 gap-y-3 justify-center md:justify-start pt-2">
                     <a href="mailto:dhinearjona16@gmail.com"
-                        class="text-[10px] font-bold text-brand uppercase tracking-widest border-b border-brand">Email</a>
+                        class="text-[10px] font-bold text-brand tracking-widest border-b border-brand">Email</a>
                     <a href="https://github.com/Dhinearjona" target="_blank"
-                        class="text-[10px] font-bold text-gray-500 uppercase tracking-widest hover:text-white transition-colors">GitHub</a>
+                        class="text-[10px] font-bold text-gray-500 tracking-widest hover:text-white transition-colors">GitHub</a>
                     <a href="https://www.linkedin.com/in/dhinearjona/" target="_blank"
-                        class="text-[10px] font-bold text-gray-500 uppercase tracking-widest hover:text-white transition-colors">LinkedIn</a>
+                        class="text-[10px] font-bold text-gray-500 tracking-widest hover:text-white transition-colors">LinkedIn</a>
                     <a href="https://www.facebook.com/dhinearjona/" target="_blank"
-                        class="text-[10px] font-bold text-gray-500 uppercase tracking-widest hover:text-white transition-colors">Facebook</a>
+                        class="text-[10px] font-bold text-gray-500 tracking-widest hover:text-white transition-colors">Facebook</a>
                 </div>
             </div>
         </div>
-
-        <div class="bento-card md:col-span-2 reveal">
-            <h3 class="text-[10px] font-bold text-brand uppercase tracking-widest mb-4">Core Stack</h3>
+        <div class="bento-card col-span-1 md:col-span-2 reveal" style="transition-delay: 100ms;">
+            <h3 class="text-[10px] font-bold text-brand tracking-widest mb-4">Core Stack</h3>
             <div class="flex flex-wrap gap-2">
-                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">JavaScript</span>
-                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">PHP / MySQL</span>
-                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">Laravel</span>
-                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">Google Apps
+                <span class="text-[9px] font-mono bg-white/5 px-2 py-1 rounded border border-border">PHP
+                    (Laravel)</span>
+                <span class="text-[9px] font-mono bg-white/5 px-2 py-1 rounded border border-border">JavaScript</span>
+                <span class="text-[9px] font-mono bg-white/5 px-2 py-1 rounded border border-border">MySQL</span>
+                <span class="text-[9px] font-mono bg-white/5 px-2 py-1 rounded border border-border">Google Apps
                     Script</span>
-                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">Firebase</span>
-                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">Tailwind
-                    CSS</span>
-                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">Bootstrap 5</span>
-                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">Git /
-                    GitHub</span>
-                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">HTML5 /
-                    CSS3</span>
+                <span class="text-[9px] font-mono bg-white/5 px-2 py-1 rounded border border-border">Firebase</span>
+                <span class="text-[9px] font-mono bg-white/5 px-2 py-1 rounded border border-border">Tailwind CSS</span>
+                <span class="text-[9px] font-mono bg-white/5 px-2 py-1 rounded border border-border">Bootstrap 5</span>
+                <span class="text-[9px] font-mono bg-white/5 px-2 py-1 rounded border border-border">Git / GitHub</span>
             </div>
         </div>
-
-        <div class="bento-card md:col-span-3 md:row-span-2 reveal">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-[10px] font-bold text-brand uppercase tracking-widest">Selected Projects</h3>
-            </div>
+        <div class="bento-card col-span-1 md:col-span-3 md:row-span-2 reveal">
+            <h3 class="text-[10px] font-bold text-brand tracking-widest mb-6 italic">Selected Projects</h3>
             <div class="space-y-1">
                 <a href="https://attendo.dhinearjona.online/login.php" target="_blank" class="project-item block group">
                     <div class="flex items-center justify-between">
                         <span class="text-sm font-bold group-hover:text-brand transition-colors">Atendo HRIS
                             (PWA)</span>
-                        <svg class="w-3 h-3 text-gray-600 group-hover:text-brand transition-colors" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-3 h-3 text-gray-600 group-hover:text-brand" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                     </div>
-                    <p class="text-[10px] text-gray-500 mt-1">GPS-verified attendance tracking and automated leave
-                        management system.</p>
+                    <p class="text-[10px] text-gray-500 mt-1 normal-case italic">GPS-verified attendance tracking and
+                        automated leave management.</p>
                 </a>
-
                 <a href="https://truvizionmultimedia.com/" target="_blank" class="project-item block group">
                     <div class="flex items-center justify-between">
                         <span class="text-sm font-bold group-hover:text-brand transition-colors">Tru-Vizion
                             Multimedia</span>
-                        <svg class="w-3 h-3 text-gray-600 group-hover:text-brand transition-colors" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-3 h-3 text-gray-600 group-hover:text-brand" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                     </div>
-                    <p class="text-[10px] text-gray-500 mt-1">Digital product showcase and administrative hardware
-                        inventory portal.</p>
+                    <p class="text-[10px] text-gray-500 mt-1 normal-case italic">Digital product showcase and
+                        administrative hardware inventory portal.</p>
                 </a>
-
                 <div class="project-item group cursor-pointer" onclick="openVideoModal()">
                     <div class="flex items-center justify-between">
                         <span class="text-sm font-bold group-hover:text-brand transition-colors">Job Order
                             Tracker</span>
-                        <svg class="w-3.5 h-3.5 text-gray-600 group-hover:text-brand transition-colors"
-                            fill="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-3.5 h-3.5 text-gray-600 group-hover:text-brand" fill="currentColor"
+                            viewBox="0 0 24 24">
                             <path
                                 d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
                         </svg>
                     </div>
-                    <p class="text-[10px] text-gray-500 mt-1">Internal workflow automation for task monitoring and
-                        reporting.</p>
+                    <p class="text-[10px] text-gray-500 mt-1 normal-case italic">Internal workflow automation for task
+                        monitoring and reporting.</p>
                 </div>
-
                 <a href="https://servicio.world/" target="_blank" class="project-item block group">
                     <div class="flex items-center justify-between">
                         <span class="text-sm font-bold group-hover:text-brand transition-colors">Servicio World</span>
-                        <svg class="w-3 h-3 text-gray-600 group-hover:text-brand transition-colors" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-3 h-3 text-gray-600 group-hover:text-brand" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                     </div>
-                    <p class="text-[10px] text-gray-500 mt-1">Service management platform providing digital solutions
-                        and logistics.</p>
+                    <p class="text-[10px] text-gray-500 mt-1 normal-case italic">Service management platform providing
+                        digital solutions and logistics.</p>
                 </a>
-
                 <a href="https://goldenhorselimo.com/" target="_blank" class="project-item block group">
                     <div class="flex items-center justify-between">
                         <span class="text-sm font-bold group-hover:text-brand transition-colors">Golden Horse
                             Limo</span>
-                        <svg class="w-3 h-3 text-gray-600 group-hover:text-brand transition-colors" fill="none"
+                        <svg class="w-3 h-3 text-gray-600 group-hover:text-brand" fill="none"
                             stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                     </div>
-                    <p class="text-[10px] text-gray-500 mt-1">High-end limousine service portal for luxury
-                        transportation bookings.</p>
+                    <p class="text-[10px] text-gray-500 mt-1 normal-case italic">High-end limousine service portal for
+                        luxury transportation bookings.</p>
                 </a>
-
                 <a href="https://gerrmanitsolutions.com/" target="_blank"
                     class="project-item block group border-none">
                     <div class="flex items-center justify-between">
                         <span class="text-sm font-bold group-hover:text-brand transition-colors">Gerrman IT
                             Solutions</span>
-                        <svg class="w-3 h-3 text-gray-600 group-hover:text-brand transition-colors" fill="none"
+                        <svg class="w-3 h-3 text-gray-600 group-hover:text-brand" fill="none"
                             stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                     </div>
-                    <p class="text-[10px] text-gray-500 mt-1">Official corporate website showcasing specialized IT
-                        services and solutions.</p>
+                    <p class="text-[10px] text-gray-500 mt-1 normal-case italic">Official corporate website showcasing
+                        specialized IT services.</p>
                 </a>
             </div>
         </div>
-
-        <div class="bento-card md:col-span-3 md:row-span-2 reveal group">
-            <div class="flex items-center justify-between mb-8">
-                <h3 class="text-[10px] font-bold text-brand uppercase tracking-widest">Work Experience</h3>
-            </div>
-
+        <div class="bento-card col-span-1 md:col-span-3 md:row-span-2 reveal" style="transition-delay: 200ms;">
+            <h3 class="text-[10px] font-bold text-brand tracking-widest mb-8">Work Experience</h3>
             <div class="space-y-8">
                 <div
-                    class="group/item relative pl-8 pb-4 border-l border-brand/20 hover:border-brand/50 transition-colors duration-500">
+                    class="group/item relative pl-6 md:pl-8 pb-4 border-l border-brand/20 hover:border-brand/50 transition-colors">
                     <div
                         class="absolute w-3 h-3 bg-background border-2 border-brand rounded-full -left-[6.5px] top-1.5 shadow-[0_0_10px_#FF0000] z-10">
                     </div>
-
-                    <div class="space-y-2 transform group-hover/item:translate-x-1 transition-transform duration-300">
-                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-                            <h4
-                                class="text-sm font-extrabold uppercase tracking-tight text-white group-hover/item:text-brand transition-colors">
-                                Web Developer</h4>
+                    <div class="space-y-2">
+                        <div class="flex flex-col gap-1">
+                            <h4 class="text-sm font-extrabold text-white group-hover/item:text-brand">Web Developer
+                            </h4>
                             <span
-                                class="text-[9px] font-mono text-brand bg-brand/5 px-2 py-0.5 rounded-full border border-brand/20 w-fit uppercase">Feb
+                                class="text-[8px] md:text-[9px] font-mono text-brand bg-brand/5 px-2 py-0.5 rounded-full border border-brand/20 w-fit">Feb
                                 2026 — Mar 2026</span>
                         </div>
-                        <p class="text-[11px] text-gray-300 font-semibold tracking-wide">A2Z2GO Marketing Corporation
-                        </p>
-                        <ul class="text-[10px] text-gray-500 space-y-1 list-disc ml-4">
-                            <li>Developed automated reporting systems using <span class="text-gray-300">Google Apps
-                                    Script</span>, reducing manual data entry.</li>
-                            <li>Engineered <span class="text-gray-300">PDF generation logic</span> for structured
-                                employee attendance summaries.</li>
+                        <p class="text-[10px] md:text-[11px] text-gray-300 font-semibold tracking-wide">A2Z2GO
+                            Marketing Corporation</p>
+                        <ul class="text-[9px] text-gray-500 space-y-1 list-disc ml-4 normal-case">
+                            <li>Automated reporting via Google Apps Script.</li>
+                            <li>Engineered custom PDF generation logic.</li>
                         </ul>
                     </div>
                 </div>
-
                 <div
-                    class="group/item relative pl-8 pb-4 border-l border-white/5 hover:border-white/20 transition-colors duration-500">
+                    class="group/item relative pl-6 md:pl-8 pb-4 border-l border-white/5 hover:border-white/20 transition-colors">
                     <div
-                        class="absolute w-2 h-2 bg-border border border-white/20 rounded-full -left-[4.5px] top-2 z-10 group-hover/item:bg-white/40 transition-colors">
+                        class="absolute w-2 h-2 bg-border border border-white/20 rounded-full -left-[4.5px] top-2 z-10">
                     </div>
-
-                    <div class="space-y-2 transform group-hover/item:translate-x-1 transition-transform duration-300">
-                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-                            <h4 class="text-sm font-bold uppercase tracking-tight text-gray-400">Junior Developer</h4>
+                    <div class="space-y-2">
+                        <div class="flex flex-col gap-1">
+                            <h4 class="text-sm font-bold text-gray-400">Junior Developer</h4>
                             <span
-                                class="text-[9px] font-mono text-gray-600 border border-white/5 px-2 py-0.5 rounded-full w-fit uppercase">Apr
+                                class="text-[8px] md:text-[9px] font-mono text-gray-600 border border-white/5 px-2 py-0.5 rounded-full w-fit">Apr
                                 2025 — Nov 2025</span>
                         </div>
-                        <p class="text-[11px] text-gray-500 font-medium tracking-wide">Myracle Innovation Inc.</p>
-                        <ul class="text-[10px] text-gray-600 space-y-1 list-disc ml-4">
-                            <li>Developed SaaS-style <span class="text-gray-500">Inventory Management</span>, Job
-                                Orders, and Sales Tracking platforms using PHP and MySQL.</li>
-                            <li>Engineered <span class="text-gray-500">Order Fulfillment</span> workflows to streamline
-                                internal business processes and task monitoring.</li>
-                            <li>Managed full-cycle deployment, hosting setup, and version control via <span
-                                    class="text-gray-500">Git/GitHub</span>.</li>
+                        <p class="text-[10px] md:text-[11px] text-gray-500 font-medium tracking-wide">Myracle
+                            Innovation Inc.</p>
+                        <ul class="text-[9px] text-gray-600 space-y-1 list-disc ml-4 normal-case">
+                            <li>Built SaaS Inventory, Job Order, and POS systems.</li>
+                            <li>Managed full-cycle deployment and version control.</li>
                         </ul>
                     </div>
                 </div>
-
                 <div
-                    class="group/item relative pl-8 border-l border-white/5 hover:border-white/20 transition-colors duration-500">
+                    class="group/item relative pl-6 md:pl-8 border-l border-white/5 hover:border-white/20 transition-colors">
                     <div
-                        class="absolute w-2 h-2 bg-border border border-white/20 rounded-full -left-[4.5px] top-2 z-10 group-hover/item:bg-white/40 transition-colors">
+                        class="absolute w-2 h-2 bg-border border border-white/20 rounded-full -left-[4.5px] top-2 z-10">
                     </div>
-
-                    <div class="space-y-2 transform group-hover/item:translate-x-1 transition-transform duration-300">
-                        <div class="flex flex-col sm:flex-row sm:items-baselin  e sm:justify-between gap-1">
-                            <h4 class="text-sm font-bold uppercase tracking-tight text-gray-400">Web Developer</h4>
+                    <div class="space-y-2">
+                        <div class="flex flex-col gap-1">
+                            <h4 class="text-sm font-bold text-gray-400">Web Developer</h4>
                             <span
-                                class="text-[9px] font-mono text-gray-600 border border-white/5 px-2 py-0.5 rounded-full w-fit uppercase">Nov
+                                class="text-[8px] md:text-[9px] font-mono text-gray-600 border border-white/5 px-2 py-0.5 rounded-full w-fit">Nov
                                 2023 — Apr 2025</span>
                         </div>
-                        <p class="text-[11px] text-gray-500 font-medium tracking-wide">Gerrman IT Solutions Inc.</p>
-                        <ul class="text-[10px] text-gray-600 space-y-1 list-disc ml-4">
-                            <li>Developed high-performance landing pages using <span
-                                    class="text-gray-500">Laravel</span>, Tailwind CSS, and Bootstrap 5.</li>
-                            <li>Integrated <span class="text-gray-500">Firebase</span> for dynamic image storage and
-                                automated deployments via Bash scripts.</li>
+                        <p class="text-[10px] md:text-[11px] text-gray-500 font-medium tracking-wide">Gerrman IT
+                            Solutions Inc.</p>
+                        <ul class="text-[9px] text-gray-600 space-y-1 list-disc ml-4 normal-case">
+                            <li>Developed landing pages using Laravel and Tailwind.</li>
+                            <li>Integrated Firebase for dynamic image storage.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="bento-card md:col-span-6 reveal">
-            <div class="flex items-center justify-between mb-6">
-                <h3 class="text-[10px] font-bold text-white uppercase tracking-widest">Professional Credentials</h3>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bento-card col-span-1 md:col-span-6 reveal">
+            <h3 class="text-[10px] font-bold text-white tracking-widest mb-6 italic">Education & Credentials</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div
-                    class="group/cert p-4 border border-border rounded-xl bg-white/[0.02] hover:border-brand/30 transition-all duration-300">
-                    <div class="flex justify-between items-start mb-2">
-                        <div>
-                            <p class="text-[10px] font-bold text-brand uppercase tracking-tighter">TESDA National
-                                Certificate II</p>
-                            <p class="text-sm font-extrabold text-white mt-0.5">Animation</p>
-                        </div>
-                        <div class="text-right">
-                            <p class="text-[9px] text-gray-500 font-mono">No: 19130402017845</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-4 mt-4 pt-4 border-t border-border/50">
-                        <div>
-                            <p class="text-[8px] text-gray-500 uppercase font-bold">Issued</p>
-                            <p class="text-[10px] text-gray-300">Nov 2019</p>
-                        </div>
-                        <div>
-                            <p class="text-[8px] text-gray-500 uppercase font-bold">Expires</p>
-                            <p class="text-[10px] text-gray-300">Nov 2024</p>
-                        </div>
-                    </div>
+                    class="p-4 border border-border rounded-xl bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                    <p class="text-[10px] font-bold text-brand">BS Information Technology</p>
+                    <p class="text-sm font-extrabold text-white">Datamex College of Saint Adeline</p>
+                    <p class="text-[9px] text-gray-500 font-mono mt-1">Batch 2020 - 2024</p>
                 </div>
-
                 <div
-                    class="group/cert p-4 border border-border rounded-xl bg-white/[0.02] hover:border-brand/30 transition-all duration-300">
-                    <div class="flex justify-between items-start mb-2">
-                        <div>
-                            <p class="text-[10px] font-bold text-brand uppercase tracking-tighter">RVN Tech-Voc Inc.
-                            </p>
-                            <p class="text-sm font-extrabold text-white mt-0.5">Web Development II</p>
-                        </div>
-                        <div class="text-right">
-                            <p class="text-[9px] text-gray-500 font-mono italic">Trainer: Steve Santos</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-4 mt-4 pt-4 border-t border-border/50">
-                        <div>
-                            <p class="text-[8px] text-gray-500 uppercase font-bold">Period</p>
-                            <p class="text-[10px] text-gray-300">Dec 2021 - Jan 2022</p>
-                        </div>
-                    </div>
+                    class="p-4 border border-border rounded-xl bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                    <p class="text-[10px] font-bold text-brand">TESDA NC II: Animation</p>
+                    <p class="text-sm font-extrabold text-white">College of Saint Amatiel</p>
+                    <p class="text-[9px] text-gray-500 font-mono mt-2">No: 19130402017845</p>
+                    <p class="text-[9px] text-gray-500">Issued: Nov 2019</p>
+                </div>
+                <div
+                    class="p-4 border border-border rounded-xl bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                    <p class="text-[10px] font-bold text-brand">Web Development II</p>
+                    <p class="text-sm font-extrabold text-white">RVN Tech-Voc Inc.</p>
+                    <p class="text-[9px] text-gray-500 font-mono mt-1">Trainer: Steve Santos</p>
                 </div>
             </div>
         </div>
-
     </div>
-
     <div id="videoModal"
         class="fixed inset-0 bg-black/95 hidden items-center justify-center z-[100] p-4 backdrop-blur-sm">
         <div class="max-w-4xl w-full border border-white/10 bg-card rounded-2xl overflow-hidden shadow-2xl">
             <div class="flex justify-between items-center p-4 border-b border-border">
-                <span class="text-[10px] font-bold text-brand uppercase tracking-widest">Demo: Job Order Tracker</span>
+                <span class="text-[10px] font-bold text-brand tracking-widest italic">Demo: Job Order Tracker</span>
                 <button onclick="closeVideoModal()" class="text-xs font-bold hover:text-brand">CLOSE [ESC]</button>
             </div>
             <div class="aspect-video bg-black">
@@ -367,15 +313,16 @@
             </div>
         </div>
     </div>
-
     <script>
-        const observer = new IntersectionObserver(entries => {
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
+                if (entry.isIntersecting) entry.target.classList.add('active');
             });
-        }, {
-            threshold: 0.1
-        });
+        }, observerOptions);
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
         function openVideoModal() {
@@ -386,11 +333,9 @@
 
         function closeVideoModal() {
             const modal = document.getElementById('videoModal');
-            const video = document.getElementById('modalVideo');
+            document.getElementById('modalVideo').pause();
             modal.classList.add('hidden');
             modal.classList.remove('flex');
-            video.pause();
-            video.currentTime = 0;
             document.body.style.overflow = 'auto';
         }
         document.addEventListener('keydown', e => {
