@@ -1,358 +1,364 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dhine Franklin Arjona — Web Developer</title>
-  <link rel="icon" href="assets/img/profile.png" type="image/png">
-  <link rel="shortcut icon" href="assets/img/profile.png" type="image/png">
-  <link rel="apple-touch-icon" href="assets/img/profile.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dhine Franklin Arjona — Full-Stack Developer</title>
+    <link rel="icon" href="assets/img/profile.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
-                        border: "hsl(var(--border))",
-                        input: "hsl(var(--input))",
-                        ring: "hsl(var(--ring))",
-                        background: "hsl(var(--background))",
-                        foreground: "hsl(var(--foreground))",
-                        primary: {
-                            DEFAULT: "hsl(var(--primary))",
-                            foreground: "hsl(var(--primary-foreground))",
-                        },
-                        secondary: {
-                            DEFAULT: "hsl(var(--secondary))",
-                            foreground: "hsl(var(--secondary-foreground))",
-                        },
-                        destructive: {
-                            DEFAULT: "hsl(var(--destructive))",
-                            foreground: "hsl(var(--destructive-foreground))",
-                        },
-                        muted: {
-                            DEFAULT: "hsl(var(--muted))",
-                            foreground: "hsl(var(--muted-foreground))",
-                        },
-                        accent: {
-                            DEFAULT: "hsl(var(--accent))",
-                            foreground: "hsl(var(--accent-foreground))",
-                        },
-                        popover: {
-                            DEFAULT: "hsl(var(--popover))",
-                            foreground: "hsl(var(--popover-foreground))",
-                        },
-                        card: {
-                            DEFAULT: "hsl(var(--card))",
-                            foreground: "hsl(var(--card-foreground))",
-                        },
-                    },
-                    borderRadius: {
-                        lg: "var(--radius)",
-                        md: "calc(var(--radius) - 2px)",
-                        sm: "calc(var(--radius) - 4px)",
+                        brand: "#FF0000",
+                        border: "#1A1A1A",
+                        background: "#000000",
+                        card: "#050505",
                     },
                 }
             }
         }
     </script>
     <style>
-        :root {
-            --background: 0 0% 100%;
-            --foreground: 0 0% 0%;
-            --card: 0 0% 100%;
-            --card-foreground: 0 0% 0%;
-            --popover: 0 0% 100%;
-            --popover-foreground: 0 0% 0%;
-            --primary: 0 100% 50%;
-            --primary-foreground: 0 0% 100%;
-            --secondary: 0 0% 95%;
-            --secondary-foreground: 0 0% 0%;
-            --muted: 0 0% 95%;
-            --muted-foreground: 0 0% 40%;
-            --accent: 0 0% 95%;
-            --accent-foreground: 0 0% 0%;
-            --destructive: 0 100% 50%;
-            --destructive-foreground: 0 0% 100%;
-            --border: 0 0% 90%;
-            --input: 0 0% 90%;
-            --ring: 0 100% 50%;
-            --radius: 0.5rem;
-        }
-
-        .dark {
-            --background: 0 0% 0%;
-            --foreground: 0 0% 100%;
-            --card: 0 0% 10%;
-            --card-foreground: 0 0% 100%;
-            --popover: 0 0% 10%;
-            --popover-foreground: 0 0% 100%;
-            --primary: 0 100% 50%;
-            --primary-foreground: 0 0% 100%;
-            --secondary: 0 0% 20%;
-            --secondary-foreground: 0 0% 100%;
-            --muted: 0 0% 20%;
-            --muted-foreground: 0 0% 60%;
-            --accent: 0 0% 20%;
-            --accent-foreground: 0 0% 100%;
-            --destructive: 0 100% 50%;
-            --destructive-foreground: 0 0% 100%;
-            --border: 0 0% 30%;
-            --input: 0 0% 30%;
-            --ring: 0 100% 50%;
-        }
-
         body {
-            font-family: 'Sora', sans-serif;
-            background-color: hsl(var(--background));
-            color: hsl(var(--foreground));
-            transition: background-color 0.3s, color 0.3s;
+            background-color: #000000;
+            color: #FFFFFF;
         }
 
-        /* Gradient mesh background */
-        .hero-bg {
-          background-image:
-            radial-gradient(ellipse 80% 60% at 20% 30%, rgba(34,197,94,0.08) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 50% at 80% 70%, rgba(59,130,246,0.05) 0%, transparent 60%);
-        }
-        .dark .hero-bg {
-          background-image:
-            radial-gradient(ellipse 80% 60% at 20% 30%, rgba(34,197,94,0.12) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 50% at 80% 70%, rgba(59,130,246,0.08) 0%, transparent 60%);
+        .bento-card {
+            background: #050505;
+            border: 1px solid #1A1A1A;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Grid dot pattern */
-        .dot-grid {
-          background-image: radial-gradient(circle, rgba(0,0,0,0.08) 1px, transparent 1px);
-          background-size: 28px 28px;
-        }
-        .dark .dot-grid {
-          background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+        .bento-card:hover {
+            border-color: #FF0000;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.05);
         }
 
-        /* Nav blur */
-        .nav-blur {
-          backdrop-filter: blur(16px);
-          -webkit-backdrop-filter: blur(16px);
+        .project-item {
+            border-bottom: 1px solid #1A1A1A;
+            padding: 1rem 0;
+            transition: all 0.2s;
         }
 
-        /* Typing cursor */
-        .cursor::after {
-          content: '|';
-          animation: blink 1s step-end infinite;
-          color: #22c55e;
-          font-weight: 300;
-        }
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0; }
+        .project-item:last-child {
+            border-bottom: none;
         }
 
-        /* Scroll reveal */
+        .project-item:hover {
+            padding-left: 0.5rem;
+            border-color: #FF0000;
+        }
+
         .reveal {
-          opacity: 0;
-          transform: translateY(28px);
-          transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
         }
+
         .reveal.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        /* Card hover lift */
-        .card-hover {
-          transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s ease;
-        }
-        .card-hover:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-        }
-        .dark .card-hover:hover {
-          box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-        }
-
-        /* Mobile menu */
-        #mobile-menu { transition: all 0.3s cubic-bezier(0.16,1,0.3,1); }
-
-        .shadcn-card {
-            border: 1px solid hsl(var(--border));
-            background: hsl(var(--card));
-            color: hsl(var(--card-foreground));
-            border-radius: var(--radius);
-            transition: all 0.2s ease-in-out;
-        }
-
-        .shadcn-card:hover {
-            border-color: hsl(var(--primary));
-            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-        }
-
-        .section-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: hsl(var(--primary));
-            margin-bottom: 1rem;
-            display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 
-<body class="antialiased selection:bg-primary/10 dark:selection:bg-primary/20">
+<body class="antialiased p-4 md:p-8 font-sans">
 
-    <header
-        class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <nav class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-end">
-            <button onclick="toggleTheme()"
-                class="p-2 rounded-md hover:bg-accent border border-border">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-            </button>
-        </nav>
-    </header>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-4">
 
-    <main class="max-w-3xl mx-auto px-6 pt-32 pb-24 space-y-24">
-        <section class="reveal">
-            <div class="flex flex-col md:flex-row items-start md:items-center gap-8 mb-8">
-                <img src="assets/img/profile.png"
-                    class="w-24 h-24 rounded-2xl object-cover border border-border shadow-sm"
-                    alt="Dhine Franklin Arjona">
-                <div>
-                    <h1 class="text-4xl font-extrabold tracking-tight mb-2">Dhine Franklin Arjona</h1>
-                    <p class="text-primary font-mono text-sm font-medium uppercase tracking-widest">Web Developer</p>
+        <div class="bento-card md:col-span-4 flex flex-col md:flex-row gap-6 items-center md:items-start reveal">
+            <img src="assets/img/profile.png" class="w-28 h-28 rounded-xl object-cover border border-border"
+                alt="Profile">
+            <div class="space-y-3 text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start gap-2">
+                    <h1 class="text-4xl font-extrabold tracking-tighter">Dhine Franklin <span
+                            class="text-brand">Arjona</span></h1>
+                    <img src="assets/img/social-media.png" class="w-5 h-5 object-contain" alt="Verified">
+                </div>
+
+                <div class="flex flex-col gap-1">
+                    <p class="text-white text-sm font-bold tracking-wide uppercase">Web Developer / AI Automation</p>
+                    <p class="text-gray-400 text-xs">Malabon City, Philippines</p>
+                </div>
+
+                <div class="flex flex-wrap gap-x-4 gap-y-2 justify-center md:justify-start pt-2">
+                    <a href="mailto:dhinearjona16@gmail.com"
+                        class="text-[10px] font-bold text-brand uppercase tracking-widest border-b border-brand">Email</a>
+                    <a href="https://github.com/Dhinearjona" target="_blank"
+                        class="text-[10px] font-bold text-gray-500 uppercase tracking-widest hover:text-white transition-colors">GitHub</a>
+                    <a href="https://www.linkedin.com/in/dhinearjona/" target="_blank"
+                        class="text-[10px] font-bold text-gray-500 uppercase tracking-widest hover:text-white transition-colors">LinkedIn</a>
+                    <a href="https://www.facebook.com/dhinearjona/" target="_blank"
+                        class="text-[10px] font-bold text-gray-500 uppercase tracking-widest hover:text-white transition-colors">Facebook</a>
                 </div>
             </div>
-            <p class="text-muted-foreground max-w-xl leading-relaxed text-base">
-                Focused on building minimalist, high-performance web applications. Expert in automating workflows and
-                creating clean, data-driven systems.
-            </p>
-        </section>
+        </div>
 
-        <section class="reveal">
-            <span class="section-label">Tech Stack</span>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                <div class="shadcn-card p-3 text-xs font-medium text-center">JavaScript</div>
-                <div class="shadcn-card p-3 text-xs font-medium text-center">PHP / MySQL</div>
-                <div class="shadcn-card p-3 text-xs font-medium text-center">Google Apps Script</div>
-                <div class="shadcn-card p-3 text-xs font-medium text-center">Laravel</div>
-                <div class="shadcn-card p-3 text-xs font-medium text-center">Tailwind CSS</div>
-                <div class="shadcn-card p-3 text-xs font-medium text-center">Bootstrap 5</div>
-                <div class="shadcn-card p-3 text-xs font-medium text-center">Git / GitHub</div>
-                <div class="shadcn-card p-3 text-xs font-medium text-center">HTML5 / CSS3</div>
+        <div class="bento-card md:col-span-2 reveal">
+            <h3 class="text-[10px] font-bold text-brand uppercase tracking-widest mb-4">Core Stack</h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">JavaScript</span>
+                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">PHP / MySQL</span>
+                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">Laravel</span>
+                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">Google Apps
+                    Script</span>
+                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">Firebase</span>
+                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">Tailwind
+                    CSS</span>
+                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">Bootstrap 5</span>
+                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">Git /
+                    GitHub</span>
+                <span class="text-[10px] font-mono bg-white/5 px-2 py-1 rounded border border-border">HTML5 /
+                    CSS3</span>
             </div>
-        </section>
+        </div>
 
-        <section id="projects" class="reveal">
-            <span class="section-label">Selected Projects</span>
-            <div class="grid gap-4">
-                <div class="grid md:grid-cols-2 gap-4">
-                    <a href="https://gerrmanitsolutions.com/" target="_blank"
-                        class="shadcn-card p-5 group flex flex-col justify-between h-32 transition-all">
-                        <div class="flex justify-between items-start">
-                            <span class="font-bold tracking-tight group-hover:text-primary">Gerrman IT Solutions</span>
-                            <span class="text-[10px] text-muted-foreground uppercase font-mono">Live</span>
+        <div class="bento-card md:col-span-3 md:row-span-2 reveal">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-[10px] font-bold text-brand uppercase tracking-widest">Selected Projects</h3>
+            </div>
+            <div class="space-y-1">
+                <a href="https://attendo.dhinearjona.online/login.php" target="_blank" class="project-item block group">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-bold group-hover:text-brand transition-colors">Atendo HRIS
+                            (PWA)</span>
+                        <svg class="w-3 h-3 text-gray-600 group-hover:text-brand transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </div>
+                    <p class="text-[10px] text-gray-500 mt-1">GPS-verified attendance tracking and automated leave
+                        management system.</p>
+                </a>
+
+                <a href="https://truvizionmultimedia.com/" target="_blank" class="project-item block group">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-bold group-hover:text-brand transition-colors">Tru-Vizion
+                            Multimedia</span>
+                        <svg class="w-3 h-3 text-gray-600 group-hover:text-brand transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </div>
+                    <p class="text-[10px] text-gray-500 mt-1">Digital product showcase and administrative hardware
+                        inventory portal.</p>
+                </a>
+
+                <div class="project-item group cursor-pointer" onclick="openVideoModal()">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-bold group-hover:text-brand transition-colors">Job Order
+                            Tracker</span>
+                        <svg class="w-3.5 h-3.5 text-gray-600 group-hover:text-brand transition-colors"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+                        </svg>
+                    </div>
+                    <p class="text-[10px] text-gray-500 mt-1">Internal workflow automation for task monitoring and
+                        reporting.</p>
+                </div>
+
+                <a href="https://servicio.world/" target="_blank" class="project-item block group">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-bold group-hover:text-brand transition-colors">Servicio World</span>
+                        <svg class="w-3 h-3 text-gray-600 group-hover:text-brand transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </div>
+                    <p class="text-[10px] text-gray-500 mt-1">Service management platform providing digital solutions
+                        and logistics.</p>
+                </a>
+
+                <a href="https://goldenhorselimo.com/" target="_blank" class="project-item block group">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-bold group-hover:text-brand transition-colors">Golden Horse
+                            Limo</span>
+                        <svg class="w-3 h-3 text-gray-600 group-hover:text-brand transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </div>
+                    <p class="text-[10px] text-gray-500 mt-1">High-end limousine service portal for luxury
+                        transportation bookings.</p>
+                </a>
+
+                <a href="https://gerrmanitsolutions.com/" target="_blank"
+                    class="project-item block group border-none">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-bold group-hover:text-brand transition-colors">Gerrman IT
+                            Solutions</span>
+                        <svg class="w-3 h-3 text-gray-600 group-hover:text-brand transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </div>
+                    <p class="text-[10px] text-gray-500 mt-1">Official corporate website showcasing specialized IT
+                        services and solutions.</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="bento-card md:col-span-3 md:row-span-2 reveal group">
+            <div class="flex items-center justify-between mb-8">
+                <h3 class="text-[10px] font-bold text-brand uppercase tracking-widest">Work Experience</h3>
+            </div>
+
+            <div class="space-y-8">
+                <div
+                    class="group/item relative pl-8 pb-4 border-l border-brand/20 hover:border-brand/50 transition-colors duration-500">
+                    <div
+                        class="absolute w-3 h-3 bg-background border-2 border-brand rounded-full -left-[6.5px] top-1.5 shadow-[0_0_10px_#FF0000] z-10">
+                    </div>
+
+                    <div class="space-y-2 transform group-hover/item:translate-x-1 transition-transform duration-300">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                            <h4
+                                class="text-sm font-extrabold uppercase tracking-tight text-white group-hover/item:text-brand transition-colors">
+                                Web Developer</h4>
+                            <span
+                                class="text-[9px] font-mono text-brand bg-brand/5 px-2 py-0.5 rounded-full border border-brand/20 w-fit uppercase">Feb
+                                2026 — Mar 2026</span>
                         </div>
-                        <p class="text-xs text-muted-foreground">Corporate IT Solutions platform.</p>
-                    </a>
-                    <a href="https://goldenhorselimo.com/" target="_blank"
-                        class="shadcn-card p-5 group flex flex-col justify-between h-32 transition-all">
-                        <div class="flex justify-between items-start">
-                            <span class="font-bold tracking-tight group-hover:text-primary">Golden Horse Limo</span>
-                            <span class="text-[10px] text-muted-foreground uppercase font-mono">Live</span>
-                        </div>
-                        <p class="text-xs text-muted-foreground">Logistics & Transportation service.</p>
-                    </a>
-                    <a href="https://truvizionmultimedia.com/" target="_blank"
-                        class="shadcn-card p-5 group flex flex-col justify-between h-32 transition-all">
-                        <div class="flex justify-between items-start">
-                            <span class="font-bold tracking-tight group-hover:text-primary">Truvizion Multimedia</span>
-                            <span class="text-[10px] text-muted-foreground uppercase font-mono">Live</span>
-                        </div>
-                        <p class="text-xs text-muted-foreground">Product Management & Digital Portal.</p>
-                    </a>
-                    <div class="shadcn-card p-5 group flex flex-col justify-between h-32 border-dashed">
-                        <div class="flex justify-between items-start">
-                            <span class="font-bold tracking-tight">Job Order Tracker</span>
-                            <button onclick="openVideoModal()"
-                                class="text-[10px] text-primary border border-primary px-2 py-0.5 rounded hover:bg-primary hover:text-primary-foreground transition-all uppercase font-mono">Demo</button>
-                        </div>
-                        <p class="text-xs text-muted-foreground">Internal workflow & task automation system.</p>
+                        <p class="text-[11px] text-gray-300 font-semibold tracking-wide">A2Z2GO Marketing Corporation
+                        </p>
+                        <ul class="text-[10px] text-gray-500 space-y-1 list-disc ml-4">
+                            <li>Developed automated reporting systems using <span class="text-gray-300">Google Apps
+                                    Script</span>, reducing manual data entry.</li>
+                            <li>Engineered <span class="text-gray-300">PDF generation logic</span> for structured
+                                employee attendance summaries.</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="grid md:grid-cols-2 gap-4">
-                    <a href="https://servicio.world/" target="_blank"
-                        class="shadcn-card p-5 group flex flex-col justify-between h-32 transition-all">
-                        <div class="flex justify-between items-start">
-                            <span class="font-bold tracking-tight group-hover:text-primary">Servicio World</span>
-                            <span class="text-[10px] text-muted-foreground uppercase font-mono">Live</span>
-                        </div>
-                        <p class="text-xs text-muted-foreground">Service management platform.</p>
-                    </a>
-                    <a href="https://www.inursereviewcenter.com/" target="_blank"
-                        class="shadcn-card p-5 group flex flex-col justify-between h-32 transition-all">
-                        <div class="flex justify-between items-start">
-                            <span class="font-bold tracking-tight group-hover:text-primary">iNurse Review Center</span>
-                            <span class="text-[10px] text-muted-foreground uppercase font-mono">Live</span>
-                        </div>
-                        <p class="text-xs text-muted-foreground">Nursing education & review platform.</p>
-                    </a>
-                </div>
-            </div>
-        </section>
 
-        <section id="certifications" class="reveal">
-            <span class="section-label">Certifications</span>
-            <div class="space-y-4">
-                <div class="shadcn-card p-5">
-                    <h3 class="font-bold text-sm">TESDA NC II: Animation</h3>
-                    <p class="text-xs text-muted-foreground mt-1 font-mono">No: 19130402017845</p>
-                    <div class="mt-4 flex gap-4 text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">
-                        <span>Issued: 11/2019</span>
-                        <span>Expires: 11/2024</span>
+                <div
+                    class="group/item relative pl-8 pb-4 border-l border-white/5 hover:border-white/20 transition-colors duration-500">
+                    <div
+                        class="absolute w-2 h-2 bg-border border border-white/20 rounded-full -left-[4.5px] top-2 z-10 group-hover/item:bg-white/40 transition-colors">
+                    </div>
+
+                    <div class="space-y-2 transform group-hover/item:translate-x-1 transition-transform duration-300">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                            <h4 class="text-sm font-bold uppercase tracking-tight text-gray-400">Junior Developer</h4>
+                            <span
+                                class="text-[9px] font-mono text-gray-600 border border-white/5 px-2 py-0.5 rounded-full w-fit uppercase">Apr
+                                2025 — Nov 2025</span>
+                        </div>
+                        <p class="text-[11px] text-gray-500 font-medium tracking-wide">Myracle Innovation Inc.</p>
+                        <ul class="text-[10px] text-gray-600 space-y-1 list-disc ml-4">
+                            <li>Developed SaaS-style <span class="text-gray-500">Inventory Management</span>, Job
+                                Orders, and Sales Tracking platforms using PHP and MySQL.</li>
+                            <li>Engineered <span class="text-gray-500">Order Fulfillment</span> workflows to streamline
+                                internal business processes and task monitoring.</li>
+                            <li>Managed full-cycle deployment, hosting setup, and version control via <span
+                                    class="text-gray-500">Git/GitHub</span>.</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="shadcn-card p-5">
-                    <h3 class="font-bold text-sm">RVN Tech-Voc Inc.: Web Development II</h3>
-                    <p class="text-xs text-muted-foreground mt-1">Trainer: Steve Santos · Sector: ICT</p>
-                    <div class="mt-4 text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">
-                        Period: 12/2021 – 01/2022
+
+                <div
+                    class="group/item relative pl-8 border-l border-white/5 hover:border-white/20 transition-colors duration-500">
+                    <div
+                        class="absolute w-2 h-2 bg-border border border-white/20 rounded-full -left-[4.5px] top-2 z-10 group-hover/item:bg-white/40 transition-colors">
+                    </div>
+
+                    <div class="space-y-2 transform group-hover/item:translate-x-1 transition-transform duration-300">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                            <h4 class="text-sm font-bold uppercase tracking-tight text-gray-400">Web Developer</h4>
+                            <span
+                                class="text-[9px] font-mono text-gray-600 border border-white/5 px-2 py-0.5 rounded-full w-fit uppercase">Nov
+                                2023 — Apr 2025</span>
+                        </div>
+                        <p class="text-[11px] text-gray-500 font-medium tracking-wide">Gerrman IT Solutions Inc.</p>
+                        <ul class="text-[10px] text-gray-600 space-y-1 list-disc ml-4">
+                            <li>Developed high-performance landing pages using <span
+                                    class="text-gray-500">Laravel</span>, Tailwind CSS, and Bootstrap 5.</li>
+                            <li>Integrated <span class="text-gray-500">Firebase</span> for dynamic image storage and
+                                automated deployments via Bash scripts.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section id="connect" class="reveal pb-12">
-            <span class="section-label">Connect</span>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <a href="mailto:dhinearjona16@gmail.com"
-                    class="shadcn-card p-4 text-center text-xs font-bold hover:bg-primary hover:text-primary-foreground transition-colors">EMAIL</a>
-                <a href="https://github.com/Dhinearjona" target="_blank"
-                    class="shadcn-card p-4 text-center text-xs font-bold hover:bg-accent hover:text-accent-foreground transition-colors">GITHUB</a>
-                <a href="https://www.linkedin.com/in/dhinearjona/" target="_blank"
-                    class="shadcn-card p-4 text-center text-xs font-bold hover:bg-blue-600 hover:text-white transition-colors">LINKEDIN</a>
-                <a href="https://www.messenger.com/t/dhinearjona/" target="_blank"
-                    class="shadcn-card p-4 text-center text-xs font-bold hover:bg-blue-600 hover:text-white transition-colors">MESSENGER</a>
+        <div class="bento-card md:col-span-6 reveal">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-[10px] font-bold text-white uppercase tracking-widest">Professional Credentials</h3>
             </div>
-        </section>
-    </main>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div
+                    class="group/cert p-4 border border-border rounded-xl bg-white/[0.02] hover:border-brand/30 transition-all duration-300">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <p class="text-[10px] font-bold text-brand uppercase tracking-tighter">TESDA National
+                                Certificate II</p>
+                            <p class="text-sm font-extrabold text-white mt-0.5">Animation</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-[9px] text-gray-500 font-mono">No: 19130402017845</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 mt-4 pt-4 border-t border-border/50">
+                        <div>
+                            <p class="text-[8px] text-gray-500 uppercase font-bold">Issued</p>
+                            <p class="text-[10px] text-gray-300">Nov 2019</p>
+                        </div>
+                        <div>
+                            <p class="text-[8px] text-gray-500 uppercase font-bold">Expires</p>
+                            <p class="text-[10px] text-gray-300">Nov 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="group/cert p-4 border border-border rounded-xl bg-white/[0.02] hover:border-brand/30 transition-all duration-300">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <p class="text-[10px] font-bold text-brand uppercase tracking-tighter">RVN Tech-Voc Inc.
+                            </p>
+                            <p class="text-sm font-extrabold text-white mt-0.5">Web Development II</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-[9px] text-gray-500 font-mono italic">Trainer: Steve Santos</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 mt-4 pt-4 border-t border-border/50">
+                        <div>
+                            <p class="text-[8px] text-gray-500 uppercase font-bold">Period</p>
+                            <p class="text-[10px] text-gray-300">Dec 2021 - Jan 2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <div id="videoModal"
-        class="fixed inset-0 bg-background/95 hidden items-center justify-center z-[100] p-4 backdrop-blur-sm">
-        <div class="max-w-4xl w-full shadcn-card overflow-hidden shadow-2xl">
+        class="fixed inset-0 bg-black/95 hidden items-center justify-center z-[100] p-4 backdrop-blur-sm">
+        <div class="max-w-4xl w-full border border-white/10 bg-card rounded-2xl overflow-hidden shadow-2xl">
             <div class="flex justify-between items-center p-4 border-b border-border">
-                <span class="text-[10px] uppercase font-bold tracking-widest text-primary">Project Demo: Job Order
-                    Tracker</span>
-                <button onclick="closeVideoModal()"
-                    class="text-[10px] font-bold uppercase hover:text-primary transition-colors">Close [esc]</button>
+                <span class="text-[10px] font-bold text-brand uppercase tracking-widest">Demo: Job Order Tracker</span>
+                <button onclick="closeVideoModal()" class="text-xs font-bold hover:text-brand">CLOSE [ESC]</button>
             </div>
             <div class="aspect-video bg-black">
                 <video id="modalVideo" controls class="w-full h-full">
@@ -363,19 +369,6 @@
     </div>
 
     <script>
-        // Theme Toggle
-        const html = document.documentElement;
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia(
-                '(prefers-color-scheme: dark)').matches)) {
-            html.classList.add('dark');
-        }
-
-        function toggleTheme() {
-            html.classList.toggle('dark');
-            localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
-        }
-
-        // Reveal Animation
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -385,11 +378,9 @@
         });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Modal logic
         function openVideoModal() {
-            const modal = document.getElementById('videoModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
+            document.getElementById('videoModal').classList.remove('hidden');
+            document.getElementById('videoModal').classList.add('flex');
             document.body.style.overflow = 'hidden';
         }
 
@@ -406,7 +397,6 @@
             if (e.key === "Escape") closeVideoModal();
         });
     </script>
-
 </body>
 
 </html>
