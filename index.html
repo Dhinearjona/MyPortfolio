@@ -4,234 +4,323 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dhine Franklin Arjona — Web Developer</title>
+    <title>Dhine Franklin Arjona — Full-stack Developer</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet" />
 
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
                     },
                     colors: {
-                        background: "#000000",
-                        foreground: "#fafafa",
-                        card: "#0a0a0a",
-                        border: "#1f1f1f",
-                        muted: "#a1a1aa",
-                        accent: "#18181b",
-                    }
+                        border: "hsl(240 3.7% 15.9%)",
+                        background: "hsl(240 10% 3.9%)",
+                        foreground: "hsl(0 0% 98%)",
+                        muted: {
+                            DEFAULT: "hsl(240 3.7% 15.9%)",
+                            foreground: "hsl(240 5% 64.9%)",
+                        },
+                        accent: {
+                            DEFAULT: "hsl(240 3.7% 15.9%)",
+                            foreground: "hsl(0 0% 98%)",
+                        },
+                        card: "hsl(240 10% 3.9%)",
+                    },
                 }
             }
         }
     </script>
 
+    <style>
+        body {
+            background-color: #09090b;
+            color: #fafafa;
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: -0.015em;
+        }
+
+        .shadcn-card {
+            background-color: #09090b;
+            border: 1px solid #27272a;
+            border-radius: 0.75rem;
+            transition: all 0.2s ease;
+        }
+
+        .shadcn-card:hover {
+            border-color: #3f3f46;
+            background-color: #0c0c0e;
+        }
+
+        .badge {
+            background-color: #18181b;
+            color: #fafafa;
+            padding: 0.2rem 0.6rem;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            border: 1px solid #27272a;
+        }
+
+        .btn-primary {
+            background-color: #fafafa;
+            color: #18181b;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: opacity 0.2s;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid #27272a;
+            color: #fafafa;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background-color: #18181b;
+            border-color: #3f3f46;
+        }
+
+        /* Subtle Fade Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeIn 0.5s ease out forwards;
+        }
+    </style>
 </head>
 
-<body class="bg-background text-foreground font-sans p-6 md:p-10">
-
-    <!-- subtle background -->
-    <div class="fixed inset-0 -z-10">
-        <div
-            class="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-white/5 blur-[140px] rounded-full">
-        </div>
-    </div>
-
-    <div class="max-w-5xl mx-auto space-y-6">
-
-        <!-- HERO + STACK -->
-        <div class="grid md:grid-cols-6 gap-4">
-
-            <!-- PROFILE -->
-            <div
-                class="md:col-span-4 border border-border rounded-2xl p-6 bg-card flex flex-col md:flex-row gap-6 items-center md:items-start transition hover:border-neutral-700">
-
-                <img src="assets/img/profile.png" class="w-28 h-28 rounded-2xl object-cover border border-border">
-
-                <div class="space-y-4 text-center md:text-left">
-
-                    <h1 class="text-3xl md:text-4xl font-semibold leading-tight">
-                        Dhine Franklin Arjona
-                    </h1>
-
-                    <p class="text-muted text-sm md:text-base">
+<body class="font-sans antialiased">
+    <div class="max-w-4xl mx-auto px-6 py-20 md:py-32 space-y-16">
+        <header class="space-y-8 animate-in">
+            <div class="flex flex-col md:flex-row gap-8 items-start md:items-center">
+                <img src="assets/img/profile.png"
+                    class="w-24 h-24 rounded-2xl object-cover border border-zinc-800 shadow-2xl" alt="Profile">
+                <div class="space-y-2">
+                    <h1 class="text-4xl md:text-5xl font-bold tracking-tighter">Dhine Franklin Arjona</h1>
+                    <p class="text-zinc-400 text-lg md:text-xl max-w-xl font-normal leading-snug">
                         I build systems, websites, and automation that help businesses scale.
                     </p>
+                </div>
+            </div>
 
-                    <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+            <div class="flex flex-wrap gap-3">
+                <a href="https://www.facebook.com/dhinearjona/" target="_blank" class="btn-primary hover:opacity-90">
+                    Get in touch
+                </a>
+                <a href="https://github.com/Dhinearjona" target="_blank" class="btn-secondary flex items-center gap-2">
+                    <i data-lucide="code-2" class="w-4 h-4"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/dhinearjona/" target="_blank"
+                    class="btn-secondary flex items-center gap-2">
+                    <i data-lucide="briefcase" class="w-4 h-4"></i> LinkedIn
+                </a>
+            </div>
+        </header>
 
-                        <a href="mailto:dhinearjona16@gmail.com"
-                            class="px-4 py-2 text-sm rounded-md bg-white text-black font-medium hover:opacity-90 transition">
-                            Contact Me
-                        </a>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 animate-in" style="animation-delay: 0.1s;">
 
-                        <a href="https://github.com/Dhinearjona" target="_blank"
-                            class="px-4 py-2 text-sm rounded-md border border-border hover:bg-accent transition">
-                            GitHub
-                        </a>
+            <div class="shadcn-card p-6 md:col-span-1 space-y-6">
+                <div>
+                    <h3 class="text-xs font-semibold text-zinc-500 uppercase tracking-widest mb-4">Skills & Technologies
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge">PHP / Laravel</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">MySQL</span>
+                        <span class="badge">Google Apps Script</span>
+                        <span class="badge">Firebase</span>
+                        <span class="badge">Tailwind CSS</span>
+                        <span class="badge">Bootstrap 5</span>
+                        <span class="badge">Git / GitHub</span>
+                        <span class="badge">Gitlab</span>
+                        <span class="badge">PWA</span>
+                        <span class="badge">API Integration</span>
+                        <span class="badge">Modern UI / UX Design</span>
+                        <span class="badge">Responsive Web Design</span>
+                        <span class="badge">CSS3</span>
+                        <span class="badge">HTML5</span>
+                        <span class="badge">Figma</span>
+                        <span class="badge">Canva</span>
+                        <span class="badge">Adobe Illustrator</span>
+                    </div>
+                </div>
 
-                        <a href="https://www.linkedin.com/in/dhinearjona/" target="_blank"
-                            class="px-4 py-2 text-sm rounded-md border border-border hover:bg-accent transition">
-                            LinkedIn
-                        </a>
-
+                <div class="pt-6 border-t border-zinc-800 grid grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-xl font-bold">2+</p>
+                        <p class="text-[10px] text-zinc-500 uppercase font-bold tracking-wider">Years Exp.</p>
+                    </div>
+                    <div>
+                        <p class="text-xl font-bold">6+</p>
+                        <p class="text-[10px] text-zinc-500 uppercase font-bold tracking-wider">Projects</p>
                     </div>
                 </div>
             </div>
 
-            <!-- STACK -->
-            <div class="md:col-span-2 border border-border rounded-2xl p-6 bg-card">
-                <h3 class="text-sm font-medium mb-4 text-muted">Core Stack</h3>
+            <div class="shadcn-card p-6 md:col-span-2">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-xs font-semibold text-zinc-500 uppercase tracking-widest">Selected Projects</h3>
+                    <span class="text-[10px] text-zinc-600 font-medium uppercase tracking-widest">Recent Work</span>
+                </div>
 
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 text-xs rounded-full bg-accent border border-border">PHP (Laravel)</span>
-                    <span class="px-3 py-1 text-xs rounded-full bg-accent border border-border">JavaScript</span>
-                    <span class="px-3 py-1 text-xs rounded-full bg-accent border border-border">MySQL</span>
-                    <span class="px-3 py-1 text-xs rounded-full bg-accent border border-border">Google Apps
-                        Script</span>
-                    <span class="px-3 py-1 text-xs rounded-full bg-accent border border-border">Firebase</span>
-                    <span class="px-3 py-1 text-xs rounded-full bg-accent border border-border">Tailwind CSS</span>
-                    <span class="px-3 py-1 text-xs rounded-full bg-accent border border-border">Bootstrap 5</span>
-                    <span class="px-3 py-1 text-xs rounded-full bg-accent border border-border">Git / GitHub</span>
+                <div class="divide-y divide-zinc-800">
+                    <a href="https://lovethailand.legal/" target="_blank" class="group block py-4 first:pt-0 last:pb-0">
+                        <div class="flex items-center justify-between">
+                            <div class="space-y-1">
+                                <h4 class="font-medium text-zinc-100 flex items-center gap-2">
+                                    Love Thailand Legal
+                                    <i data-lucide="arrow-up-right"
+                                        class="w-3 h-3 text-zinc-600 group-hover:text-zinc-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                                </h4>
+                                <p class="text-sm text-zinc-500 leading-relaxed">Legal consultation platform with
+                                    appointment scheduling.</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://attendo.dhinearjona.online/login.php" target="_blank" class="group block py-4">
+                        <div class="flex items-center justify-between">
+                            <div class="space-y-1">
+                                <h4 class="font-medium text-zinc-100 flex items-center gap-2">
+                                    Atendo HRIS
+                                    <span
+                                        class="text-[10px] bg-zinc-800/50 px-1.5 py-0.5 rounded border border-zinc-700 font-mono text-zinc-400">PWA</span>
+                                    <i data-lucide="arrow-up-right"
+                                        class="w-3 h-3 text-zinc-600 group-hover:text-zinc-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                                </h4>
+                                <p class="text-sm text-zinc-500 leading-relaxed">GPS-verified attendance tracking and
+                                    automated leave management.</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://truvizionmultimedia.com/" target="_blank" class="group block py-4">
+                        <div class="flex items-center justify-between">
+                            <div class="space-y-1">
+                                <h4 class="font-medium text-zinc-100 flex items-center gap-2">
+                                    Tru-Vizion Multimedia
+                                    <i data-lucide="arrow-up-right"
+                                        class="w-3 h-3 text-zinc-600 group-hover:text-zinc-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                                </h4>
+                                <p class="text-sm text-zinc-500 leading-relaxed">Digital product showcase and
+                                    administrative hardware inventory portal.</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://servicio.world/" target="_blank" class="group block py-4">
+                        <div class="flex items-center justify-between">
+                            <div class="space-y-1">
+                                <h4 class="font-medium text-zinc-100 flex items-center gap-2">
+                                    Servicio World
+                                    <i data-lucide="arrow-up-right"
+                                        class="w-3 h-3 text-zinc-600 group-hover:text-zinc-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                                </h4>
+                                <p class="text-sm text-zinc-500 leading-relaxed">Service management platform providing
+                                    digital solutions and logistics.</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://goldenhorselimo.com/" target="_blank" class="group block py-4">
+                        <div class="flex items-center justify-between">
+                            <div class="space-y-1">
+                                <h4 class="font-medium text-zinc-100 flex items-center gap-2">
+                                    Golden Horse Limo
+                                    <i data-lucide="arrow-up-right"
+                                        class="w-3 h-3 text-zinc-600 group-hover:text-zinc-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                                </h4>
+                                <p class="text-sm text-zinc-500 leading-relaxed">High-end limousine service portal for
+                                    luxury transportation bookings.</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://gerrmanitsolutions.com/" target="_blank" class="group block py-4 last:pb-0">
+                        <div class="flex items-center justify-between">
+                            <div class="space-y-1">
+                                <h4 class="font-medium text-zinc-100 flex items-center gap-2">
+                                    Gerrman IT Solutions
+                                    <i data-lucide="arrow-up-right"
+                                        class="w-3 h-3 text-zinc-600 group-hover:text-zinc-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                                </h4>
+                                <p class="text-sm text-zinc-500 leading-relaxed">Official corporate website showcasing
+                                    specialized IT services.</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
-
         </div>
 
-        <!-- PROJECTS -->
-        <div class="border border-border rounded-2xl p-6 bg-card relative overflow-hidden">
-
-            <!-- glow -->
-            <div class="absolute -top-20 -right-20 w-72 h-72 bg-white/5 blur-3xl rounded-full"></div>
-
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-sm font-semibold">Selected Projects</h3>
-                <span class="text-xs text-muted">Recent Work</span>
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-zinc-800 animate-in"
+            style="animation-delay: 0.2s;">
+            <div class="space-y-4">
+                <h3 class="text-xs font-semibold text-zinc-500 uppercase tracking-widest">About</h3>
+                <p class="text-zinc-400 leading-relaxed">
+                    Web developer based in the Philippines. I specialise in building scalable web
+                    applications, business automation, and internal systems. Passionate about clean code, thoughtful UI,
+                    and solutions that actually move the needle.
+                </p>
+                <div class="flex items-center gap-4 text-xs text-zinc-500 font-medium">
+                    <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                        Philippines</span>
+                    <span class="flex items-center gap-1.5"><i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                        dhinearjona16@gmail.com</span>
+                </div>
             </div>
-
-            <div class="space-y-2">
-
-                <!-- ITEM -->
-                <a href="https://lovethailand.legal/" target="_blank"
-                    class="group flex justify-between items-start rounded-xl px-4 py-3 hover:bg-accent transition">
-
-                    <div>
-                        <p class="text-sm font-medium group-hover:text-white">
-                            Love Thailand Legal
-                        </p>
-                        <p class="text-xs text-muted mt-1">
-                            Thailand based legal consultation platform with appointment scheduling.
-                        </p>
-                    </div>
-
-                    <svg class="w-4 h-4 mt-1 text-muted group-hover:text-white group-hover:translate-x-1 transition"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                </a>
-
-                <a href="https://attendo.dhinearjona.online/login.php" target="_blank"
-                    class="group flex justify-between items-start rounded-xl px-4 py-3 hover:bg-accent transition">
-
-                    <div>
-                        <p class="text-sm font-medium group-hover:text-white">
-                            Atendo HRIS (PWA)
-                        </p>
-                        <p class="text-xs text-muted mt-1">
-                            GPS-verified attendance tracking and automated leave management.
-                        </p>
-                    </div>
-
-                    <svg class="w-4 h-4 mt-1 text-muted group-hover:text-white group-hover:translate-x-1 transition"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                </a>
-
-                <a href="https://truvizionmultimedia.com/" target="_blank"
-                    class="group flex justify-between items-start rounded-xl px-4 py-3 hover:bg-accent transition">
-
-                    <div>
-                        <p class="text-sm font-medium group-hover:text-white">
-                            Tru-Vizion Multimedia
-                        </p>
-                        <p class="text-xs text-muted mt-1">
-                            Digital product showcase and administrative hardware inventory portal.
-                        </p>
-                    </div>
-
-                    <svg class="w-4 h-4 mt-1 text-muted group-hover:text-white group-hover:translate-x-1 transition"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                </a>
-
-                <a href="https://servicio.world/" target="_blank"
-                    class="group flex justify-between items-start rounded-xl px-4 py-3 hover:bg-accent transition">
-
-                    <div>
-                        <p class="text-sm font-medium group-hover:text-white">
-                            Servicio World
-                        </p>
-                        <p class="text-xs text-muted mt-1">
-                            Service management platform providing digital solutions and logistics.
-                        </p>
-                    </div>
-
-                    <svg class="w-4 h-4 mt-1 text-muted group-hover:text-white group-hover:translate-x-1 transition"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                </a>
-
-                <a href="https://goldenhorselimo.com/" target="_blank"
-                    class="group flex justify-between items-start rounded-xl px-4 py-3 hover:bg-accent transition">
-
-                    <div>
-                        <p class="text-sm font-medium group-hover:text-white">
-                            Golden Horse Limo
-                        </p>
-                        <p class="text-xs text-muted mt-1">
-                            High-end limousine service portal for luxury transportation bookings.
-                        </p>
-                    </div>
-
-                    <svg class="w-4 h-4 mt-1 text-muted group-hover:text-white group-hover:translate-x-1 transition"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                </a>
-
-                <a href="https://gerrmanitsolutions.com/" target="_blank"
-                    class="group flex justify-between items-start rounded-xl px-4 py-3 hover:bg-accent transition">
-
-                    <div>
-                        <p class="text-sm font-medium group-hover:text-white">
-                            Gerrman IT Solutions
-                        </p>
-                        <p class="text-xs text-muted mt-1">
-                            Official corporate website showcasing specialized IT services.
-                        </p>
-                    </div>
-
-                    <svg class="w-4 h-4 mt-1 text-muted group-hover:text-white group-hover:translate-x-1 transition"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
+            <div
+                class="shadcn-card p-8 bg-zinc-900/30 flex flex-col items-center justify-center text-center space-y-4 border-dashed border-zinc-700">
+                <h4 class="text-lg font-semibold tracking-tight italic">"Have a project in mind?"</h4>
+                <p class="text-sm text-zinc-500 max-w-xs">Open to freelance, contract, and full-time opportunities.</p>
+                <a href="https://www.facebook.com/dhinearjona/" target="_blank"
+                    class="btn-primary w-full md:w-auto px-12">
+                    Let's Talk
                 </a>
             </div>
-        </div>
+        </section>
+
+        <footer class="text-center pt-8">
+            <p class="text-[10px] text-zinc-600 font-bold uppercase tracking-[0.4em]">
+                © <span id="year"></span> Dhine Franklin Arjona
+            </p>
+        </footer>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
 </body>
 
 </html>
